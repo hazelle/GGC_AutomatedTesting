@@ -9,3 +9,4 @@ Servers/
 *.log
 pom.xml
 *.xlsx
+*.MF
