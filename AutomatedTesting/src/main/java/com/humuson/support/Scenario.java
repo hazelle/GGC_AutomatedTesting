@@ -45,7 +45,7 @@ public class Scenario extends CustomLogging{
 	protected int period = 5;
 	protected int flag=0;
 
-	/** action()만 실행시키면 시나리오의 모든 내용 진행 가능하도록 설계되어있음 */
+	/** action()�� �����Ű�� �ó������� ��� ���� ���� �����ϵ��� ����Ǿ����� */
 	public void action() {
 		CustomWait(3);
 		GO();
@@ -54,12 +54,12 @@ public class Scenario extends CustomLogging{
 		END();
 	}
 
-	/** 시나리오의 main 부분을 실행함 */
+	/** �ó������� main �κ��� ������ */
 	protected void DO() {	}
 
 	protected void execute() {
 		for (int i = 0; i < getChildScenario().size(); i++) {
-			System.out.println("# 시나리오 명 : " + getChildScenario().get(i).getTitle());
+			System.out.println("# �ó����� �� : " + getChildScenario().get(i).getTitle());
 			getChildScenario().get(i).action();
 		}
 	}
@@ -71,69 +71,69 @@ public class Scenario extends CustomLogging{
 			RESULT += 1;
 	}
 
-	/** @return 해당 시나리오의 하위 시나리오를 ArrayList로 리턴함 */
+	/** @return �ش� �ó������� ���� �ó������� ArrayList�� ������ */
 	public ArrayList<Scenario> getChildScenario() {
 		return childScenario;
 	}
 
-	/** 하위 시나리오를 생성하는 메소드 */
+	/** ���� �ó������� �����ϴ� �޼ҵ� */
 	protected void makeScenario() {	}
 
 	/**
-	 * 하위 시나리오를 childScenario에 추가
+	 * ���� �ó������� childScenario�� �߰�
 	 * 
 	 * @param sc
-	 *            하위 시나리오
+	 *            ���� �ó�����
 	 */
 	public void addChildScenario(Scenario sc) {
 		childScenario.add(sc);
 	}
 
-	/** 로그 상에 시나리오의 시작을 알림 */
+	/** �α� �� �ó������� ������ �˸� */
 	public void GO() {
 		simpleLog("");
-		simpleLog(">>> " + getTitle() + " [시작]");
+		simpleLog(">>> " + getTitle() + " [����]");
 	}
 
-	/** 로그 상에 시나리오의 끝을 알림 */
+	/** �α� �� �ó������� ���� �˸� */
 	public void END() {
 		if(RESULT==0) {
-			simpleLog("<<< " + getTitle() + " [끝] ... O");
+			simpleLog("<<< " + getTitle() + " [��] ... O");
 			if(TYPE==E)	logExcel(category[0], category[1], category[2], title, "O", failDetail);
 		} else {
-			simpleLog("<<< " + getTitle() + " [끝] ... X");
+			simpleLog("<<< " + getTitle() + " [��] ... X");
 			if(TYPE==E)	logExcel(category[0], category[1], category[2], title, "X", failDetail);
 		}
 	}
 
-	/** 현재 타이틀의 성공을 로그에 O표시와 함께 남김 */
+	/** ���� Ÿ��Ʋ�� ������ �α׿� Oǥ�ÿ� �Բ� ���� */
 	public void OK() {
 		simpleLog("O  " + getTitle());
 	}
 
-	/** 현재 타이틀의 실패를 로그에 X표시와 함께 남김 */
+	/** ���� Ÿ��Ʋ�� ���и� �α׿� Xǥ�ÿ� �Բ� ���� */
 	public void FAIL() {
 		RESULT += 1;
 		simpleLog("X  " + getTitle());
 	}
 
 	/**
-	 * 성공도 실패도 아닌 기타 내용의 로그를 남김/ 'type msg' <-형태로 로그에 기록됨
+	 * ������ ���е� �ƴ� ��Ÿ ������ �α׸� ����/ 'type msg' <-���·� �α׿� ��ϵ�
 	 * 
 	 * @param type
-	 *            로그의 타입을 직접 입력. O나 X, 다른 것도 가능
+	 *            �α��� Ÿ���� ���� �Է�. O�� X, �ٸ� �͵� ����
 	 * @param msg
-	 *            로그의 내용
+	 *            �α��� ����
 	 */
 	public void ETC(String type, String msg) {
 		simpleLog(type + "  " + msg);
 	}
 
 	/**
-	 * DetaildLog가 true일 때만 실행됨. O표시와 함께 로그에 찍힘
+	 * DetaildLog�� true�� ���� �����. Oǥ�ÿ� �Բ� �α׿� ����
 	 * 
 	 * @param detail
-	 *            세부 내용 (현재 Class의 title 뒤에 찍힐 내용)
+	 *            ���� ���� (���� Class�� title �ڿ� ���� ����)
 	 */
 	public void OK(String detail) {
 		if (StartTesting.DetailedLog)
@@ -141,15 +141,15 @@ public class Scenario extends CustomLogging{
 	}
 
 	/**
-	 * X표시와 함께 로그에 찍힘
+	 * Xǥ�ÿ� �Բ� �α׿� ����
 	 * 
 	 * @param detail
-	 *            로그에 직접적으로 찍히는 내용
+	 *            �α׿� ���������� ������ ����
 	 */
 	public void FAIL(String detail) {
 		// if(StartTesting.DetailedLog)
 		RESULT += 1;
-		simpleLog("X  " + getTitle() + " | " + detail + " 실패");
+		simpleLog("X  " + getTitle() + " | " + detail + " ����");
 		if(failDetail.length()>0) {
 			failDetail += "\n"+detail;
 		} else {
@@ -158,35 +158,35 @@ public class Scenario extends CustomLogging{
 	}
 
 	/**
-	 * 현재 Url을 로그에 출력. X표시와 함께 로그에 찍힘
+	 * ���� Url�� �α׿� ���. Xǥ�ÿ� �Բ� �α׿� ����
 	 * 
 	 * @param detail
-	 *            세부 내용 (현재 Class의 title 뒤에 찍힐 내용)
+	 *            ���� ���� (���� Class�� title �ڿ� ���� ����)
 	 * @param currentUrl
-	 *            현재 페이지의 Url. driver.getCurrentUrl()로 쓰면 됨
+	 *            ���� �������� Url. driver.getCurrentUrl()�� ���� ��
 	 */
 	public void FAIL(String detail, String currentUrl) {
 		// if(StartTesting.DetailedLog)
 		RESULT += 1;
-		simpleLog("X  " + getTitle() + " | " + detail + " 실패. 현재 페이지 " + currentUrl);
+		simpleLog("X  " + getTitle() + " | " + detail + " ����. ���� ������ " + currentUrl);
 	}
 
 	/**
-	 * 현재 발생한 Exception의 내용을 로그에 출력. X표시와 함께 로그에 찍힘
+	 * ���� �߻��� Exception�� ������ �α׿� ���. Xǥ�ÿ� �Բ� �α׿� ����
 	 * 
 	 * @param detail
-	 *            세부 내용 (현재 Class의 title 뒤에 찍힐 내용)
+	 *            ���� ���� (���� Class�� title �ڿ� ���� ����)
 	 * @param e
-	 *            현재 발생한 Exception
+	 *            ���� �߻��� Exception
 	 */
 	public void FAIL(String detail, Exception e) {
 		RESULT += 1;
-		simpleLog("X  " + getTitle() + " | " + detail + " 실패");
+		simpleLog("X  " + getTitle() + " | " + detail + " ����");
 		simpleLog(e.getMessage());
 	}
 
 	/**
-	 * DetaildLog가 true일 때만 실행됨.
+	 * DetaildLog�� true�� ���� �����.
 	 * 
 	 * @param type
 	 * @param msg
@@ -198,15 +198,15 @@ public class Scenario extends CustomLogging{
 	}
 
 	/**
-	 * driver.findElement(by)와 try/catch문을 한 메소드에 작성함
+	 * driver.findElement(by)�� try/catch���� �� �޼ҵ忡 �ۼ���
 	 * 
 	 * @param type
-	 *            WebElement 검색에 쓸 값의 종류. id, xpath, css, name이 있음. default : id
+	 *            WebElement �˻��� �� ���� ����. id, xpath, css, name�� ����. default : id
 	 * @param value
-	 *            WebElement 검색에 쓸 값
+	 *            WebElement �˻��� �� ��
 	 * @param detail
-	 *            검색한 WebElement를 부를 명칭. Exception발생 시 로그에 찍힘
-	 * @return 검색된 WebElement. 검색에 실패 시 null값 리턴
+	 *            �˻��� WebElement�� �θ� ��Ī. Exception�߻� �� �α׿� ����
+	 * @return �˻��� WebElement. �˻��� ���� �� null�� ����
 	 */
 	public WebElement FEB(String type, String value, String detail) {
 		CustomWait(4);
@@ -237,20 +237,20 @@ public class Scenario extends CustomLogging{
 				wait.until(ExpectedConditions.presenceOfElementLocated(By.id(value)));
 				w = driver.findElement(By.id(value));
 			}
-			OK(detail +" 탐색");
+			OK(detail +" Ž��");
 			return w;
 		} catch (StaleElementReferenceException e) {
-			System.out.println("Stale 났음!!!!");
+			System.out.println("Stale ����!!!!");
 			return FEB(type, value, detail);
 		} catch (WebDriverException e) {
-			System.out.println("그냥 WebDriverException 났음!!!!");
-			FAIL(detail + " WebElement 찾기 실패", e);
+			System.out.println("�׳� WebDriverException ����!!!!");
+			FAIL(detail + " WebElement ã�� ����", e);
 			return null;
 		}
 	}
 
 	/**
-	 * 현재 웹페이지 전체를 캡쳐해 jpg파일로 저장
+	 * ���� �������� ��ü�� ĸ���� jpg���Ϸ� ����
 	 */
 	public void saveScreenShot(String[] category, String detail, String extension) {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
@@ -263,7 +263,7 @@ public class Scenario extends CustomLogging{
 			filename += " "+detail;
 			FileUtils.copyFile(scrFile, new File(filename + extension));
 		} catch (IOException e) {
-			FAIL(detail + " 스크린샷", e);
+			FAIL(detail + " ��ũ����", e);
 		}
 	}
 	
@@ -287,7 +287,7 @@ public class Scenario extends CustomLogging{
 //		js.executeScript("document.getElementById('//id of element').setAttribute('attr', '10')");
 	}
 
-	/** @return 현재 Class의 title */
+	/** @return ���� Class�� title */
 	public String getTitle() {
 		return title;
 	}
@@ -313,7 +313,7 @@ public class Scenario extends CustomLogging{
 		String[] val = {cate0, cate1, cate2, scenarioname, result, failDetail};
 		xlsxContent.add(val);
 		if(xlsxContent.size()>=period) {
-//		if(title.equals("로그인")) {
+//		if(title.equals("�α���")) {
 			StartTesting.x.modify(xlsxContent);
 			xlsxContent.clear();
 		} else {	}
