@@ -8,9 +8,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù MySite
- * @ÁßºĞ·ù Ã¤³Î °ü¸®
- * @½Ã³ª¸®¿À¸í SMS °èÁ¤µî·Ï
+ * @ëŒ€ë¶„ë¥˜ MySite
+ * @ì¤‘ë¶„ë¥˜ ì±„ë„ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… SMS ê³„ì •ë“±ë¡
  * */
 public class E_SMSAccount extends Scenario {
 	public E_SMSAccount(int type, String[] category, String title) {
@@ -28,69 +28,69 @@ public class E_SMSAccount extends Scenario {
 			delete();
 		} else {
 			CHECK(false);
-			FAIL("SMS °èÁ¤µî·Ï ÆäÀÌÁö ÀÌµ¿");
+			FAIL("SMS ê³„ì •ë“±ë¡ í˜ì´ì§€ ì´ë™");
 		}
 	}
 
 	private void click() {
-		FEB("id", "regSMS", "SMS °èÁ¤µî·Ï ÅÇ").click();
+		FEB("id", "regSMS", "SMS ê³„ì •ë“±ë¡ íƒ­").click();
 	}
 
 	private void register() {
 		clear();
-		FEB("id", "userName", "º¸³»´Â »ç¶÷ ÀÌ¸§ ÀÔ·ÂÄ­").sendKeys(pr.getPropValue("site.sender.name"));
-		FEB("id", "userPhone", "º¸³»´Â ÀüÈ­¹øÈ£ ÀÔ·ÂÄ­").sendKeys(pr.getPropValue("site.sender.phone"));
-		FEB("id", "regist", "µî·Ï ¹öÆ°").click();
-		int cnt = FEB("id", "resultBody", "¾÷Ã¼ ¸®½ºÆ®").findElements(By.tagName("tr")).size();
-		if (!FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "À¯Àú ¸®½ºÆ®ÀÇ Ã¹¹øÂ° º¸³»´Â »ç¶÷ ÀÌ¸§ ÀÔ·ÂÄ­").getAttribute("value").equals(pr.getPropValue("site.sender.name"))) {
-			FAIL("À¯Àú µî·Ï");
+		FEB("id", "userName", "ë³´ë‚´ëŠ” ì‚¬ëŒ ì´ë¦„ ì…ë ¥ì¹¸").sendKeys(pr.getPropValue("site.sender.name"));
+		FEB("id", "userPhone", "ë³´ë‚´ëŠ” ì „í™”ë²ˆí˜¸ ì…ë ¥ì¹¸").sendKeys(pr.getPropValue("site.sender.phone"));
+		FEB("id", "regist", "ë“±ë¡ ë²„íŠ¼").click();
+		int cnt = FEB("id", "resultBody", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("tr")).size();
+		if (!FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "ìœ ì € ë¦¬ìŠ¤íŠ¸ì˜ ì²«ë²ˆì§¸ ë³´ë‚´ëŠ” ì‚¬ëŒ ì´ë¦„ ì…ë ¥ì¹¸").getAttribute("value").equals(pr.getPropValue("site.sender.name"))) {
+			FAIL("ìœ ì € ë“±ë¡");
 		}
 	}
 
 	private void modify() {
 		CustomWait(10);
 		clear();
-		FEB("id", "userName", "º¸³»´Â »ç¶÷ ÀÌ¸§ ÀÔ·ÂÄ­").sendKeys("¼öÁ¤¿ë");
-		FEB("id", "userPhone", "º¸³»´Â ÀüÈ­¹øÈ£ ÀÔ·ÂÄ­").sendKeys("01099999999");
-		FEB("id", "regist", "µî·Ï ¹öÆ°").click();
+		FEB("id", "userName", "ë³´ë‚´ëŠ” ì‚¬ëŒ ì´ë¦„ ì…ë ¥ì¹¸").sendKeys("ìˆ˜ì •ìš©");
+		FEB("id", "userPhone", "ë³´ë‚´ëŠ” ì „í™”ë²ˆí˜¸ ì…ë ¥ì¹¸").sendKeys("01099999999");
+		FEB("id", "regist", "ë“±ë¡ ë²„íŠ¼").click();
 		
 		driver.navigate().refresh();
 		
-		int cnt = FEB("id", "resultBody", "À¯Àú ¸®½ºÆ®").findElements(By.tagName("tr")).size();
+		int cnt = FEB("id", "resultBody", "ìœ ì € ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("tr")).size();
 
-		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "À¯Àú ¸®½ºÆ®ÀÇ ¸¶Áö¸· º¸³»´Â »ç¶÷ ÀÌ¸§ ÀÔ·ÂÄ­").clear();
-		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "À¯Àú ¸®½ºÆ®ÀÇ ¸¶Áö¸· º¸³»´Â »ç¶÷ ÀÌ¸§ ÀÔ·ÂÄ­").sendKeys("»èÁ¦¿ë");
-		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[2]/input", "À¯Àú ¸®½ºÆ®ÀÇ ¸¶Áö¸· º¸³»´Â ÀüÈ­¹øÈ£ ÀÔ·ÂÄ­").clear();
-		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[2]/input", "À¯Àú ¸®½ºÆ®ÀÇ ¸¶Áö¸· º¸³»´Â ÀüÈ­¹øÈ£ ÀÔ·ÂÄ­").sendKeys("heejae2@humuson.com");
-		FEB("xpath", "//*[@id=\"resultBody\"]/tr[1]/td[3]/span", "À¯Àú ¸®½ºÆ®ÀÇ ¸¶Áö¸· ¼öÁ¤ ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "ìœ ì € ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ë³´ë‚´ëŠ” ì‚¬ëŒ ì´ë¦„ ì…ë ¥ì¹¸").clear();
+		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "ìœ ì € ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ë³´ë‚´ëŠ” ì‚¬ëŒ ì´ë¦„ ì…ë ¥ì¹¸").sendKeys("ì‚­ì œìš©");
+		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[2]/input", "ìœ ì € ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ë³´ë‚´ëŠ” ì „í™”ë²ˆí˜¸ ì…ë ¥ì¹¸").clear();
+		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[2]/input", "ìœ ì € ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ë³´ë‚´ëŠ” ì „í™”ë²ˆí˜¸ ì…ë ¥ì¹¸").sendKeys("heejae2@humuson.com");
+		FEB("xpath", "//*[@id=\"resultBody\"]/tr[1]/td[3]/span", "ìœ ì € ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ìˆ˜ì • ë²„íŠ¼").click();
 
 		driver.navigate().refresh();
 
-		if(!FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "À¯Àú ¸®½ºÆ®ÀÇ ¸¶Áö¸· º¸³»´Â »ç¶÷ ÀÌ¸§ ÀÔ·ÂÄ­")
-				.getAttribute("value").equals("»èÁ¦¿ë")) {
-			FAIL("À¯Àú ¼öÁ¤ : À¯Àú ¸®½ºÆ®ÀÇ ¸¶Áö¸· º¸³»´Â »ç¶÷ ÀÌ¸§ ÀÔ·ÂÄ­");
+		if(!FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "ìœ ì € ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ë³´ë‚´ëŠ” ì‚¬ëŒ ì´ë¦„ ì…ë ¥ì¹¸")
+				.getAttribute("value").equals("ì‚­ì œìš©")) {
+			FAIL("ìœ ì € ìˆ˜ì • : ìœ ì € ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ë³´ë‚´ëŠ” ì‚¬ëŒ ì´ë¦„ ì…ë ¥ì¹¸");
 		}
-		if(!FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[2]/input", "À¯Àú ¸®½ºÆ®ÀÇ ¸¶Áö¸· º¸³»´Â ÀüÈ­¹øÈ£ ÀÔ·ÂÄ­")
+		if(!FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[2]/input", "ìœ ì € ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ë³´ë‚´ëŠ” ì „í™”ë²ˆí˜¸ ì…ë ¥ì¹¸")
 				.getAttribute("value").equals("01044444444")) {
-			FAIL("À¯Àú ¼öÁ¤ : À¯Àú ¸®½ºÆ®ÀÇ ¸¶Áö¸· º¸³»´Â ÀüÈ­¹øÈ£ ÀÔ·ÂÄ­");
+			FAIL("ìœ ì € ìˆ˜ì • : ìœ ì € ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ë³´ë‚´ëŠ” ì „í™”ë²ˆí˜¸ ì…ë ¥ì¹¸");
 		}
 	}
 
 	private void delete() {
-		int cnt = FEB("id", "resultBody", "À¯Àú ¸®½ºÆ®").findElements(By.tagName("tr")).size();
+		int cnt = FEB("id", "resultBody", "ìœ ì € ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("tr")).size();
 
-		if (FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "À¯Àú ¸®½ºÆ®ÀÇ ¸¶Áö¸· º¸³»´Â »ç¶÷ ÀÌ¸§ ÀÔ·ÂÄ­").getAttribute("value")
-				.equals("»èÁ¦¿ë")) {
-			FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[4]/span", "À¯Àú ¸®½ºÆ®ÀÇ ¸¶Áö¸· »èÁ¦ ¹öÆ°").click();
+		if (FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "ìœ ì € ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ë³´ë‚´ëŠ” ì‚¬ëŒ ì´ë¦„ ì…ë ¥ì¹¸").getAttribute("value")
+				.equals("ì‚­ì œìš©")) {
+			FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[4]/span", "ìœ ì € ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ì‚­ì œ ë²„íŠ¼").click();
 		}
 		driver.navigate().refresh();
-		if (!(cnt == FEB("id", "resultBody", "À¯Àú ¸®½ºÆ®").findElements(By.tagName("tr")).size() + 1)) {
-			FAIL("À¯Àú »èÁ¦ : »èÁ¦");
+		if (!(cnt == FEB("id", "resultBody", "ìœ ì € ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("tr")).size() + 1)) {
+			FAIL("ìœ ì € ì‚­ì œ : ì‚­ì œ");
 		}
 	}
 
 	private void clear() {
-		FEB("id", "userName", "º¸³»´Â »ç¶÷ ÀÌ¸§ ÀÔ·ÂÄ­").clear();
-		FEB("id", "userPhone", "º¸³»´Â ÀüÈ­¹øÈ£ ÀÔ·ÂÄ­").clear();
+		FEB("id", "userName", "ë³´ë‚´ëŠ” ì‚¬ëŒ ì´ë¦„ ì…ë ¥ì¹¸").clear();
+		FEB("id", "userPhone", "ë³´ë‚´ëŠ” ì „í™”ë²ˆí˜¸ ì…ë ¥ì¹¸").clear();
 	}
 }

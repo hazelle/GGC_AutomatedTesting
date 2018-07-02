@@ -10,12 +10,12 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù MySite
- * @ÁßºĞ·ù »çÀÌÆ® °ü¸®
- * @½Ã³ª¸®¿À¸í »çÀÌÆ® »èÁ¦
+ * @ëŒ€ë¶„ë¥˜ MySite
+ * @ì¤‘ë¶„ë¥˜ ì‚¬ì´íŠ¸ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ì‚¬ì´íŠ¸ ì‚­ì œ
  * */
 public class E_DeleteSite extends Scenario {
-	private String deletename = "»èÁ¦¿ë";
+	private String deletename = "ì‚­ì œìš©";
 	
 	public E_DeleteSite(int type, String[] category, String title) {
 		this.title = title;
@@ -30,7 +30,7 @@ public class E_DeleteSite extends Scenario {
 			chooseSite(deletename);
 			alert();
 		} else {
-			FAIL("»çÀÌÆ® ¸®½ºÆ® ÆäÀÌÁö ÀÌµ¿");
+			FAIL("ì‚¬ì´íŠ¸ ë¦¬ìŠ¤íŠ¸ í˜ì´ì§€ ì´ë™");
 		}
 		CHECK(check());
 	}
@@ -53,7 +53,7 @@ public class E_DeleteSite extends Scenario {
 		if(Pattern.compile(deletename).matcher(alert).find()) {
 			cp.acceptAlert(0);
 		} else {
-			FAIL("»èÁ¦ÇÏ¸é ¾È µÇ´Â »çÀÌÆ® »èÁ¦¹öÆ° Å¬¸¯");
+			FAIL("ì‚­ì œí•˜ë©´ ì•ˆ ë˜ëŠ” ì‚¬ì´íŠ¸ ì‚­ì œë²„íŠ¼ í´ë¦­");
 		}
 	}
 	
@@ -70,10 +70,10 @@ public class E_DeleteSite extends Scenario {
 	}
 	
 	private void registerSite() {
-		FEB("xpath", "//*[@id=\"registSite\"]/div", "½Å±Ô »çÀÌÆ® µî·Ï ¹öÆ°").click();
-		FEB("xpath", "//*[@id=\"siteImageFile\"]", "ÀÌ¹ÌÁö Upload ¹öÆ°").sendKeys(pr.getPropValue("site.image.path"));
-		FEB("xpath", "//*[@id=\"siteName\"]", "»çÀÌÆ®¸í ÀÔ·ÂÄ­").sendKeys(deletename);
-		FEB("xpath", "//*[@id=\"btnSave\"]", "ÀúÀå ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"registSite\"]/div", "ì‹ ê·œ ì‚¬ì´íŠ¸ ë“±ë¡ ë²„íŠ¼").click();
+		FEB("xpath", "//*[@id=\"siteImageFile\"]", "ì´ë¯¸ì§€ Upload ë²„íŠ¼").sendKeys(pr.getPropValue("site.image.path"));
+		FEB("xpath", "//*[@id=\"siteName\"]", "ì‚¬ì´íŠ¸ëª… ì…ë ¥ì¹¸").sendKeys(deletename);
+		FEB("xpath", "//*[@id=\"btnSave\"]", "ì €ì¥ ë²„íŠ¼").click();
 		
 		cp.movePage("/site/index");
 	}

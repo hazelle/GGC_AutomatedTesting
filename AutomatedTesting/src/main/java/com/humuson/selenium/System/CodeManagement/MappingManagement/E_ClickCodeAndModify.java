@@ -6,10 +6,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @╢К╨п╥Ы System
- * @аъ╨п╥Ы дз╣Е ╟Э╦╝
- * @╪р╨п╥Ы ╦егн ╟Э╦╝
- * @╫цЁ╙╦╝©ю╦М дз╣Е╦М е╛╦╞, дз╣Е ╪Жа╓
+ * @К▄─К╤└К╔≤ System
+ * @Л╓▒К╤└К╔≤ Л╫■К⌠° Й╢─К╕╛
+ * @Л├▄К╤└К╔≤ К╖╓М∙▒ Й╢─К╕╛
+ * @Л▀°К┌≤К╕╛Л≤╓К╙┘ Л╫■К⌠°К╙┘ М│╢К╕╜, Л╫■К⌠° Л┬≤Л═∙
  * */
 public class E_ClickCodeAndModify extends Scenario {
 	private String original = "";
@@ -32,19 +32,19 @@ public class E_ClickCodeAndModify extends Scenario {
 //		wait.until(ExpectedConditions.stalenessOf(driver.findElement(By.xpath("//*[@id=\"listBody\"]/tr[1]/td[2]/a"))));
 		CustomWait(3);
 		try {
-		FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "╦егндз╣Е ╦Я╥о ц╧╧Ьб╟ гв╦Я").click();
+		FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "К╖╓М∙▒Л╫■К⌠° К╙╘К║² Л╡╚К╡┬Л╖╦ М∙╜К╙╘").click();
 		} catch(StaleElementReferenceException e) {
-			System.out.println("stale ╧ъ╩Щ1");
-			FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "╦егндз╣Е ╦Я╥о ц╧╧Ьб╟ гв╦Я").click();
+			System.out.println("stale К╟°Л┐²1");
+			FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "К╖╓М∙▒Л╫■К⌠° К╙╘К║² Л╡╚К╡┬Л╖╦ М∙╜К╙╘").click();
 		}
 	}
 	
 	private void modify() {
-		original = FEB("xpath", "//*[@id=\"mapping_name\"]", "╦егн╦Мд╙ ют╥бд╜").getAttribute("value");
+		original = FEB("xpath", "//*[@id=\"mapping_name\"]", "К╖╓М∙▒К╙┘Л╧╜ Л·┘К═╔Л╧╦").getAttribute("value");
 		change = original+"22";
-		FEB("id", "mapping_name", "╦егн╦Мд╙ ют╥бд╜").clear();
-		FEB("id", "mapping_name", "╦егн╦Мд╙ ют╥бд╜").sendKeys(change);
-		FEB("xpath", "//*[@id=\"updateBtn\"]", "╪Жа╓ ╧Жф╟").click();
+		FEB("id", "mapping_name", "К╖╓М∙▒К╙┘Л╧╜ Л·┘К═╔Л╧╦").clear();
+		FEB("id", "mapping_name", "К╖╓М∙▒К╙┘Л╧╜ Л·┘К═╔Л╧╦").sendKeys(change);
+		FEB("xpath", "//*[@id=\"updateBtn\"]", "Л┬≤Л═∙ К╡└М┼╪").click();
 		cp.acceptAlert();
 	}
 	
@@ -52,12 +52,12 @@ public class E_ClickCodeAndModify extends Scenario {
 		CustomWait(3);
 		boolean result = false;
 		try{
-			result = FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "╦егндз╣Е ╦Я╥о ц╧╧Ьб╟ гв╦Я дз╣Е╦М").getText().equals(change);
+			result = FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "К╖╓М∙▒Л╫■К⌠° К╙╘К║² Л╡╚К╡┬Л╖╦ М∙╜К╙╘ Л╫■К⌠°К╙┘").getText().equals(change);
 		} catch(StaleElementReferenceException e) {
-			System.out.println("stale ╧ъ╩Щ2");
-			result = FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "╦егндз╣Е ╦Я╥о ц╧╧Ьб╟ гв╦Я дз╣Е╦М").getText().equals(change);
+			System.out.println("stale К╟°Л┐²2");
+			result = FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "К╖╓М∙▒Л╫■К⌠° К╙╘К║² Л╡╚К╡┬Л╖╦ М∙╜К╙╘ Л╫■К⌠°К╙┘").getText().equals(change);
 		}
 		return result;
-//		return FEB("css", "#listBody > tr:nth-child(1) > td:nth-child(2) > a", "╦егндз╣Е ╦Я╥о ц╧╧Ьб╟ гв╦Я дз╣Е╦М").getText().equals(change);
+//		return FEB("css", "#listBody > tr:nth-child(1) > td:nth-child(2) > a", "К╖╓М∙▒Л╫■К⌠° К╙╘К║² Л╡╚К╡┬Л╖╦ М∙╜К╙╘ Л╫■К⌠°К╙┘").getText().equals(change);
 	}
 }

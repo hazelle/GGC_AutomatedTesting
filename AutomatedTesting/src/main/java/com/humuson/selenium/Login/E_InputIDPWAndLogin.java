@@ -5,9 +5,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * ´ëºĞ·ù : ·Î±×ÀÎ
- * ÁßºĞ·ù : ·Î±×ÀÎ
- * ½Ã³ª¸®¿À ¸í : ¾ÆÀÌµğ, ÆĞ½º¿öµå ÀÔ·ÂÇÏ¿© ·Î±×ÀÎ ¼º°ø
+ * ëŒ€ë¶„ë¥˜ : ë¡œê·¸ì¸
+ * ì¤‘ë¶„ë¥˜ : ë¡œê·¸ì¸
+ * ì‹œë‚˜ë¦¬ì˜¤ ëª… : ì•„ì´ë””, íŒ¨ìŠ¤ì›Œë“œ ì…ë ¥í•˜ì—¬ ë¡œê·¸ì¸ ì„±ê³µ
  * */
 public class E_InputIDPWAndLogin extends Scenario {
 	public E_InputIDPWAndLogin(int type, String[] category, String title) {

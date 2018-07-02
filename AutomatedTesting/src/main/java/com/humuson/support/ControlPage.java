@@ -36,7 +36,7 @@ public class ControlPage extends CustomLogging {
 //		System.out.println("*** current url : " + driver.getCurrentUrl());
 //		System.out.println("***        tail : " + baseUrl+tail);
 		if (driver.getCurrentUrl().equals(baseUrl + tail)) {
-//			simpleLog(baseUrl+tail+"Ã¢ ¿ÀÇÂ ¿Ï·á");
+//			simpleLog(baseUrl+tail+"ì°½ ì˜¤í”ˆ ì™„ë£Œ");
 			return true;
 		} else { return false; }
 	}
@@ -103,19 +103,19 @@ public class ControlPage extends CustomLogging {
 	
 	public void logAlertText() {
 		String[] dividedAlert = dividedAlertText(getAlertText());
-		simpleLog("    ¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤"); // -°¡ 40°³
+		simpleLog("    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”"); // -ê°€ 40ê°œ
 		for(int i=0; i<dividedAlert.length; i++) {
 			simpleLog("       "+String.format("%-36s", dividedAlert[i])+"  ");
 		}
-		simpleLog("    ¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥"); // -°¡ 40°³
+		simpleLog("    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜"); // -ê°€ 40ê°œ
 	}
 	
 	public void logAlertText(String[] dividedAlert) {
-		simpleLog("    ¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤"); // -°¡ 40°³
+		simpleLog("    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”"); // -ê°€ 40ê°œ
 		for(int i=0; i<dividedAlert.length; i++) {
 			simpleLog("       "+String.format("%-36s", dividedAlert[i])+"  ");
 		}
-		simpleLog("    ¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥"); // -°¡ 40°³
+		simpleLog("    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜"); // -ê°€ 40ê°œ
 	}
 
 	public String[] dividedAlertText(String alertText) {
@@ -123,19 +123,19 @@ public class ControlPage extends CustomLogging {
 	}
 	
 	public boolean detectLogin() {
-		// /login À¸·Î ÀÌµ¿ÀÌ °¡´ÉÇÏ´Ù = ·Î±×ÀÎÇÏÁö ¾ÊÀº »óÅÂ
-		// /login À¸·Î ÀÌµ¿ÀÌ ºÒ°¡´ÉÇÏ´Ù = ·Î±×ÀÎÇÑ »óÅÂ
+		// /login ìœ¼ë¡œ ì´ë™ì´ ê°€ëŠ¥í•˜ë‹¤ = ë¡œê·¸ì¸í•˜ì§€ ì•Šì€ ìƒíƒœ
+		// /login ìœ¼ë¡œ ì´ë™ì´ ë¶ˆê°€ëŠ¥í•˜ë‹¤ = ë¡œê·¸ì¸í•œ ìƒíƒœ
 		return !movePage("/login");
 	}
 	
-//	// ½Å±Ô »çÀÌÆ® µî·Ï ÆäÀÌÁö·Î ÀÌµ¿
+//	// ì‹ ê·œ ì‚¬ì´íŠ¸ ë“±ë¡ í˜ì´ì§€ë¡œ ì´ë™
 //	public void goToRegistSite(String[] strInput, boolean[] boolInput, String[] userInput) throws IOException {
 //		StartTesting.driver.get(pr.getPropValue("base.url") + "/site/regist");
 //		webLogging(driver);
 //		if (driver.getCurrentUrl().equals(pr.getPropValue("base.url") + "/site/regist")) {
 //			new RegistSite(strInput, boolInput, userInput);
 //		} else {
-//			logging("ÆäÀÌÁö ÀÌµ¿ ½ÇÆĞ (½Å±Ô »çÀÌÆ® µî·Ï)", 0, false);
+//			logging("í˜ì´ì§€ ì´ë™ ì‹¤íŒ¨ (ì‹ ê·œ ì‚¬ì´íŠ¸ ë“±ë¡)", 0, false);
 //		}
 //	}
 //

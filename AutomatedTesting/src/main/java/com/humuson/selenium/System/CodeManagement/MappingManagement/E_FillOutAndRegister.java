@@ -6,10 +6,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù ÄÚµå °ü¸®
- * @¼ÒºĞ·ù ¸ÅÇÎ °ü¸®
- * @½Ã³ª¸®¿À¸í ÇÏ´Ü Æû¿¡ µ¥ÀÌÅÍ ÀÔ·Â ÈÄ µî·Ï ¹öÆ° Å¬¸¯
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ ì½”ë“œ ê´€ë¦¬
+ * @ì†Œë¶„ë¥˜ ë§¤í•‘ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… í•˜ë‹¨ í¼ì— ë°ì´í„° ì…ë ¥ í›„ ë“±ë¡ ë²„íŠ¼ í´ë¦­
  * */
 public class E_FillOutAndRegister extends Scenario {
 	private String show_seq = "";
@@ -30,15 +30,15 @@ public class E_FillOutAndRegister extends Scenario {
 	}
 	
 	private void fillOut() {
-		FEB("xpath", "//*[@id=\"show_seq\"]", "¸ÅÇÎÄÚµå ÀÔ·ÂÄ­").sendKeys(show_seq);
-		FEB("xpath", "//*[@id=\"img_file_name\"]", "ÀÌ¹ÌÁö ÆÄÀÏ¸í ÀÔ·ÂÄ­").sendKeys(img_file_name);
-		FEB("xpath", "//*[@id=\"mapping_name\"]", "¸ÅÇÎ¸íÄª ÀÔ·ÂÄ­").sendKeys(mapping_name);
-		FEB("xpath", "//*[@id=\"member_column_name\"]", "ÄÃ·³¸í ÀÔ·ÂÄ­").sendKeys(member_column_name);
+		FEB("xpath", "//*[@id=\"show_seq\"]", "ë§¤í•‘ì½”ë“œ ì…ë ¥ì¹¸").sendKeys(show_seq);
+		FEB("xpath", "//*[@id=\"img_file_name\"]", "ì´ë¯¸ì§€ íŒŒì¼ëª… ì…ë ¥ì¹¸").sendKeys(img_file_name);
+		FEB("xpath", "//*[@id=\"mapping_name\"]", "ë§¤í•‘ëª…ì¹­ ì…ë ¥ì¹¸").sendKeys(mapping_name);
+		FEB("xpath", "//*[@id=\"member_column_name\"]", "ì»¬ëŸ¼ëª… ì…ë ¥ì¹¸").sendKeys(member_column_name);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.getElementById('title_mapping').setAttribute('value', 'N')");
 		js.executeScript("document.getElementById('d_use_yn').setAttribute('value', 'N')");
 		
-		FEB("xpath", "//*[@id=\"saveBtn\"]", "µî·Ï ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"saveBtn\"]", "ë“±ë¡ ë²„íŠ¼").click();
 		cp.acceptAlert();
 	}
 	

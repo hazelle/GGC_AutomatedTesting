@@ -7,10 +7,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù ÄÚµå °ü¸®
- * @¼ÒºĞ·ù ½Ã½ºÅÛ ÄÚµå °ü¸®
- * @½Ã³ª¸®¿À¸í ÄÚµå¸í Å¬¸¯, ÄÚµå ¼öÁ¤
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ ì½”ë“œ ê´€ë¦¬
+ * @ì†Œë¶„ë¥˜ ì‹œìŠ¤í…œ ì½”ë“œ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ì½”ë“œëª… í´ë¦­, ì½”ë“œ ìˆ˜ì •
  * */
 public class E_ClickCodeAndModify extends Scenario {
 	private String original = "";
@@ -32,32 +32,32 @@ public class E_ClickCodeAndModify extends Scenario {
 	
 	private void click() {
 		search_codeType(bs.getPropValue("systemcode.code_type"));
-		FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[3]/a", "½Ã½ºÅÛÄÚµå ¸ñ·Ï Ã¹¹øÂ° Ç×¸ñ").click();
+		FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[3]/a", "ì‹œìŠ¤í…œì½”ë“œ ëª©ë¡ ì²«ë²ˆì§¸ í•­ëª©").click();
 		CustomWait(3);
 	}
 	
 	private void modify() {
-		original = FEB("xpath", "//*[@id=\"code_name\"]", "ÄÚµå¸í ÀÔ·ÂÄ­").getAttribute("value");
+		original = FEB("xpath", "//*[@id=\"code_name\"]", "ì½”ë“œëª… ì…ë ¥ì¹¸").getAttribute("value");
 		change = original+"22";
-		FEB("id", "code_name", "ÄÚµå¸í ÀÔ·ÂÄ­").clear();
-		FEB("id", "code_name", "ÄÚµå¸í ÀÔ·ÂÄ­").sendKeys(change);
+		FEB("id", "code_name", "ì½”ë“œëª… ì…ë ¥ì¹¸").clear();
+		FEB("id", "code_name", "ì½”ë“œëª… ì…ë ¥ì¹¸").sendKeys(change);
 		CustomWait(3);
-		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[3]", "¼öÁ¤ ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[3]", "ìˆ˜ì • ë²„íŠ¼").click();
 		cp.acceptAlert();
 	}
 	
 	private boolean check() {
 		boolean result = false;
 		try {
-			result = FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[3]/a", "½Ã½ºÅÛÄÚµå ¸ñ·Ï Ã¹¹øÂ° Ç×¸ñ ÄÚµå¸í").getText().equals(change);
+			result = FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[3]/a", "ì‹œìŠ¤í…œì½”ë“œ ëª©ë¡ ì²«ë²ˆì§¸ í•­ëª© ì½”ë“œëª…").getText().equals(change);
 		} catch(StaleElementReferenceException e) {
-			result = FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[3]/a", "½Ã½ºÅÛÄÚµå ¸ñ·Ï Ã¹¹øÂ° Ç×¸ñ ÄÚµå¸í").getText().equals(change);
+			result = FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[3]/a", "ì‹œìŠ¤í…œì½”ë“œ ëª©ë¡ ì²«ë²ˆì§¸ í•­ëª© ì½”ë“œëª…").getText().equals(change);
 		}
 		return result;
 	}
 	
 	public void search_codeType(String codetype) {
-		Select dropbox = new Select(FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[1]/div/select", "ÄÚµåÅ¸ÀÔ µå·Ó¹Ú½º"));
+		Select dropbox = new Select(FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[1]/div/select", "ì½”ë“œíƒ€ì… ë“œë¡­ë°•ìŠ¤"));
 		dropbox.selectByValue(codetype);
 	}
 }

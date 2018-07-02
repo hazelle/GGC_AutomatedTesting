@@ -8,9 +8,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * ´ëºĞ·ù : ·Î±×ÀÎ
- * ÁßºĞ·ù : ·Î±×ÀÎ
- * ½Ã³ª¸®¿À ¸í : ºñ¹Ğ¹øÈ£ Æ²¸° °æ¿ì
+ * ëŒ€ë¶„ë¥˜ : ë¡œê·¸ì¸
+ * ì¤‘ë¶„ë¥˜ : ë¡œê·¸ì¸
+ * ì‹œë‚˜ë¦¬ì˜¤ ëª… : ë¹„ë°€ë²ˆí˜¸ í‹€ë¦° ê²½ìš°
  * */
 public class E_WrongPassword extends Scenario {
 	private String ID = ii.getStrArray().get(0)[2];
@@ -32,7 +32,7 @@ public class E_WrongPassword extends Scenario {
 			alert = new LoginFunction(ID, PW).login2();
 		}
 		cp.dismissAlert(0);
-		if(Pattern.compile("·Î±×ÀÎ¿¡").matcher(alert).find()) {
+		if(Pattern.compile("ë¡œê·¸ì¸ì—").matcher(alert).find()) {
 			OK();
 		} else {
 			FAIL("(ID : "+ID+", PW : "+PW+")");

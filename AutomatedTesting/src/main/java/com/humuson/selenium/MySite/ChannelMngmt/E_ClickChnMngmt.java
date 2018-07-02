@@ -10,9 +10,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù MySite
- * @ÁßºĞ·ù »çÀÌÆ® °ü¸®
- * @½Ã³ª¸®¿À¸í Ã¤³Î °ü¸® ¹öÆ° Å¬¸¯
+ * @ëŒ€ë¶„ë¥˜ MySite
+ * @ì¤‘ë¶„ë¥˜ ì‚¬ì´íŠ¸ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ì±„ë„ ê´€ë¦¬ ë²„íŠ¼ í´ë¦­
  * */
 public class E_ClickChnMngmt extends Scenario {
 	public E_ClickChnMngmt(int type, String[] category, String title) {
@@ -26,7 +26,7 @@ public class E_ClickChnMngmt extends Scenario {
 		if(chooseSite(pr.getPropValue("site.name2"))) {
 			
 		} else {
-			FAIL("Ã¤³Î °ü¸® È­¸é ÁøÀÔ");
+			FAIL("ì±„ë„ ê´€ë¦¬ í™”ë©´ ì§„ì…");
 		}
 		
 		CHECK(check());

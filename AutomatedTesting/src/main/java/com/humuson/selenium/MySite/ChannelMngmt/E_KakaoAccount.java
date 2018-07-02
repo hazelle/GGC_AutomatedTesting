@@ -8,12 +8,12 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù MySite
- * @ÁßºĞ·ù Ã¤³Î °ü¸®
- * @½Ã³ª¸®¿À¸í Kakao °èÁ¤µî·Ï
+ * @ëŒ€ë¶„ë¥˜ MySite
+ * @ì¤‘ë¶„ë¥˜ ì±„ë„ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… Kakao ê³„ì •ë“±ë¡
  */
 public class E_KakaoAccount extends Scenario {
-	String delete_name = "»èÁ¦¿ë";
+	String delete_name = "ì‚­ì œìš©";
 	String delete_key = "7777";
 	
 	public E_KakaoAccount(int type, String[] category, String title) {
@@ -37,63 +37,63 @@ public class E_KakaoAccount extends Scenario {
 	}
 
 	private void click() {
-		FEB("id", "regKakao", "Kakao °èÁ¤µî·Ï ÅÇ").click();
+		FEB("id", "regKakao", "Kakao ê³„ì •ë“±ë¡ íƒ­").click();
 	}
 
 	private void register() {
 		clear();
-		FEB("id", "company_name", "¾÷Ã¼¸í ÀÌ¸§ ÀÔ·ÂÄ­").sendKeys(pr.getPropValue("site.sender.name"));
-		FEB("id", "sender_key", "¹ß½ÅÇÁ·ÎÇÊ Å° ÀÔ·ÂÄ­").sendKeys(pr.getPropValue("site.sender.senderkey"));
-		FEB("id", "regist", "µî·Ï ¹öÆ°").click();
-		int cnt = FEB("id", "resultBody", "¾÷Ã¼ ¸®½ºÆ®").findElements(By.tagName("tr")).size();
-		if (!FEB("xpath", "//*[@id=\"resultBody\"]/tr[" + cnt + "]/td[1]/input", "¾÷Ã¼ ¸®½ºÆ®ÀÇ ¾÷Ã¼¸í ÀÌ¸§ ÀÔ·ÂÄ­")
+		FEB("id", "company_name", "ì—…ì²´ëª… ì´ë¦„ ì…ë ¥ì¹¸").sendKeys(pr.getPropValue("site.sender.name"));
+		FEB("id", "sender_key", "ë°œì‹ í”„ë¡œí•„ í‚¤ ì…ë ¥ì¹¸").sendKeys(pr.getPropValue("site.sender.senderkey"));
+		FEB("id", "regist", "ë“±ë¡ ë²„íŠ¼").click();
+		int cnt = FEB("id", "resultBody", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("tr")).size();
+		if (!FEB("xpath", "//*[@id=\"resultBody\"]/tr[" + cnt + "]/td[1]/input", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸ì˜ ì—…ì²´ëª… ì´ë¦„ ì…ë ¥ì¹¸")
 				.getAttribute("value").equals(pr.getPropValue("site.sender.name"))) {
-			FAIL("¾÷Ã¼ µî·Ï");
+			FAIL("ì—…ì²´ ë“±ë¡");
 		}
 	}
 
 	private void modify() {
 		CustomWait(10);
 		clear();
-		FEB("id", "company_name", "¾÷Ã¼¸í ÀÌ¸§ ÀÔ·ÂÄ­").sendKeys("¼öÁ¤¿ë");
-		FEB("id", "sender_key", "¹ß½ÅÇÁ·ÎÇÊ Å° ÀÔ·ÂÄ­").sendKeys("9999");
-		FEB("id", "regist", "µî·Ï ¹öÆ°").click();
+		FEB("id", "company_name", "ì—…ì²´ëª… ì´ë¦„ ì…ë ¥ì¹¸").sendKeys("ìˆ˜ì •ìš©");
+		FEB("id", "sender_key", "ë°œì‹ í”„ë¡œí•„ í‚¤ ì…ë ¥ì¹¸").sendKeys("9999");
+		FEB("id", "regist", "ë“±ë¡ ë²„íŠ¼").click();
 		
 		driver.navigate().refresh();
 		
-		int cnt = FEB("id", "resultBody", "¾÷Ã¼ ¸®½ºÆ®").findElements(By.tagName("tr")).size();
+		int cnt = FEB("id", "resultBody", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("tr")).size();
 
-		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "¾÷Ã¼ ¸®½ºÆ®ÀÇ ¸¶Áö¸· ¾÷Ã¼¸í ÀÔ·ÂÄ­").clear();
-		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "¾÷Ã¼ ¸®½ºÆ®ÀÇ ¸¶Áö¸· ¾÷Ã¼¸í ÀÔ·ÂÄ­").sendKeys(delete_name);
-		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[2]/input", "¾÷Ã¼ ¸®½ºÆ®ÀÇ ¸¶Áö¸· ¹ß½ÅÇÁ·ÎÇÊ Å° ÀÔ·ÂÄ­").clear();
-		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[2]/input", "¾÷Ã¼ ¸®½ºÆ®ÀÇ ¸¶Áö¸· ¹ß½ÅÇÁ·ÎÇÊ Å° ÀÔ·ÂÄ­")
+		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ì—…ì²´ëª… ì…ë ¥ì¹¸").clear();
+		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ì—…ì²´ëª… ì…ë ¥ì¹¸").sendKeys(delete_name);
+		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[2]/input", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ë°œì‹ í”„ë¡œí•„ í‚¤ ì…ë ¥ì¹¸").clear();
+		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[2]/input", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ë°œì‹ í”„ë¡œí•„ í‚¤ ì…ë ¥ì¹¸")
 				.sendKeys(delete_key);
-		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[3]/span", "¾÷Ã¼ ¸®½ºÆ®ÀÇ Ã¹¹øÂ° ¼öÁ¤ ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[3]/span", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸ì˜ ì²«ë²ˆì§¸ ìˆ˜ì • ë²„íŠ¼").click();
 
 		driver.navigate().refresh();
 		
-		if (FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "¾÷Ã¼ ¸®½ºÆ®ÀÇ ¸¶Áö¸· ¾÷Ã¼¸í ÀÔ·ÂÄ­").getAttribute("value").equals("»èÁ¦¿ë")
-				&&	FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[2]/input", "¾÷Ã¼ ¸®½ºÆ®ÀÇ ¸¶Áö¸· ¹ß½ÅÇÁ·ÎÇÊ Å° ÀÔ·ÂÄ­").getAttribute("value").equals("7777")) {
+		if (FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[1]/input", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ì—…ì²´ëª… ì…ë ¥ì¹¸").getAttribute("value").equals("ì‚­ì œìš©")
+				&&	FEB("xpath", "//*[@id=\"resultBody\"]/tr["+cnt+"]/td[2]/input", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ë°œì‹ í”„ë¡œí•„ í‚¤ ì…ë ¥ì¹¸").getAttribute("value").equals("7777")) {
 		} else {
-			FAIL("¾÷Ã¼ ¼öÁ¤");
+			FAIL("ì—…ì²´ ìˆ˜ì •");
 		}
 	}
 
 	private void delete() {
-		int cnt = FEB("id", "resultBody", "¾÷Ã¼ ¸®½ºÆ®").findElements(By.tagName("tr")).size();
+		int cnt = FEB("id", "resultBody", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("tr")).size();
 
-		if (FEB("xpath", "//*[@id=\"resultBody\"]/tr[" + cnt + "]/td[1]/input", "¾÷Ã¼ ¸®½ºÆ®ÀÇ ¸¶Áö¸· ¾÷Ã¼¸í ÀÔ·ÂÄ­")
-				.getAttribute("value").equals("»èÁ¦¿ë"))
-			FEB("xpath", "//*[@id=\"resultBody\"]/tr[" + cnt + "]/td[4]/span", "¾÷Ã¼ ¸®½ºÆ®ÀÇ ¸¶Áö¸· »èÁ¦ ¹öÆ°").click();
+		if (FEB("xpath", "//*[@id=\"resultBody\"]/tr[" + cnt + "]/td[1]/input", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ì—…ì²´ëª… ì…ë ¥ì¹¸")
+				.getAttribute("value").equals("ì‚­ì œìš©"))
+			FEB("xpath", "//*[@id=\"resultBody\"]/tr[" + cnt + "]/td[4]/span", "ì—…ì²´ ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ ì‚­ì œ ë²„íŠ¼").click();
 
 		driver.navigate().refresh();
-		if (cnt == FEB("id", "resultBody", "À¯Àú ¸®½ºÆ®").findElements(By.tagName("tr")).size()) {
-			FAIL("¾÷Ã¼ »èÁ¦");
+		if (cnt == FEB("id", "resultBody", "ìœ ì € ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("tr")).size()) {
+			FAIL("ì—…ì²´ ì‚­ì œ");
 		}
 	}
 
 	private void clear() {
-		FEB("id", "company_name", "¾÷Ã¼¸í ÀÔ·ÂÄ­").clear();
-		FEB("id", "sender_key", "¹ß½ÅÇÁ·ÎÇÊ Å° ÀÔ·ÂÄ­").clear();
+		FEB("id", "company_name", "ì—…ì²´ëª… ì…ë ¥ì¹¸").clear();
+		FEB("id", "sender_key", "ë°œì‹ í”„ë¡œí•„ í‚¤ ì…ë ¥ì¹¸").clear();
 	}
 }

@@ -49,9 +49,9 @@ public class CustomLogging {
 		}
 		
 		if(type==0) {
-			result += "  ";	    // ¶ç¾î¾²±â µÎ ¹ø
+			result += "  ";	    // ë„ì–´ì“°ê¸° ë‘ ë²ˆ
 		} else {
-			result += "     ";	// ¶ç¾î¾²±â ´Ù¼¸ ¹ø
+			result += "     ";	// ë„ì–´ì“°ê¸° ë‹¤ì„¯ ë²ˆ
 		}
 		logging(result+msg);
 	}
@@ -85,7 +85,7 @@ public class CustomLogging {
 //		logging("");
 	}
 	
-	// »õ·Î »ı±ä ÆË¾÷À» Ã£´Â´Ù. ÆË¾÷ÀÌ ¿©·¯°³ ¶°ÀÖÀ¸¸é ¿¡·¯ »ı±æ¼ö ÀÖÀ½. * @throws InterruptedException
+	// ìƒˆë¡œ ìƒê¸´ íŒì—…ì„ ì°¾ëŠ”ë‹¤. íŒì—…ì´ ì—¬ëŸ¬ê°œ ë– ìˆìœ¼ë©´ ì—ëŸ¬ ìƒê¸¸ìˆ˜ ìˆìŒ. * @throws InterruptedException
 	public void detectPopup(WebDriver driver) throws InterruptedException {
 		Set<String> handles = driver.getWindowHandles(); // get all window
 															// handles
@@ -94,7 +94,7 @@ public class CustomLogging {
 		String popupWindow = iterator.next();
 
 		driver.switchTo().window(popupWindow);
-		logger.info("ÆË¾÷Ã¢: " + driver.getTitle());
+		logger.info("íŒì—…ì°½: " + driver.getTitle());
 		Thread.sleep(1000);
 		driver.close();
 		driver.switchTo().window(mainWindow);
@@ -126,7 +126,7 @@ public class CustomLogging {
 	
 	public String popupLogging(WebDriver driver) {
 		String errormsg = driver.switchTo().alert().getText();
-//		logging("===> ÆË¾÷ Ã¢ ³»¿ë\n\n" + errormsg+"\n", 9);	// ºóÄ­ 26Ä­  
+//		logging("===> íŒì—… ì°½ ë‚´ìš©\n\n" + errormsg+"\n", 9);	// ë¹ˆì¹¸ 26ì¹¸  
 		return errormsg;
 	}
 	

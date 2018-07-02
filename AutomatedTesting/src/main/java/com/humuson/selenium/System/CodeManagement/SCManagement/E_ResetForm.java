@@ -4,10 +4,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù ÄÚµå °ü¸®
- * @¼ÒºĞ·ù ½Ã½ºÅÛ ÄÚµå °ü¸®
- * @½Ã³ª¸®¿À¸í ½Å±Ô ¹öÆ° Å¬¸¯
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ ì½”ë“œ ê´€ë¦¬
+ * @ì†Œë¶„ë¥˜ ì‹œìŠ¤í…œ ì½”ë“œ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ì‹ ê·œ ë²„íŠ¼ í´ë¦­
  * */
 public class E_ResetForm extends Scenario {
 	public E_ResetForm(int type, String[] category, String title) {
@@ -25,31 +25,31 @@ public class E_ResetForm extends Scenario {
 	
 	private boolean check() {
 		boolean result = true;
-		result &= FEB("xpath", "//*[@id=\"code_type\"]", "ºĞ·ùÄÚµå ÀÔ·ÂÄ­").getAttribute("value").equals("");
-		result &= FEB("xpath", "//*[@id=\"code_code\"]", "»ó¼¼ÄÚµå ÀÔ·ÂÄ­").getAttribute("value").equals("");
-		result &= FEB("xpath", "//*[@id=\"code_name\"]", "ÄÚµå¸í ÀÔ·ÂÄ­").getAttribute("value").equals("");
-		result &= FEB("xpath", "//*[@id=\"code1\"]", "Å¸°ÙÅ×ÀÌºí ÀÔ·ÂÄ­").getAttribute("value").equals("");
-		result &= FEB("xpath", "//*[@id=\"code2\"]", "ÂüÁ¶ÄÃ·³ ÀÔ·ÂÄ­").getAttribute("value").equals("");
-		result &= FEB("xpath", "//*[@id=\"code3\"]", "½ÃÀÛ°ª ÀÔ·ÂÄ­").getAttribute("value").equals("");
-		result &= FEB("xpath", "//*[@id=\"code4\"]", "Á¾·á°ª ÀÔ·ÂÄ­").getAttribute("value").equals("");
-		result &= FEB("xpath", "//*[@id=\"code5\"]", "ºñ°í ÀÔ·ÂÄ­").getAttribute("value").equals("");
+		result &= FEB("xpath", "//*[@id=\"code_type\"]", "ë¶„ë¥˜ì½”ë“œ ì…ë ¥ì¹¸").getAttribute("value").equals("");
+		result &= FEB("xpath", "//*[@id=\"code_code\"]", "ìƒì„¸ì½”ë“œ ì…ë ¥ì¹¸").getAttribute("value").equals("");
+		result &= FEB("xpath", "//*[@id=\"code_name\"]", "ì½”ë“œëª… ì…ë ¥ì¹¸").getAttribute("value").equals("");
+		result &= FEB("xpath", "//*[@id=\"code1\"]", "íƒ€ê²Ÿí…Œì´ë¸” ì…ë ¥ì¹¸").getAttribute("value").equals("");
+		result &= FEB("xpath", "//*[@id=\"code2\"]", "ì°¸ì¡°ì»¬ëŸ¼ ì…ë ¥ì¹¸").getAttribute("value").equals("");
+		result &= FEB("xpath", "//*[@id=\"code3\"]", "ì‹œì‘ê°’ ì…ë ¥ì¹¸").getAttribute("value").equals("");
+		result &= FEB("xpath", "//*[@id=\"code4\"]", "ì¢…ë£Œê°’ ì…ë ¥ì¹¸").getAttribute("value").equals("");
+		result &= FEB("xpath", "//*[@id=\"code5\"]", "ë¹„ê³  ì…ë ¥ì¹¸").getAttribute("value").equals("");
 		
 		return result;
 	}
 	
 	private void click() {
-		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[1]", "½Å±Ô ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[1]", "ì‹ ê·œ ë²„íŠ¼").click();
 	}
 	
 	private void fillOut() {
-		FEB("xpath", "//*[@id=\"code_type\"]", "ºĞ·ùÄÚµå ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.code_type2"));
-		FEB("xpath", "//*[@id=\"code_code\"]", "»ó¼¼ÄÚµå ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.code_code2"));
-		FEB("xpath", "//*[@id=\"code_name\"]", "ÄÚµå¸í ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.code_name2"));
-		FEB("xpath", "//*[@id=\"code1\"]", "Å¸°ÙÅ×ÀÌºí ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.target_table2"));
-		FEB("xpath", "//*[@id=\"code2\"]", "ÂüÁ¶ÄÃ·³ ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.ref_column2"));
-		FEB("xpath", "//*[@id=\"code3\"]", "½ÃÀÛ°ª ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.start_value2"));
-		FEB("xpath", "//*[@id=\"code4\"]", "Á¾·á°ª ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.end_value2"));
-		FEB("xpath", "//*[@id=\"code5\"]", "ºñ°í ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.etc2"));
+		FEB("xpath", "//*[@id=\"code_type\"]", "ë¶„ë¥˜ì½”ë“œ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.code_type2"));
+		FEB("xpath", "//*[@id=\"code_code\"]", "ìƒì„¸ì½”ë“œ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.code_code2"));
+		FEB("xpath", "//*[@id=\"code_name\"]", "ì½”ë“œëª… ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.code_name2"));
+		FEB("xpath", "//*[@id=\"code1\"]", "íƒ€ê²Ÿí…Œì´ë¸” ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.target_table2"));
+		FEB("xpath", "//*[@id=\"code2\"]", "ì°¸ì¡°ì»¬ëŸ¼ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.ref_column2"));
+		FEB("xpath", "//*[@id=\"code3\"]", "ì‹œì‘ê°’ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.start_value2"));
+		FEB("xpath", "//*[@id=\"code4\"]", "ì¢…ë£Œê°’ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.end_value2"));
+		FEB("xpath", "//*[@id=\"code5\"]", "ë¹„ê³  ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.etc2"));
 	}
 }
 

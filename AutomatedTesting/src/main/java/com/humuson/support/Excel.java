@@ -43,14 +43,14 @@ public class Excel {
 	
 	public Excel() {
 //		path = currentTime()+".xlsx";
-		// Workbook »ı¼º
-		// xlsWb = new HSSFWorkbook(); // Excel 2007 ÀÌÀü ¹öÀü
-		xlsxWb = new XSSFWorkbook(); // Excel 2007 ÀÌ»ó
+		// Workbook ìƒì„±
+		// xlsWb = new HSSFWorkbook(); // Excel 2007 ì´ì „ ë²„ì „
+		xlsxWb = new XSSFWorkbook(); // Excel 2007 ì´ìƒ
 
-		// Sheet »ı¼º
+		// Sheet ìƒì„±
 		sheet = xlsxWb.createSheet("firstSheet");
 
-		// ÄÃ·³ ³Êºñ ¼³Á¤
+		// ì»¬ëŸ¼ ë„ˆë¹„ ì„¤ì •
 		sheet.setColumnWidth(0, wsize(22));
 		sheet.setColumnWidth(1, wsize(22));
 		sheet.setColumnWidth(2, wsize(22));
@@ -65,7 +65,7 @@ public class Excel {
 	}
 
 	private void createFile() {
-		// excel ÆÄÀÏ ÀúÀå
+		// excel íŒŒì¼ ì €ì¥
 		try {
 //			File xlsxFile = new File(path);
 			File xlsxFile = new File(path);
@@ -82,14 +82,14 @@ public class Excel {
 
 	private void setCellStyle(Workbook wb) {
 		cellStyle = wb.createCellStyle();
-		// ÁÙ ¹Ù²Ş
+		// ì¤„ ë°”ê¿ˆ
 		cellStyle.setWrapText(true);
 		
 		cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
 		cellStyle.setAlignment(HorizontalAlignment.CENTER);
 		
 		cellStyle.setFont(fontStyle());
-		cellStyle.setBorderTop(BorderStyle.THIN); // ==> Å×µÎ¸® ¼³Á¤
+		cellStyle.setBorderTop(BorderStyle.THIN); // ==> í…Œë‘ë¦¬ ì„¤ì •
 		cellStyle.setBorderLeft(BorderStyle.THIN);
 		cellStyle.setBorderRight(BorderStyle.THIN);
 		cellStyle.setBorderBottom(BorderStyle.THIN);
@@ -100,11 +100,11 @@ public class Excel {
 	private void setHeaderCellStyle() {
 		headerStyle = xlsxWb.createCellStyle();
 
-		headerStyle.setVerticalAlignment(VerticalAlignment.CENTER); // ==> Á¤·Ä
+		headerStyle.setVerticalAlignment(VerticalAlignment.CENTER); // ==> ì •ë ¬
 		headerStyle.setAlignment(HorizontalAlignment.CENTER);
 
-		headerStyle.setFont(fontStyle(IndexedColors.WHITE.getIndex())); // ==> ÆùÆ®
-		headerStyle.setBorderTop(BorderStyle.THIN); // ==> Å×µÎ¸® ¼³Á¤
+		headerStyle.setFont(fontStyle(IndexedColors.WHITE.getIndex())); // ==> í°íŠ¸
+		headerStyle.setBorderTop(BorderStyle.THIN); // ==> í…Œë‘ë¦¬ ì„¤ì •
 		headerStyle.setBorderLeft(BorderStyle.THIN);
 		headerStyle.setBorderRight(BorderStyle.THIN);
 		headerStyle.setBorderBottom(BorderStyle.THIN);
@@ -116,7 +116,7 @@ public class Excel {
 		Font font = xlsxWb.createFont();
 		
 		font.setColor(IndexedColors.BLACK.getIndex());
-		font.setFontName("³ª´®°íµñÄÚµù");
+		font.setFontName("ë‚˜ëˆ”ê³ ë”•ì½”ë”©");
 
 		return font;
 	}
@@ -125,7 +125,7 @@ public class Excel {
 		Font font = xlsxWb.createFont();
 		
 		font.setColor(color);
-		font.setFontName("³ª´®°íµñÄÚµù");
+		font.setFontName("ë‚˜ëˆ”ê³ ë”•ì½”ë”©");
 
 		return font;
 	}
@@ -134,7 +134,7 @@ public class Excel {
 		Row row = sheet.createRow(0);
 		Cell cell;
 
-		String[] heads = { "´ëºĞ·ù", "ÁßºĞ·ù", "¼ÒºĞ·ù", "½Ã³ª¸®¿À ¸í", "°á°ú", "½ÇÆĞ ³»¿ª" };
+		String[] heads = { "ëŒ€ë¶„ë¥˜", "ì¤‘ë¶„ë¥˜", "ì†Œë¶„ë¥˜", "ì‹œë‚˜ë¦¬ì˜¤ ëª…", "ê²°ê³¼", "ì‹¤íŒ¨ ë‚´ì—­" };
 		for (int i = 0; i < heads.length; i++) {
 			cell = row.createCell(i);
 			cell.setCellValue(heads[i]);
@@ -153,13 +153,13 @@ public class Excel {
 
 	public void modify(ArrayList<String[]> xlsxContent) {
 //		CellStyle cs = cellStyle;
-		// TODO ¹ß¼Û °á°ú¿¡ µû¶ó ¼¿ ½ºÅ¸ÀÏ ´Ù¸£°Ô ¼³Á¤ÇÒ ¿¹Á¤
+		// TODO ë°œì†¡ ê²°ê³¼ì— ë”°ë¼ ì…€ ìŠ¤íƒ€ì¼ ë‹¤ë¥´ê²Œ ì„¤ì •í•  ì˜ˆì •
 		
-		System.out.println("** ¿¢¼¿ ÆÄÀÏ ¼öÁ¤ÇÔ");
+		System.out.println("** ì—‘ì…€ íŒŒì¼ ìˆ˜ì •í•¨");
 		try {
 			XSSFWorkbook wb = new XSSFWorkbook(new File(path));
 			Sheet sheet = wb.getSheetAt(0);
-			setCellStyle(wb);	// ÀÌ ºÎºĞ¿¡¼­ ÀÌ workbook¿¡ cellstyle ÁöÁ¤ÇÏ¹Ç·Î À¯ÀÇ
+			setCellStyle(wb);	// ì´ ë¶€ë¶„ì—ì„œ ì´ workbookì— cellstyle ì§€ì •í•˜ë¯€ë¡œ ìœ ì˜
 
 			for (int i = 0; i < xlsxContent.size(); i++) {
 				Row row = sheet.createRow(sheet.getLastRowNum()+1);
@@ -182,7 +182,7 @@ public class Excel {
 			
 			Files.copy(Paths.get(backpath), Paths.get(path), StandardCopyOption.REPLACE_EXISTING);
 		} catch(FileNotFoundException e) { 
-			System.out.println("!!!!!!!! ¿¢¼¿ ÆÄÀÏÀÌ ¿­·ÁÀÖ¾î ¼öÁ¤ÇÒ ¼ö ¾ø½À´Ï´Ù. !!!!!!!!");
+			System.out.println("!!!!!!!! ì—‘ì…€ íŒŒì¼ì´ ì—´ë ¤ìˆì–´ ìˆ˜ì •í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. !!!!!!!!");
 		} catch (EncryptedDocumentException | InvalidFormatException | IOException | NullPointerException e) {
 			e.printStackTrace();
 		}

@@ -42,7 +42,7 @@ public class InputInfo {
 	private String strpw = "humuson123!"; 									// 3
 	private String strsitename = "Auto"; 									// 4
 	private String strImagePath = "D:/cat.jpg"; 							// 5
-	private String senderName = "±èÈñÀçÅ×½ºÆ®";
+	private String senderName = "ê¹€í¬ì¬í…ŒìŠ¤íŠ¸";
 	private String senderEmail = "heejae@humuson.com";
 	private String returnEmail = "heejae@humuson.com";*/
 	

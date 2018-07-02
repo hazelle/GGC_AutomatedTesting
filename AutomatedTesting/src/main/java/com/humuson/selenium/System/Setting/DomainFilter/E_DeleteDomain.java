@@ -4,10 +4,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù È¯°æ¼³Á¤
- * @¼ÒºĞ·ù µµ¸ŞÀÎ ÇÊÅÍ
- * @½Ã³ª¸®¿À¸í µµ¸ŞÀÎ ÇÊÅÍ »èÁ¦
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ í™˜ê²½ì„¤ì •
+ * @ì†Œë¶„ë¥˜ ë„ë©”ì¸ í•„í„°
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ë„ë©”ì¸ í•„í„° ì‚­ì œ
  */
 public class E_DeleteDomain extends Scenario {
 	public E_DeleteDomain(int type, String[] category, String title) {

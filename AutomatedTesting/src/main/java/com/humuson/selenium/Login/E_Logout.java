@@ -5,9 +5,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * ´ëºĞ·ù : ·Î±×ÀÎ
- * ÁßºĞ·ù : ·Î±×ÀÎ
- * ½Ã³ª¸®¿À ¸í : ·Î±×¾Æ¿ô ¹öÆ°À» ´­·¯ ·Î±×¾Æ¿ô ¼º°ø
+ * ëŒ€ë¶„ë¥˜ : ë¡œê·¸ì¸
+ * ì¤‘ë¶„ë¥˜ : ë¡œê·¸ì¸
+ * ì‹œë‚˜ë¦¬ì˜¤ ëª… : ë¡œê·¸ì•„ì›ƒ ë²„íŠ¼ì„ ëˆŒëŸ¬ ë¡œê·¸ì•„ì›ƒ ì„±ê³µ
  * */
 public class E_Logout extends Scenario {
 	public E_Logout(int type, String[] category, String title) {

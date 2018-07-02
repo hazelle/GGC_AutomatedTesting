@@ -10,10 +10,10 @@ import com.humuson.support.Scenario;
 /**
  * ADMIN
  * 
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù È¯°æ¼³Á¤
- * @¼ÒºĞ·ù ¸ğ´ÏÅÍ¸µ ¼­¹ö
- * @½Ã³ª¸®¿À¸í ¸ğ´ÏÅÍ¸µ ¼­¹ö Ãß°¡
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ í™˜ê²½ì„¤ì •
+ * @ì†Œë¶„ë¥˜ ëª¨ë‹ˆí„°ë§ ì„œë²„
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ëª¨ë‹ˆí„°ë§ ì„œë²„ ì¶”ê°€
  */
 public class E_AddMntrSvr extends Scenario {
 	public E_AddMntrSvr(int type, String[] category, String title) {
@@ -31,7 +31,7 @@ public class E_AddMntrSvr extends Scenario {
 	}
 	
 	private void click() {
-		List<WebElement> servers = FEB("xpath", "//*[@id=\"ListDiv\"]/div/div/table/tbody", "¼­¹ö ¸®½ºÆ®").findElements(By.tagName("tr"));
+		List<WebElement> servers = FEB("xpath", "//*[@id=\"ListDiv\"]/div/div/table/tbody", "ì„œë²„ ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("tr"));
 		for (int i = 1; i < servers.size() - 8; i++) {
 			if (i % 2 == 1
 					&& driver.findElement(By.xpath("//*[@id=\"ListDiv\"]/div/div/table/tbody/tr[" + i + "]/td[2]/a"))

@@ -6,9 +6,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù ·Î±×ÀÎ
- * @ÁßºĞ·ù ·Î±×ÀÎ
- * @½Ã³ª¸®¿À¸í remember me Ã¼Å©
+ * @ëŒ€ë¶„ë¥˜ ë¡œê·¸ì¸
+ * @ì¤‘ë¶„ë¥˜ ë¡œê·¸ì¸
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… remember me ì²´í¬
  */
 public class E_CheckRememberMe extends Scenario {
 	public E_CheckRememberMe(int type, String[] category, String title) {
@@ -25,8 +25,8 @@ public class E_CheckRememberMe extends Scenario {
 	}
 
 	private void click() {
-		FEB("xpath", "//*[@id=\"loginForm\"]/fieldset/div[2]/div[2]/div/input", "remember me Ã¼Å©").click();
-		OK("remember me Ã¼Å©");
+		FEB("xpath", "//*[@id=\"loginForm\"]/fieldset/div[2]/div[2]/div/input", "remember me ì²´í¬").click();
+		OK("remember me ì²´í¬");
 		new LoginFunction();
 	}
 }

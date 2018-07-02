@@ -4,10 +4,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù ÄÚµå °ü¸®
- * @¼ÒºĞ·ù ½Ã½ºÅÛ ÄÚµå °ü¸®
- * @½Ã³ª¸®¿À¸í ½Ã½ºÅÛ ÄÚµå Á¤º¸ ÀÔ·Â Æû¿¡ µ¥ÀÌÅÍ ÀÔ·Â ÈÄ µî·Ï ¹öÆ° Å¬¸¯
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ ì½”ë“œ ê´€ë¦¬
+ * @ì†Œë¶„ë¥˜ ì‹œìŠ¤í…œ ì½”ë“œ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ì‹œìŠ¤í…œ ì½”ë“œ ì •ë³´ ì…ë ¥ í¼ì— ë°ì´í„° ì…ë ¥ í›„ ë“±ë¡ ë²„íŠ¼ í´ë¦­
  */
 public class E_FillOutAndRegister extends Scenario {
 	private String code_type = "";
@@ -29,20 +29,20 @@ public class E_FillOutAndRegister extends Scenario {
 	protected void DO() {
 		setting();
 		fillOut();
-		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[2]", "µî·Ï ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[2]", "ë“±ë¡ ë²„íŠ¼").click();
 		cp.acceptAlert();
 	}
 	
 	private void fillOut() {
-		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[1]", "½Å±Ô ¹öÆ°").click();
-		FEB("xpath", "//*[@id=\"code_type\"]", "ºĞ·ùÄÚµå ÀÔ·ÂÄ­").sendKeys(code_type);
-		FEB("xpath", "//*[@id=\"code_code\"]", "»ó¼¼ÄÚµå ÀÔ·ÂÄ­").sendKeys(code_code);
-		FEB("xpath", "//*[@id=\"code_name\"]", "ÄÚµå¸í ÀÔ·ÂÄ­").sendKeys(code_name);
-		FEB("xpath", "//*[@id=\"code1\"]", "Å¸°ÙÅ×ÀÌºí ÀÔ·ÂÄ­").sendKeys(target_table);
-		FEB("xpath", "//*[@id=\"code2\"]", "ÂüÁ¶ÄÃ·³ ÀÔ·ÂÄ­").sendKeys(ref_column);
-		FEB("xpath", "//*[@id=\"code3\"]", "½ÃÀÛ°ª ÀÔ·ÂÄ­").sendKeys(start_value);
-		FEB("xpath", "//*[@id=\"code4\"]", "Á¾·á°ª ÀÔ·ÂÄ­").sendKeys(end_value);
-		FEB("xpath", "//*[@id=\"code5\"]", "ºñ°í ÀÔ·ÂÄ­").sendKeys(etc);
+		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[1]", "ì‹ ê·œ ë²„íŠ¼").click();
+		FEB("xpath", "//*[@id=\"code_type\"]", "ë¶„ë¥˜ì½”ë“œ ì…ë ¥ì¹¸").sendKeys(code_type);
+		FEB("xpath", "//*[@id=\"code_code\"]", "ìƒì„¸ì½”ë“œ ì…ë ¥ì¹¸").sendKeys(code_code);
+		FEB("xpath", "//*[@id=\"code_name\"]", "ì½”ë“œëª… ì…ë ¥ì¹¸").sendKeys(code_name);
+		FEB("xpath", "//*[@id=\"code1\"]", "íƒ€ê²Ÿí…Œì´ë¸” ì…ë ¥ì¹¸").sendKeys(target_table);
+		FEB("xpath", "//*[@id=\"code2\"]", "ì°¸ì¡°ì»¬ëŸ¼ ì…ë ¥ì¹¸").sendKeys(ref_column);
+		FEB("xpath", "//*[@id=\"code3\"]", "ì‹œì‘ê°’ ì…ë ¥ì¹¸").sendKeys(start_value);
+		FEB("xpath", "//*[@id=\"code4\"]", "ì¢…ë£Œê°’ ì…ë ¥ì¹¸").sendKeys(end_value);
+		FEB("xpath", "//*[@id=\"code5\"]", "ë¹„ê³  ì…ë ¥ì¹¸").sendKeys(etc);
 	}
 	
 	private void setting() {

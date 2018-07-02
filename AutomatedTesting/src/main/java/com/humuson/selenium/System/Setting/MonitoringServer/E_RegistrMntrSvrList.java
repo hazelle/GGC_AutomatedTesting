@@ -10,10 +10,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù È¯°æ¼³Á¤
- * @¼ÒºĞ·ù ¸ğ´ÏÅÍ¸µ ¼­¹ö
- * @½Ã³ª¸®¿À¸í ¸ğ´ÏÅÍ¸µ ¼­¹ö ¸®½ºÆ® µî·Ï
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ í™˜ê²½ì„¤ì •
+ * @ì†Œë¶„ë¥˜ ëª¨ë‹ˆí„°ë§ ì„œë²„
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ëª¨ë‹ˆí„°ë§ ì„œë²„ ë¦¬ìŠ¤íŠ¸ ë“±ë¡
  */
 public class E_RegistrMntrSvrList extends Scenario {
 	private int cnt = 0;
@@ -33,49 +33,49 @@ public class E_RegistrMntrSvrList extends Scenario {
 	}
 	
 	private void click() {
-//		FEB("xpath", "//*[@id=\"page-wrapper\"]/div[1]/div/button", "µî·Ï ¹öÆ°").click();
-//		if(FEB("xpath", "//*[@id=\"modalServer\"]", "¼­¹ö Á¤º¸ ¸ğ´ŞÃ¢").getAttribute("display").equals("display: none;")) {
-//			FEB("xpath", "//*[@id=\"page-wrapper\"]/div[1]/div/button", "µî·Ï ¹öÆ°").click();
+//		FEB("xpath", "//*[@id=\"page-wrapper\"]/div[1]/div/button", "ë“±ë¡ ë²„íŠ¼").click();
+//		if(FEB("xpath", "//*[@id=\"modalServer\"]", "ì„œë²„ ì •ë³´ ëª¨ë‹¬ì°½").getAttribute("display").equals("display: none;")) {
+//			FEB("xpath", "//*[@id=\"page-wrapper\"]/div[1]/div/button", "ë“±ë¡ ë²„íŠ¼").click();
 //		}
 		do {
-			FEB("xpath", "//*[@id=\"page-wrapper\"]/div[1]/div/button", "µî·Ï ¹öÆ°").click();
-		} while(FEB("xpath", "//*[@id=\"modalServer\"]", "¼­¹ö ¸®½ºÆ® Á¤º¸ ¸ğ´ŞÃ¢").getAttribute("style").equals("display: none;"));
+			FEB("xpath", "//*[@id=\"page-wrapper\"]/div[1]/div/button", "ë“±ë¡ ë²„íŠ¼").click();
+		} while(FEB("xpath", "//*[@id=\"modalServer\"]", "ì„œë²„ ë¦¬ìŠ¤íŠ¸ ì •ë³´ ëª¨ë‹¬ì°½").getAttribute("style").equals("display: none;"));
 	}
 	
 	private void fillOut() {
-		List<WebElement> servers = FEB("xpath", "//*[@id=\"ListDiv\"]/div/div/table/tbody", "¼­¹ö ¸®½ºÆ® tbody").findElements(By.tagName("tr"));
+		List<WebElement> servers = FEB("xpath", "//*[@id=\"ListDiv\"]/div/div/table/tbody", "ì„œë²„ ë¦¬ìŠ¤íŠ¸ tbody").findElements(By.tagName("tr"));
 		cnt = servers.size();
 		
-		wait.until(ExpectedConditions.visibilityOf(FEB("id", "server_name", "¼­¹ö¸í ÀÔ·ÂÄ­"))); 
+		wait.until(ExpectedConditions.visibilityOf(FEB("id", "server_name", "ì„œë²„ëª… ì…ë ¥ì¹¸"))); 
 		
-		FEB("id", "server_name", "¼­¹ö¸í ÀÔ·ÂÄ­").clear();
-		FEB("id", "server_name", "¼­¹ö¸í ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("monitoring.server.name"));
+		FEB("id", "server_name", "ì„œë²„ëª… ì…ë ¥ì¹¸").clear();
+		FEB("id", "server_name", "ì„œë²„ëª… ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("monitoring.server.name"));
 		
-		FEB("id", "max_hdd", "HDD ÀüÃ¼ ¿ë·® ÀÔ·ÂÄ­").clear();
-		FEB("id", "max_hdd", "HDD ÀüÃ¼ ¿ë·® ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("monitoring.server.max.hdd"));
+		FEB("id", "max_hdd", "HDD ì „ì²´ ìš©ëŸ‰ ì…ë ¥ì¹¸").clear();
+		FEB("id", "max_hdd", "HDD ì „ì²´ ìš©ëŸ‰ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("monitoring.server.max.hdd"));
 		
-		FEB("id", "max_db", "DB ÀüÃ¼ ¿ë·® ÀÔ·ÂÄ­").clear();
-		FEB("id", "max_db", "DB ÀüÃ¼ ¿ë·® ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("monitoring.server.max.db"));
+		FEB("id", "max_db", "DB ì „ì²´ ìš©ëŸ‰ ì…ë ¥ì¹¸").clear();
+		FEB("id", "max_db", "DB ì „ì²´ ìš©ëŸ‰ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("monitoring.server.max.db"));
 		
-		FEB("id", "warn_hdd", "°æ°í ¾Ë¶÷ HDD ÀÓ°èÄ¡ ÀÔ·ÂÄ­").clear();
-		FEB("id", "warn_hdd", "°æ°í ¾Ë¶÷ HDD ÀÓ°èÄ¡ ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("monitoring.server.warn.hdd"));
+		FEB("id", "warn_hdd", "ê²½ê³  ì•ŒëŒ HDD ì„ê³„ì¹˜ ì…ë ¥ì¹¸").clear();
+		FEB("id", "warn_hdd", "ê²½ê³  ì•ŒëŒ HDD ì„ê³„ì¹˜ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("monitoring.server.warn.hdd"));
 		
-		FEB("id", "warn_db", "°æ°í ¾Ë¶÷ DB ÀÓ°èÄ¡ ÀÔ·ÂÄ­").clear();
-		FEB("id", "warn_db", "°æ°í ¾Ë¶÷ DB ÀÓ°èÄ¡ ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("monitoring.server.warn.db"));
+		FEB("id", "warn_db", "ê²½ê³  ì•ŒëŒ DB ì„ê³„ì¹˜ ì…ë ¥ì¹¸").clear();
+		FEB("id", "warn_db", "ê²½ê³  ì•ŒëŒ DB ì„ê³„ì¹˜ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("monitoring.server.warn.db"));
 		
-		FEB("id", "hdd_path", "HDD °æ·Î ÀÔ·ÂÄ­").clear();
-		FEB("id", "hdd_path", "HDD °æ·Î ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("monitoring.server.hdd.path"));
+		FEB("id", "hdd_path", "HDD ê²½ë¡œ ì…ë ¥ì¹¸").clear();
+		FEB("id", "hdd_path", "HDD ê²½ë¡œ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("monitoring.server.hdd.path"));
 		
-		FEB("id", "serverRegistBtn", "ÀúÀå ¹öÆ°").click();
+		FEB("id", "serverRegistBtn", "ì €ì¥ ë²„íŠ¼").click();
 		cp.acceptAlert();
 	}
 	
 	private boolean check() {
 		driver.navigate().refresh();
-		List<WebElement> servers_ = FEB("xpath", "//*[@id=\"ListDiv\"]/div/div/table/tbody", "¼­¹ö ¸®½ºÆ® tbody").findElements(By.tagName("tr"));
+		List<WebElement> servers_ = FEB("xpath", "//*[@id=\"ListDiv\"]/div/div/table/tbody", "ì„œë²„ ë¦¬ìŠ¤íŠ¸ tbody").findElements(By.tagName("tr"));
 		
 		if(servers_.size()==cnt) {
-			FAIL("¸ğ´ÏÅÍ¸µ ¼­¹ö Ãß°¡");
+			FAIL("ëª¨ë‹ˆí„°ë§ ì„œë²„ ì¶”ê°€");
 			return false;
 		} else {
 			return true;

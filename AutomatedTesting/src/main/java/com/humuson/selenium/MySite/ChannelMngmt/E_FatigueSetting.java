@@ -6,9 +6,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù MySite
- * @ÁßºĞ·ù Ã¤³Î °ü¸®
- * @½Ã³ª¸®¿À¸í ÇÇ·Îµµ ¼³Á¤
+ * @ëŒ€ë¶„ë¥˜ MySite
+ * @ì¤‘ë¶„ë¥˜ ì±„ë„ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… í”¼ë¡œë„ ì„¤ì •
  * */
 public class E_FatigueSetting extends Scenario {
 	//public String[] chns = {"email", "push", "sms", "kakao"};
@@ -29,7 +29,7 @@ public class E_FatigueSetting extends Scenario {
 			if(ii.getChannel().get("push"))		fatigueSetting(1);
 			if(ii.getChannel().get("kakao"))	fatigueSetting(3);
 			
-			FEB("xpath", "//*[@id=\"regist\"]/button", "µî·Ï ¹öÆ°").click();
+			FEB("xpath", "//*[@id=\"regist\"]/button", "ë“±ë¡ ë²„íŠ¼").click();
 			cp.acceptAlert();
 			CustomWait(3);
 			cp.acceptAlert();
@@ -40,15 +40,15 @@ public class E_FatigueSetting extends Scenario {
 	}
 	
 	private void click() {
-		FEB("id", "regFatigue", "ÇÇ·Îµµ ¼³Á¤ ÅÇ").click();
+		FEB("id", "regFatigue", "í”¼ë¡œë„ ì„¤ì • íƒ­").click();
 	}
 
 	private void fatigueSetting(int index) {
 		String chn = ii.chns[index];
-		FEB("id", chn+"DayCnt", chn+" ÀÏ ÃÖ´ë È½¼ö ÀÔ·ÂÄ­").clear();
-		FEB("id", chn+"DayCnt", chn+" ÀÏ ÃÖ´ë È½¼ö ÀÔ·ÂÄ­").sendKeys(pr.getPropValue("site.fatigue."+chn+".day"));
-		FEB("id", chn+"MonthCnt", chn+" ¿ù ÃÖ´ë È½¼ö ÀÔ·ÂÄ­").clear();
-		FEB("id", chn+"MonthCnt", chn+" ¿ù ÃÖ´ë È½¼ö ÀÔ·ÂÄ­").sendKeys(pr.getPropValue("site.fatigue."+chn+".month"));
+		FEB("id", chn+"DayCnt", chn+" ì¼ ìµœëŒ€ íšŸìˆ˜ ì…ë ¥ì¹¸").clear();
+		FEB("id", chn+"DayCnt", chn+" ì¼ ìµœëŒ€ íšŸìˆ˜ ì…ë ¥ì¹¸").sendKeys(pr.getPropValue("site.fatigue."+chn+".day"));
+		FEB("id", chn+"MonthCnt", chn+" ì›” ìµœëŒ€ íšŸìˆ˜ ì…ë ¥ì¹¸").clear();
+		FEB("id", chn+"MonthCnt", chn+" ì›” ìµœëŒ€ íšŸìˆ˜ ì…ë ¥ì¹¸").sendKeys(pr.getPropValue("site.fatigue."+chn+".month"));
 	}
 }
 

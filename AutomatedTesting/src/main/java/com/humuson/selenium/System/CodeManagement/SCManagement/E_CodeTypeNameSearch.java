@@ -9,10 +9,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù ÄÚµå °ü¸®
- * @¼ÒºĞ·ù ½Ã½ºÅÛ ÄÚµå °ü¸®
- * @½Ã³ª¸®¿À¸í ÄÚµåÅ¸ÀÔ, ÄÚµå¸í ÀÔ·Â ÈÄ °Ë»ö ¹öÆ° Å¬¸¯
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ ì½”ë“œ ê´€ë¦¬
+ * @ì†Œë¶„ë¥˜ ì‹œìŠ¤í…œ ì½”ë“œ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ì½”ë“œíƒ€ì…, ì½”ë“œëª… ì…ë ¥ í›„ ê²€ìƒ‰ ë²„íŠ¼ í´ë¦­
  */
 public class E_CodeTypeNameSearch extends Scenario {
 
@@ -29,22 +29,22 @@ public class E_CodeTypeNameSearch extends Scenario {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		setting();
 		search();
-		ETC("#","ÀÌ¹ÌÁö ÆÄÀÏ È®ÀÎ ÇÊ¿ä  #");
+		ETC("#","ì´ë¯¸ì§€ íŒŒì¼ í™•ì¸ í•„ìš”  #");
 	}
 
 	private void search() {
 		search_codeType(bs.getPropValue("systemcode.code_type"));
-		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[3]/div/span/button", "°Ë»ö ¹öÆ°").click();
-		saveScreenShot(category, "ÄÚµåÅ¸ÀÔÀ¸·Î °Ë»ö", ".jpg");
+		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[3]/div/span/button", "ê²€ìƒ‰ ë²„íŠ¼").click();
+		saveScreenShot(category, "ì½”ë“œíƒ€ì…ìœ¼ë¡œ ê²€ìƒ‰", ".jpg");
 
 		search_codeName(bs.getPropValue("systemcode.code_name2"));
-		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[3]/div/span/button", "°Ë»ö ¹öÆ°").click();
-		saveScreenShot(category, "ÄÚµå¸íÀ¸·Î °Ë»ö", ".jpg");
+		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[3]/div/span/button", "ê²€ìƒ‰ ë²„íŠ¼").click();
+		saveScreenShot(category, "ì½”ë“œëª…ìœ¼ë¡œ ê²€ìƒ‰", ".jpg");
 
 		search_codeType(bs.getPropValue("systemcode.code_type"));
 		search_codeName(bs.getPropValue("systemcode.code_name3"));
-		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[3]/div/span/button", "°Ë»ö ¹öÆ°").click();
-		saveScreenShot(category, "ÄÚµåÅ¸ÀÔ,ÄÚµå¸íÀ¸·Î °Ë»ö", ".jpg");
+		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[3]/div/span/button", "ê²€ìƒ‰ ë²„íŠ¼").click();
+		saveScreenShot(category, "ì½”ë“œíƒ€ì…,ì½”ë“œëª…ìœ¼ë¡œ ê²€ìƒ‰", ".jpg");
 	}
 
 	public void search_codeType(String codetype) {
@@ -54,34 +54,34 @@ public class E_CodeTypeNameSearch extends Scenario {
 	}
 
 	private void search_codeName(String codename) {
-		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[2]/div/input", "ÄÚµå¸í ÀÔ·ÂÄ­").clear();
-		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[2]/div/input", "ÄÚµå¸í ÀÔ·ÂÄ­").sendKeys(codename);
+		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[2]/div/input", "ì½”ë“œëª… ì…ë ¥ì¹¸").clear();
+		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[2]/div/input", "ì½”ë“œëª… ì…ë ¥ì¹¸").sendKeys(codename);
 	}
 
 	private void setting() {
-		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[1]", "½Å±Ô ¹öÆ°").click();
-		FEB("xpath", "//*[@id=\"code_type\"]", "ºĞ·ùÄÚµå ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.code_type2"));
-		FEB("xpath", "//*[@id=\"code_code\"]", "»ó¼¼ÄÚµå ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.code_code2"));
-		FEB("xpath", "//*[@id=\"code_name\"]", "ÄÚµå¸í ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.code_name2"));
-		FEB("xpath", "//*[@id=\"code1\"]", "Å¸°ÙÅ×ÀÌºí ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.target_table2"));
-		FEB("xpath", "//*[@id=\"code2\"]", "ÂüÁ¶ÄÃ·³ ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.ref_column2"));
-		FEB("xpath", "//*[@id=\"code3\"]", "½ÃÀÛ°ª ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.start_value2"));
-		FEB("xpath", "//*[@id=\"code4\"]", "Á¾·á°ª ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.end_value2"));
-		FEB("xpath", "//*[@id=\"code5\"]", "ºñ°í ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.etc2"));
-		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[2]", "µî·Ï ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[1]", "ì‹ ê·œ ë²„íŠ¼").click();
+		FEB("xpath", "//*[@id=\"code_type\"]", "ë¶„ë¥˜ì½”ë“œ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.code_type2"));
+		FEB("xpath", "//*[@id=\"code_code\"]", "ìƒì„¸ì½”ë“œ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.code_code2"));
+		FEB("xpath", "//*[@id=\"code_name\"]", "ì½”ë“œëª… ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.code_name2"));
+		FEB("xpath", "//*[@id=\"code1\"]", "íƒ€ê²Ÿí…Œì´ë¸” ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.target_table2"));
+		FEB("xpath", "//*[@id=\"code2\"]", "ì°¸ì¡°ì»¬ëŸ¼ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.ref_column2"));
+		FEB("xpath", "//*[@id=\"code3\"]", "ì‹œì‘ê°’ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.start_value2"));
+		FEB("xpath", "//*[@id=\"code4\"]", "ì¢…ë£Œê°’ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.end_value2"));
+		FEB("xpath", "//*[@id=\"code5\"]", "ë¹„ê³  ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.etc2"));
+		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[2]", "ë“±ë¡ ë²„íŠ¼").click();
 		CustomWait(5);
 		cp.acceptAlert(0);
 
-		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[1]", "½Å±Ô ¹öÆ°").click();
-		FEB("xpath", "//*[@id=\"code_type\"]", "ºĞ·ùÄÚµå ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.code_type3"));
-		FEB("xpath", "//*[@id=\"code_code\"]", "»ó¼¼ÄÚµå ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.code_code3"));
-		FEB("xpath", "//*[@id=\"code_name\"]", "ÄÚµå¸í ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.code_name3"));
-		FEB("xpath", "//*[@id=\"code1\"]", "Å¸°ÙÅ×ÀÌºí ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.target_table3"));
-		FEB("xpath", "//*[@id=\"code2\"]", "ÂüÁ¶ÄÃ·³ ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.ref_column3"));
-		FEB("xpath", "//*[@id=\"code3\"]", "½ÃÀÛ°ª ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.start_value3"));
-		FEB("xpath", "//*[@id=\"code4\"]", "Á¾·á°ª ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.end_value3"));
-		FEB("xpath", "//*[@id=\"code5\"]", "ºñ°í ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("systemcode.etc3"));
-		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[2]", "µî·Ï ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[1]", "ì‹ ê·œ ë²„íŠ¼").click();
+		FEB("xpath", "//*[@id=\"code_type\"]", "ë¶„ë¥˜ì½”ë“œ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.code_type3"));
+		FEB("xpath", "//*[@id=\"code_code\"]", "ìƒì„¸ì½”ë“œ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.code_code3"));
+		FEB("xpath", "//*[@id=\"code_name\"]", "ì½”ë“œëª… ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.code_name3"));
+		FEB("xpath", "//*[@id=\"code1\"]", "íƒ€ê²Ÿí…Œì´ë¸” ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.target_table3"));
+		FEB("xpath", "//*[@id=\"code2\"]", "ì°¸ì¡°ì»¬ëŸ¼ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.ref_column3"));
+		FEB("xpath", "//*[@id=\"code3\"]", "ì‹œì‘ê°’ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.start_value3"));
+		FEB("xpath", "//*[@id=\"code4\"]", "ì¢…ë£Œê°’ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.end_value3"));
+		FEB("xpath", "//*[@id=\"code5\"]", "ë¹„ê³  ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("systemcode.etc3"));
+		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[2]", "ë“±ë¡ ë²„íŠ¼").click();
 		CustomWait(50);
 		cp.acceptAlert();
 	}

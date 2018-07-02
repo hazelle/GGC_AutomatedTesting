@@ -7,7 +7,7 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºÐ·ù System
+ * @ëŒ€ë¶„ë¥˜ System
  * */
 public class A_System extends Scenario {
 	public A_System(int type, String[] category, String title) {
@@ -19,8 +19,8 @@ public class A_System extends Scenario {
 	
 	protected void makeScenario() {
 		new LoginFunction();
-		addChildScenario(new B_CodeManagement(B, category, "ÄÚµå °ü¸®"));
-		addChildScenario(new B_Setting(B, category, "È¯°æ¼³Á¤"));
+		addChildScenario(new B_CodeManagement(B, category, "ì½”ë“œ ê´€ë¦¬"));
+		addChildScenario(new B_Setting(B, category, "í™˜ê²½ì„¤ì •"));
 	}
 	
 	protected void DO() {

@@ -6,8 +6,8 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºÐ·ù System
- * @ÁßºÐ·ù ÄÚµå °ü¸®
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ ì½”ë“œ ê´€ë¦¬
  */
 public class B_CodeManagement extends Scenario {
 	public B_CodeManagement(int type, String[] category, String title) {
@@ -19,8 +19,8 @@ public class B_CodeManagement extends Scenario {
 	
 	protected void makeScenario() {
 		
-		addChildScenario(new C_SCManagement(C, category, "½Ã½ºÅÛ ÄÚµå °ü¸®"));
-		addChildScenario(new C_MappingManagement(C, category, "¸ÅÇÎ °ü¸®"));
+		addChildScenario(new C_SCManagement(C, category, "ì‹œìŠ¤í…œ ì½”ë“œ ê´€ë¦¬"));
+		addChildScenario(new C_MappingManagement(C, category, "ë§¤í•‘ ê´€ë¦¬"));
 	}
 	
 	protected void DO() {

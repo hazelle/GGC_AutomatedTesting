@@ -9,10 +9,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù ÄÚµå °ü¸®
- * @¼ÒºĞ·ù ½Ã½ºÅÛ ÄÚµå °ü¸®
- * @½Ã³ª¸®¿À¸í ½Ã½ºÅÛ ÄÚµå ¼±ÅÃ ÈÄ »èÁ¦ ¹öÆ° Å¬¸¯
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ ì½”ë“œ ê´€ë¦¬
+ * @ì†Œë¶„ë¥˜ ì‹œìŠ¤í…œ ì½”ë“œ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ì‹œìŠ¤í…œ ì½”ë“œ ì„ íƒ í›„ ì‚­ì œ ë²„íŠ¼ í´ë¦­
  * */
 public class E_DeleteCode extends Scenario {
 	private String code_type = "";
@@ -32,27 +32,27 @@ public class E_DeleteCode extends Scenario {
 	
 	private void click() {
 		search_codeType(bs.getPropValue("systemcode.code_type"));
-		FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[3]/a", "½Ã½ºÅÛÄÚµå ¸ñ·Ï Ã¹¹øÂ° Ç×¸ñ").click();
+		FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[3]/a", "ì‹œìŠ¤í…œì½”ë“œ ëª©ë¡ ì²«ë²ˆì§¸ í•­ëª©").click();
 		remember();
 		delete();
 		search_codeType(code_type);
 		search_codeName(code_name);
-		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[3]/div/span/button", "°Ë»ö ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[3]/div/span/button", "ê²€ìƒ‰ ë²„íŠ¼").click();
 	}
 	
 	private void remember() {
-		code_type = FEB("xpath", "//*[@id=\"code_type\"]", "ºĞ·ùÄÚµå ÀÔ·ÂÄ­").getAttribute("value");
-		code_name = FEB("xpath", "//*[@id=\"code_name\"]", "ÄÚµå¸í ÀÔ·ÂÄ­").getAttribute("value");
+		code_type = FEB("xpath", "//*[@id=\"code_type\"]", "ë¶„ë¥˜ì½”ë“œ ì…ë ¥ì¹¸").getAttribute("value");
+		code_name = FEB("xpath", "//*[@id=\"code_name\"]", "ì½”ë“œëª… ì…ë ¥ì¹¸").getAttribute("value");
 	}
 	
 	private void delete() {
-		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[4]", "»èÁ¦ ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"sysCodeEditForm\"]/div[6]/div/button[4]", "ì‚­ì œ ë²„íŠ¼").click();
 		cp.acceptAlert();
 	}
 	
 	private boolean check() {
 		try {
-			WebElement w = FEB("id", "listBody", "½Ã½ºÅÛÄÚµå ¸®½ºÆ® body").findElement(By.xpath(".//*"));
+			WebElement w = FEB("id", "listBody", "ì‹œìŠ¤í…œì½”ë“œ ë¦¬ìŠ¤íŠ¸ body").findElement(By.xpath(".//*"));
 			if(w.getAttribute("class").equals("pointbg"))
 				return true;
 			else return false;
@@ -67,8 +67,8 @@ public class E_DeleteCode extends Scenario {
 	}
 	
 	private void search_codeName(String codename) {
-		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[2]/div/input", "ÄÚµå¸í ÀÔ·ÂÄ­").clear();
-		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[2]/div/input", "ÄÚµå¸í ÀÔ·ÂÄ­").sendKeys(codename);
+		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[2]/div/input", "ì½”ë“œëª… ì…ë ¥ì¹¸").clear();
+		FEB("xpath", "//*[@id=\"SearchForm\"]/div/div[2]/div/input", "ì½”ë“œëª… ì…ë ¥ì¹¸").sendKeys(codename);
 	}
 }
 

@@ -10,9 +10,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù MySite
- * @ÁßºĞ·ù »çÀÌÆ® °ü¸®
- * @½Ã³ª¸®¿À¸í MySite ¸Ş´º Å¬¸¯
+ * @ëŒ€ë¶„ë¥˜ MySite
+ * @ì¤‘ë¶„ë¥˜ ì‚¬ì´íŠ¸ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… MySite ë©”ë‰´ í´ë¦­
  * */
 public class E_ClickMySite extends Scenario {
 	public E_ClickMySite(int type, String[] category, String title) {
@@ -34,11 +34,11 @@ public class E_ClickMySite extends Scenario {
 	}
 
 	private void clickMenu() {
-		WebElement w = FEB("xpath", "/html/body/header/header/div/div[2]/div/a[2]", "¿ìÃø»ó´Ü µå·Ó¸Ş´º");
+		WebElement w = FEB("xpath", "/html/body/header/header/div/div[2]/div/a[2]", "ìš°ì¸¡ìƒë‹¨ ë“œë¡­ë©”ë‰´");
 		if (driver.findElement(By.xpath("/html/body/header/header/div/div[2]/div")).getAttribute("class").equals("btn-group")) {
 			w.click();
 		}
-		FEB("xpath", "/html/body/header/header/div/div[2]/div/ul/li[6]", "MySite ¸Ş´º").click();
+		FEB("xpath", "/html/body/header/header/div/div[2]/div/ul/li[6]", "MySite ë©”ë‰´").click();
 	}
 	
 	private boolean check() {

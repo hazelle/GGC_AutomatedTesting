@@ -4,9 +4,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù ÄÚµå °ü¸®
- * @¼ÒºĞ·ù ¸ÅÇÎ °ü¸®
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ ì½”ë“œ ê´€ë¦¬
+ * @ì†Œë¶„ë¥˜ ë§¤í•‘ ê´€ë¦¬
  */
 public class C_MappingManagement extends Scenario {
 	public C_MappingManagement(int type, String[] category, String title) {
@@ -17,11 +17,11 @@ public class C_MappingManagement extends Scenario {
 	}
 	
 	protected void makeScenario() {
-		addChildScenario(new E_ClickMManagement(E, category, "¸ÅÇÎ °ü¸® ¸Ş´º Å¬¸¯"));
-		addChildScenario(new E_FillOutAndRegister(E, category, "ÇÏ´Ü Æû¿¡ µ¥ÀÌÅÍ ÀÔ·Â ÈÄ µî·Ï ¹öÆ° Å¬¸¯"));
-		addChildScenario(new E_ClickCodeAndModify(E, category, "ÄÚµå¸í Å¬¸¯, ÄÚµå ¼öÁ¤"));
-		addChildScenario(new E_DeleteCode(E, category, "¸ÅÇÎ ÄÚµå ¼±ÅÃ ÈÄ »èÁ¦ ¹öÆ° Å¬¸¯"));
-		addChildScenario(new E_ResetForm(E, category, "½Å±Ô ¹öÆ° Å¬¸¯"));
+		addChildScenario(new E_ClickMManagement(E, category, "ë§¤í•‘ ê´€ë¦¬ ë©”ë‰´ í´ë¦­"));
+		addChildScenario(new E_FillOutAndRegister(E, category, "í•˜ë‹¨ í¼ì— ë°ì´í„° ì…ë ¥ í›„ ë“±ë¡ ë²„íŠ¼ í´ë¦­"));
+		addChildScenario(new E_ClickCodeAndModify(E, category, "ì½”ë“œëª… í´ë¦­, ì½”ë“œ ìˆ˜ì •"));
+		addChildScenario(new E_DeleteCode(E, category, "ë§¤í•‘ ì½”ë“œ ì„ íƒ í›„ ì‚­ì œ ë²„íŠ¼ í´ë¦­"));
+		addChildScenario(new E_ResetForm(E, category, "ì‹ ê·œ ë²„íŠ¼ í´ë¦­"));
 	}
 	
 	protected void DO() {

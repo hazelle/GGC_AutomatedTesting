@@ -6,10 +6,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù ÄÚµå °ü¸®
- * @¼ÒºĞ·ù ¸ÅÇÎ °ü¸®
- * @½Ã³ª¸®¿À¸í ¸ÅÇÎ ÄÚµå ¼±ÅÃ ÈÄ »èÁ¦ ¹öÆ° Å¬¸¯
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ ì½”ë“œ ê´€ë¦¬
+ * @ì†Œë¶„ë¥˜ ë§¤í•‘ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ë§¤í•‘ ì½”ë“œ ì„ íƒ í›„ ì‚­ì œ ë²„íŠ¼ í´ë¦­
  * */
 public class E_DeleteCode extends Scenario {
 	private String show_seq = "";
@@ -30,16 +30,16 @@ public class E_DeleteCode extends Scenario {
 	}
 	
 	private void click() {
-		FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "¸ÅÇÎÄÚµå ¸ñ·Ï Ã¹¹øÂ° Ç×¸ñ").click();
+		FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "ë§¤í•‘ì½”ë“œ ëª©ë¡ ì²«ë²ˆì§¸ í•­ëª©").click();
 	}
 	
 	private void remember() {
-		show_seq = FEB("xpath", "//*[@id=\"show_seq\"]", "¸ÅÇÎÄÚµå ÀÔ·ÂÄ­").getAttribute("value");
-		mapping_name = FEB("xpath", "//*[@id=\"mapping_name\"]", "¸ÅÇÎ¸íÄª ÀÔ·ÂÄ­").getAttribute("value");
+		show_seq = FEB("xpath", "//*[@id=\"show_seq\"]", "ë§¤í•‘ì½”ë“œ ì…ë ¥ì¹¸").getAttribute("value");
+		mapping_name = FEB("xpath", "//*[@id=\"mapping_name\"]", "ë§¤í•‘ëª…ì¹­ ì…ë ¥ì¹¸").getAttribute("value");
 	}
 	
 	private void delete() {
-		FEB("xpath", "//*[@id=\"deleteBtn\"]", "»èÁ¦ ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"deleteBtn\"]", "ì‚­ì œ ë²„íŠ¼").click();
 		cp.acceptAlert();
 	}
 	
@@ -48,15 +48,15 @@ public class E_DeleteCode extends Scenario {
 		boolean result2 = false;
 		
 		try{
-			result1 = !FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[1]", "¸ÅÇÎÄÚµå ¸ñ·Ï Ã¹¹øÂ° Ç×¸ñ ¸ÅÇÎ ÄÚµå").getText().equals(show_seq);
+			result1 = !FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[1]", "ë§¤í•‘ì½”ë“œ ëª©ë¡ ì²«ë²ˆì§¸ í•­ëª© ë§¤í•‘ ì½”ë“œ").getText().equals(show_seq);
 		} catch(StaleElementReferenceException e) {
-			result1 = !FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[1]", "¸ÅÇÎÄÚµå ¸ñ·Ï Ã¹¹øÂ° Ç×¸ñ ¸ÅÇÎ ÄÚµå").getText().equals(show_seq);
+			result1 = !FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[1]", "ë§¤í•‘ì½”ë“œ ëª©ë¡ ì²«ë²ˆì§¸ í•­ëª© ë§¤í•‘ ì½”ë“œ").getText().equals(show_seq);
 		}
 		
 		try{
-			result2 = !FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "¸ÅÇÎÄÚµå ¸ñ·Ï Ã¹¹øÂ° Ç×¸ñ ¸ÅÇÎ ¸íÄª").getText().equals(mapping_name);
+			result2 = !FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "ë§¤í•‘ì½”ë“œ ëª©ë¡ ì²«ë²ˆì§¸ í•­ëª© ë§¤í•‘ ëª…ì¹­").getText().equals(mapping_name);
 		} catch(StaleElementReferenceException e) {
-			result2 = !FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "¸ÅÇÎÄÚµå ¸ñ·Ï Ã¹¹øÂ° Ç×¸ñ ¸ÅÇÎ ¸íÄª").getText().equals(mapping_name);
+			result2 = !FEB("xpath", "//*[@id=\"listBody\"]/tr[1]/td[2]/a", "ë§¤í•‘ì½”ë“œ ëª©ë¡ ì²«ë²ˆì§¸ í•­ëª© ë§¤í•‘ ëª…ì¹­").getText().equals(mapping_name);
 		}
 		return result1&&result2;
 	}

@@ -8,9 +8,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * ´ëºĞ·ù : ·Î±×ÀÎ
- * ÁßºĞ·ù : ·Î±×ÀÎ
- * ½Ã³ª¸®¿À ¸í : Á¸ÀçÇÏÁö ¾Ê´Â »ç¿ëÀÚÀÏ °æ¿ì
+ * ëŒ€ë¶„ë¥˜ : ë¡œê·¸ì¸
+ * ì¤‘ë¶„ë¥˜ : ë¡œê·¸ì¸
+ * ì‹œë‚˜ë¦¬ì˜¤ ëª… : ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ì‚¬ìš©ìì¼ ê²½ìš°
  * */
 public class E_NonexistentUser extends Scenario {
 	private String ID = "zzzzz";
@@ -32,7 +32,7 @@ public class E_NonexistentUser extends Scenario {
 			alert = new LoginFunction(ID, PW).login2();
 		}
 		cp.dismissAlert(0);
-		if(Pattern.compile("Á¸ÀçÇÏÁö").matcher(alert).find()) {
+		if(Pattern.compile("ì¡´ì¬í•˜ì§€").matcher(alert).find()) {
 			OK();
 		} else {
 			FAIL("(ID : "+ID+", PW : "+PW+")");

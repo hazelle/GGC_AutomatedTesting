@@ -6,8 +6,8 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù È¯°æ¼³Á¤
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ í™˜ê²½ì„¤ì •
  */
 public class B_Setting extends Scenario {
 	
@@ -19,8 +19,8 @@ public class B_Setting extends Scenario {
 	}
 	
 	protected void makeScenario() {
-		addChildScenario(new C_DomainFilter(C, category, "µµ¸ŞÀÎ ÇÊÅÍ"));
-		addChildScenario(new C_MonitoringServer(C, category, "¸ğ´ÏÅÍ¸µ ¼­¹ö"));
+		addChildScenario(new C_DomainFilter(C, category, "ë„ë©”ì¸ í•„í„°"));
+		addChildScenario(new C_MonitoringServer(C, category, "ëª¨ë‹ˆí„°ë§ ì„œë²„"));
 	}
 	
 	protected void DO() {

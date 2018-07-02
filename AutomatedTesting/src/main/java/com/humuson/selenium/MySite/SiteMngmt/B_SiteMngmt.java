@@ -4,8 +4,8 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù MySite
- * @ÁßºĞ·ù »çÀÌÆ® °ü¸® (»çÀÌÆ® ¼±ÅÃ & »çÀÌÆ® µî·Ï,¼öÁ¤,»èÁ¦)
+ * @ëŒ€ë¶„ë¥˜ MySite
+ * @ì¤‘ë¶„ë¥˜ ì‚¬ì´íŠ¸ ê´€ë¦¬ (ì‚¬ì´íŠ¸ ì„ íƒ & ì‚¬ì´íŠ¸ ë“±ë¡,ìˆ˜ì •,ì‚­ì œ)
  * */
 public class B_SiteMngmt extends Scenario {
 	public B_SiteMngmt(int type, String[] category, String title) {
@@ -16,11 +16,11 @@ public class B_SiteMngmt extends Scenario {
 	}
 	
 	protected void makeScenario() {
-		addChildScenario(new E_ClickMySite(E, category, "MySite ¸Ş´º Å¬¸¯"));
-		addChildScenario(new E_ClickNewSite(E, category, "½Å±Ô »çÀÌÆ® µî·Ï ¹öÆ° Å¬¸¯"));
-		addChildScenario(new E_RegisterSite(E, category, "»çÀÌÆ® µî·Ï"));
-		addChildScenario(new E_ModifySite(E, category, "»çÀÌÆ® ¼öÁ¤"));
-		addChildScenario(new E_DeleteSite(E, category, "»çÀÌÆ® »èÁ¦"));
+		addChildScenario(new E_ClickMySite(E, category, "MySite ë©”ë‰´ í´ë¦­"));
+		addChildScenario(new E_ClickNewSite(E, category, "ì‹ ê·œ ì‚¬ì´íŠ¸ ë“±ë¡ ë²„íŠ¼ í´ë¦­"));
+		addChildScenario(new E_RegisterSite(E, category, "ì‚¬ì´íŠ¸ ë“±ë¡"));
+		addChildScenario(new E_ModifySite(E, category, "ì‚¬ì´íŠ¸ ìˆ˜ì •"));
+		addChildScenario(new E_DeleteSite(E, category, "ì‚¬ì´íŠ¸ ì‚­ì œ"));
 	}
 	
 	protected void DO() {

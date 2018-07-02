@@ -11,9 +11,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù MySite
- * @ÁßºĞ·ù »çÀÌÆ® °ü¸®
- * @½Ã³ª¸®¿À¸í »çÀÌÆ® ¼öÁ¤
+ * @ëŒ€ë¶„ë¥˜ MySite
+ * @ì¤‘ë¶„ë¥˜ ì‚¬ì´íŠ¸ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ì‚¬ì´íŠ¸ ìˆ˜ì •
  * */
 public class E_ModifySite extends Scenario {
 	private String[] chns = ii.chns;
@@ -48,11 +48,11 @@ public class E_ModifySite extends Scenario {
 		boolean result = true;
 		
 		chooseSite(pr.getPropValue("site.name2"));
-//		result &= FEB("xpath", "//*[@id=\"siteImageFile\"]", "ÀÌ¹ÌÁö Upload ¹öÆ°").getAttribute("value").equals(pr.getPropValue("site.image.path2"));
-//		if(!FEB("xpath", "//*[@id=\"siteImageFile\"]", "ÀÌ¹ÌÁö Upload ¹öÆ°").getAttribute("value").equals(pr.getPropValue("site.image.path2")))	FAIL("ÀÌ¹ÌÁö °æ·Î");
-		saveScreenShot(category, "ÀÌ¹ÌÁö ¹Ù²î¾ú´ÂÁö È®ÀÎ", ".jpg");
-		result &= FEB("xpath", "//*[@id=\"siteName\"]", "»çÀÌÆ®¸í ÀÔ·ÂÄ­").getAttribute("value").trim().equals(newname);
-		if(!FEB("xpath", "//*[@id=\"siteName\"]", "»çÀÌÆ®¸í ÀÔ·ÂÄ­").getAttribute("value").trim().equals(newname)) FAIL("»çÀÌÆ®¸í");
+//		result &= FEB("xpath", "//*[@id=\"siteImageFile\"]", "ì´ë¯¸ì§€ Upload ë²„íŠ¼").getAttribute("value").equals(pr.getPropValue("site.image.path2"));
+//		if(!FEB("xpath", "//*[@id=\"siteImageFile\"]", "ì´ë¯¸ì§€ Upload ë²„íŠ¼").getAttribute("value").equals(pr.getPropValue("site.image.path2")))	FAIL("ì´ë¯¸ì§€ ê²½ë¡œÃ");
+		saveScreenShot(category, "ì´ë¯¸ì§€ ë°”ë€Œì—ˆëŠ”ì§€ í™•ì¸", ".jpg");
+		result &= FEB("xpath", "//*[@id=\"siteName\"]", "ì‚¬ì´íŠ¸ëª… ì…ë ¥ì¹¸").getAttribute("value").trim().equals(newname);
+		if(!FEB("xpath", "//*[@id=\"siteName\"]", "ì‚¬ì´íŠ¸ëª… ì…ë ¥ì¹¸").getAttribute("value").trim().equals(newname)) FAIL("Â»Ã§Ã€ÃŒÃ†Â®Â¸Ã­");
 		
 		return result;
 	}
@@ -70,14 +70,14 @@ public class E_ModifySite extends Scenario {
 	}
 	
 	private void image(String path2) {
-		FEB("xpath", "//*[@id=\"siteImageFile\"]", "ÀÌ¹ÌÁö Upload ¹öÆ°").sendKeys(path2);
+		FEB("xpath", "//*[@id=\"siteImageFile\"]", "ì´ë¯¸ì§€ Upload ë²„íŠ¼").sendKeys(path2);
 	}
 
 	private void name() {
-		FEB("xpath", "//*[@id=\"siteName\"]", "»çÀÌÆ®¸í ÀÔ·ÂÄ­").clear();
+		FEB("xpath", "//*[@id=\"siteName\"]", "ì‚¬ì´íŠ¸ëª… ì…ë ¥ì¹¸").clear();
 		newname += "_"+currentTime();
 		pr.setPropValue("site.name2", newname);
-		FEB("xpath", "//*[@id=\"siteName\"]", "»çÀÌÆ®¸í ÀÔ·ÂÄ­").sendKeys(newname);
+		FEB("xpath", "//*[@id=\"siteName\"]", "ì‚¬ì´íŠ¸ëª… ì…ë ¥ì¹¸").sendKeys(newname);
 	}
 
 	private void channel() {
@@ -86,7 +86,7 @@ public class E_ModifySite extends Scenario {
 		boolean result = true;
 		
 		for (int i = 0; i < 4; i++) {
-			WebElement w = FEB("id", chns[i] + "Flag", chns[i] + " Ã¼Å©¹Ú½º");
+			WebElement w = FEB("id", chns[i] + "Flag", chns[i] + " ì²´í¬ë°•ìŠ¤");
 			origin = w.isSelected();
 			w.click();
 			w.click();
@@ -95,12 +95,12 @@ public class E_ModifySite extends Scenario {
 		}
 		
 		if(!result) {
-			FAIL("Ã¤³Î ¼±ÅÃ");
+			FAIL("ì±„ë„ ì„ íƒ");
 		}
 	}
 	
 	private void click() {
-		FEB("xpath", "//*[@id=\"btnSave\"]", "ÀúÀå ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"btnSave\"]", "ì €ì¥ ë²„íŠ¼").click();
 	}
 	
 	private String currentTime() {
