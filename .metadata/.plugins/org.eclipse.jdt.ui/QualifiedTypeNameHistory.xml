@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.MySite.ChannelMngmt.E_FatigueSetting"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.System.Setting.DomainFilter.C_DomainFilter"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.System.Setting.DomainFilter.E_ClickDomainFilter"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.System.Setting.DomainFilter.E_ModifyDomain"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.System.Setting.DomainFilter.E_DeleteDomain"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.System.Setting.DomainFilter.E_SearchDomain"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.support.ui.Select"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.System.Setting.DomainFilter.E_RegisterDomain"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.Keys"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.System.Setting.MonitoringServer.C_MonitoringServer"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.System.Setting.MonitoringServer.E_ClickMntrngServer"/>
+<fullyQualifiedTypeName name="java.lang.SecurityException"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.System.Setting.MonitoringServer.E_RegisterMntrngSvr"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.System.Setting.MonitoringServer.E_ClickMntrngSvr"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.support.ui.ExpectedConditions"/>
+<fullyQualifiedTypeName name="com.humuson.support.Scenario"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.System.Setting.MonitoringServer.E_ModifyMntrSvr"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.System.Setting.MonitoringServer.E_DeleteMntrSvr"/>
+<fullyQualifiedTypeName name="com.humuson.selenium.System.Setting.MonitoringServer.E_AddMntrSvr"/>
+</qualifiedTypeNameHistroy>

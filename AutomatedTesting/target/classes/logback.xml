@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<!-- 30초마다 설정 파일의 변경을 확인한다. 파일이 변경되면 다시 로딩한다 -->
+<configuration scan="true" scanperiod="30 seconds" debug="true" >
+ 
+	<!-- 외부 설정파일을 사용할 수 있다. -->
+	<property resource="resources.properties"></property>
+	
+	<appender name="SimpleLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/simple_log.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs_old/simple/simple_log_%d{yyyy.MM.dd}.log</fileNamePattern>
+			<maxHistory>365</maxHistory>
+		</rollingPolicy>
+		
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>info</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+
+		<encoder>
+		<charset>UTF-8</charset>
+			<pattern> %d{HH:mm:ss.SSS} %-5level %msg%n</pattern>
+		</encoder>
+	</appender>
+		
+	<appender name="DetailedLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/detailed_log.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 파일이 하루에 한 개씩 생성된다 -->
+			<fileNamePattern>logs_old/detailed/detailed_log_%d{yyyy.MM.dd}.log</fileNamePattern>
+			<maxHistory>365</maxHistory>
+		</rollingPolicy>
+ 		
+ 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>debug</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>NEUTRAL</onMismatch>
+		</filter>
+		
+		<filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+ 			<evaluator>
+ 				<matcher>
+ 					<Name>KeyEvent</Name>
+ 					<regex>^http-outgoing|^Devtools</regex>
+ 				</matcher>
+ 				<expression>KeyEvent.matches(formattedMessage)</expression>
+ 			</evaluator>
+ 			<OnMatch>DENY</OnMatch>
+ 			<OnMismatch>NEUTRAL</OnMismatch>
+ 		</filter>
+ 		
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern> %d{HH:mm:ss.SSS} %-5level %msg%n</pattern>
+		</encoder>
+	</appender>
+	 
+ 	<appender name="ORIGINAL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+ 		<file>logs/original.log</file>
+ 		<append>true</append>
+ 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+ 			<fileNamePattern>logs_old/original_%d{yyyy-MM-dd}.log</fileNamePattern>
+ 			<maxHistory>100</maxHistory>
+ 		</rollingPolicy>
+ 		<filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+ 			<evaluator>
+ 				<matcher>
+ 					<Name>KeyEvent</Name>
+ 					<regex>dispatchKeyEvent|Copyright \(c\)|Network.requestWillBeSent|childNodeCountUpdated|^http-outgoing|^Devtools</regex>
+ 				</matcher>
+ 				<expression>KeyEvent.matches(formattedMessage)</expression>
+ 			</evaluator>
+ 			<OnMatch>DENY</OnMatch>
+ 			<OnMismatch>NEUTRAL</OnMismatch>
+ 		</filter>
+ 		
+ 		<encoder>
+ 			<charset>UTF-8</charset>
+ 			<pattern> %d{HH:mm:ss.SSS} %-5level [%-35logger{0}] %msg%n</pattern>
+ 		</encoder>
+ 	</appender>
+ 
+	<logger name="org.springframework" level="off"></logger>
+	<logger name="org.hibernate" level="trace"></logger>
+	<logger name="com.humuson.selenium.StartTesting" level="trace"></logger>
+	
+	<root level="info">
+		<appender-ref ref="SimpleLog"/>
+	</root>
+	<root level="debug">
+		<appender-ref ref="DetailedLog"/>
+	</root>
+	<root level="trace">
+		<appender-ref ref="ORIGINAL"/>
+	</root>
+	
+	<!-- <if condition="property("RUN_MODE").equals("SERVICE")">
+		<then>
+			설정파일에 RUN_MODE 가 SERVICE로 정의되어 있으면 로깅 레벨을 INFO로 지정
+			<root level="info">
+				<appender-ref ref="console">
+				<appender-ref ref="FILE">
+			</appender-ref></appender-ref></root>
+		</then>
+		설정파일에 RUN_MODE 가 SERVICE로 정의되어 있지 않으면  로깅 레벨을 DEBUG 지정
+		<else>
+			<root level="debug">
+				<appender-ref ref="console">
+				<appender-ref ref="FILE">
+			</root>
+		</else>
+	</if> -->
+	
+</configuration>
