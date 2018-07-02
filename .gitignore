@@ -1,9 +1,0 @@
-.metadata/
-.recommenders/
-RemoteSystemsTempFiles/
-Servers/
-*.properties
-target/
-*.jpg
-*.log
-pom.xml
