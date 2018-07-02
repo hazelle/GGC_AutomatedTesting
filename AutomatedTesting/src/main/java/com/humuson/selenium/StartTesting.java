@@ -47,19 +47,19 @@ public class StartTesting extends CustomLogging {
 	}
 	
 	public static void start() {
-		forTest();	/* Å×½ºÆ®¸¦ À§ÇÑ ºÎºÐÀÌ¹Ç·Î °³¹ß ¿Ï·á ÈÄ¿£ Áö¿ö¾ß ÇÔ */
+		forTest();	/* ï¿½×½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½ï¿½Ì¹Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ */
 		
 		x = new Excel();
 		
-		new A_Login(Scenario.A, category, "·Î±×ÀÎ").action();		
-		System.out.println("A_Login ½ÃÀÛ");
+		new A_Login(Scenario.A, category, "ï¿½Î±ï¿½ï¿½ï¿½").action();		
+		System.out.println("A_Login ï¿½ï¿½ï¿½ï¿½");
 		new A_System(Scenario.A, category, "System").action();
-		System.out.println("A_System ½ÃÀÛ"); 
+		System.out.println("A_System ï¿½ï¿½ï¿½ï¿½"); 
 		new A_MySite(Scenario.A, category, "MySite");
-		System.out.println("A_MySite ½ÃÀÛ");
+		System.out.println("A_MySite ï¿½ï¿½ï¿½ï¿½");
 		
 		lastLogExcel();
-		System.out.println("\n³¡!");
+		System.out.println("\nï¿½ï¿½!");
 	}
 	
 	public static void setting() throws IOException {
@@ -81,7 +81,7 @@ public class StartTesting extends CustomLogging {
 	}
 
 	/**
-	 * Å×½ºÆ®¸¦ À§ÇÑ ºÎºÐÀÌ¹Ç·Î °³¹ß ¿Ï·á ÈÄ¿£ Áö¿ö¾ß ÇÔ
+	 * ï¿½×½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½ï¿½Ì¹Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	 * */
 	private static void forTest() {
 		pr.setPropValue("site.name", "TEST");
