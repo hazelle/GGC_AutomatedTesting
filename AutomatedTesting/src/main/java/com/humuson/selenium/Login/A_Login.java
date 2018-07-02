@@ -4,7 +4,7 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù ·Î±×ÀÎ
+ * @ëŒ€ë¶„ë¥˜ ë¡œê·¸ì¸
  * */
 public class A_Login extends Scenario {
 	
@@ -16,12 +16,12 @@ public class A_Login extends Scenario {
 	}
 	
 	protected void makeScenario() {
-		addChildScenario(new E_InputIDPWAndLogin(E, category, "¾ÆÀÌµğ, ÆĞ½º¿öµå ÀÔ·ÂÇÏ¿© ·Î±×ÀÎ ¼º°ø"));
-		addChildScenario(new E_CheckRememberMe(E, category, "remember me Ã¼Å©"));
-		addChildScenario(new E_Logout(E, category, "·Î±×¾Æ¿ô ¹öÆ°À» ´­·¯ ·Î±×¾Æ¿ô ¼º°ø"));
-		addChildScenario(new E_NonexistentUser(E, category, "Á¸ÀçÇÏÁö ¾Ê´Â »ç¿ëÀÚÀÏ °æ¿ì"));
-		addChildScenario(new E_WrongPassword(E, category, "ºñ¹Ğ¹øÈ£ Æ²¸° °æ¿ì"));
-//		addChildScenario(new E_LockedUser("Àá±İÃ³¸®µÈ °èÁ¤ÀÏ °æ¿ì"));
+		addChildScenario(new E_InputIDPWAndLogin(E, category, "ì•„ì´ë””, íŒ¨ìŠ¤ì›Œë“œ ì…ë ¥í•˜ì—¬ ë¡œê·¸ì¸ ì„±ê³µ"));
+		addChildScenario(new E_CheckRememberMe(E, category, "remember me ì²´í¬"));
+		addChildScenario(new E_Logout(E, category, "ë¡œê·¸ì•„ì›ƒ ë²„íŠ¼ì„ ëˆŒëŸ¬ ë¡œê·¸ì•„ì›ƒ ì„±ê³µ"));
+		addChildScenario(new E_NonexistentUser(E, category, "ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ì‚¬ìš©ìì¼ ê²½ìš°"));
+		addChildScenario(new E_WrongPassword(E, category, "ë¹„ë°€ë²ˆí˜¸ í‹€ë¦° ê²½ìš°"));
+//		addChildScenario(new E_LockedUser("ì ê¸ˆì²˜ë¦¬ëœ ê³„ì •ì¼ ê²½ìš°"));
 	}
 	
 	protected void DO() {

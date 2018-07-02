@@ -10,10 +10,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù È¯°æ¼³Á¤
- * @¼ÒºĞ·ù µµ¸ŞÀÎ ÇÊÅÍ
- * @½Ã³ª¸®¿À¸í µµ¸ŞÀÎ ÇÊÅÍ ¸Ş´º Å¬¸¯
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ í™˜ê²½ì„¤ì •
+ * @ì†Œë¶„ë¥˜ ë„ë©”ì¸ í•„í„°
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ë„ë©”ì¸ í•„í„° ë©”ë‰´ í´ë¦­
  */
 public class E_ClickDomainFilter extends Scenario {
 	public E_ClickDomainFilter(int type, String[] category, String title) {
@@ -36,18 +36,18 @@ public class E_ClickDomainFilter extends Scenario {
 	private void move() {
 		CustomWait(5);
 
-		WebElement w = FEB("xpath", "/html/body/header/header/div/div[2]/div/a[2]", "¿ìÃø»ó´Ü µå·Ó¸Ş´º");
+		WebElement w = FEB("xpath", "/html/body/header/header/div/div[2]/div/a[2]", "ìš°ì¸¡ìƒë‹¨ ë“œë¡­ë©”ë‰´");
 		if (driver.findElement(By.xpath("/html/body/header/header/div/div[2]/div")).getAttribute("class").equals("btn-group")) {
 			w.click();
 		}
-		FEB("xpath", "/html/body/header/header/div/div[2]/div/ul/li[8]/a", "System ¸Ş´º").click();
+		FEB("xpath", "/html/body/header/header/div/div[2]/div/ul/li[8]/a", "System ë©”ë‰´").click();
 		
 		if (Pattern.compile("sys").matcher(driver.getCurrentUrl()).find()) {
-			w = FEB("xpath", "//*[@id=\"nav_side_list\"]/li[2]/ul", "È¯°æ¼³Á¤ ¸Ş´º(¿­¸° ºÎºĞ)");
+			w = FEB("xpath", "//*[@id=\"nav_side_list\"]/li[2]/ul", "í™˜ê²½ì„¤ì • ë©”ë‰´(ì—´ë¦° ë¶€ë¶„)");
 			if (!w.getCssValue("display").equals("block")) {
-				FEB("xpath", "//*[@id=\"nav_side_list\"]/li[2]/a", "È¯°æ¼³Á¤ ¸Ş´º").click();
+				FEB("xpath", "//*[@id=\"nav_side_list\"]/li[2]/a", "í™˜ê²½ì„¤ì • ë©”ë‰´").click();
 			}
-			FEB("xpath", "//*[@id=\"nav_side_list\"]/li[2]/ul/li[1]/a", "µµ¸ŞÀÎ ÇÊÅÍ °ü¸® ¸Ş´º").click();
+			FEB("xpath", "//*[@id=\"nav_side_list\"]/li[2]/ul/li[1]/a", "ë„ë©”ì¸ í•„í„° ê´€ë¦¬ ë©”ë‰´").click();
 		} else {
 			cp.movePage("/sys/domainFlt");
 		}

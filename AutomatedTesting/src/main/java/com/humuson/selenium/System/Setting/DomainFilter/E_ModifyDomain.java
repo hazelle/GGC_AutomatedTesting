@@ -4,10 +4,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù È¯°æ¼³Á¤
- * @¼ÒºĞ·ù µµ¸ŞÀÎ ÇÊÅÍ
- * @½Ã³ª¸®¿À¸í µµ¸ŞÀÎ ÇÊÅÍ ¼öÁ¤
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ í™˜ê²½ì„¤ì •
+ * @ì†Œë¶„ë¥˜ ë„ë©”ì¸ í•„í„°
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ë„ë©”ì¸ í•„í„° ìˆ˜ì •
  */
 public class E_ModifyDomain extends Scenario {
 	public E_ModifyDomain(int type, String[] category, String title) {

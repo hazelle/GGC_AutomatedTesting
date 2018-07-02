@@ -4,10 +4,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù È¯°æ¼³Á¤
- * @¼ÒºĞ·ù µµ¸ŞÀÎ ÇÊÅÍ
- * @½Ã³ª¸®¿À¸í µµ¸ŞÀÎ ÇÊÅÍ °Ë»ö
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ í™˜ê²½ì„¤ì •
+ * @ì†Œë¶„ë¥˜ ë„ë©”ì¸ í•„í„°
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ë„ë©”ì¸ í•„í„° ê²€ìƒ‰
  */
 public class E_SearchDomain extends Scenario {
 	public E_SearchDomain(int type, String[] category, String title) {

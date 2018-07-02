@@ -10,10 +10,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù È¯°æ¼³Á¤
- * @¼ÒºĞ·ù ¸ğ´ÏÅÍ¸µ ¼­¹ö
- * @½Ã³ª¸®¿À¸í ¸ğ´ÏÅÍ¸µ ¼­¹ö ¸Ş´º Å¬¸¯
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ í™˜ê²½ì„¤ì •
+ * @ì†Œë¶„ë¥˜ ëª¨ë‹ˆí„°ë§ ì„œë²„
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ëª¨ë‹ˆí„°ë§ ì„œë²„ ë©”ë‰´ í´ë¦­
  */
 public class E_ClickMntrSvr extends Scenario {
 	public E_ClickMntrSvr(int type, String[] category, String title) {
@@ -36,11 +36,11 @@ public class E_ClickMntrSvr extends Scenario {
 	private void move() {
 		CustomWait(5);
 
-		WebElement w = FEB("xpath", "/html/body/header/header/div/div[2]/div/a[2]", "¿ìÃø»ó´Ü µå·Ó¸Ş´º");
+		WebElement w = FEB("xpath", "/html/body/header/header/div/div[2]/div/a[2]", "ìš°ì¸¡ìƒë‹¨ ë“œë¡­ë©”ë‰´");
 		if (driver.findElement(By.xpath("/html/body/header/header/div/div[2]/div")).getAttribute("class").equals("btn-group")) {
 			w.click();
 		}
-		FEB("xpath", "/html/body/header/header/div/div[2]/div/ul/li[8]/a", "System ¸Ş´º").click();
+		FEB("xpath", "/html/body/header/header/div/div[2]/div/ul/li[8]/a", "System ë©”ë‰´").click();
 		cp.movePage("/sys/mntrSvr");
 	}
 	

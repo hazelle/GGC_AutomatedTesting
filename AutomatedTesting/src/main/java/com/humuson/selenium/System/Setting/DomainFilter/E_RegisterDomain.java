@@ -11,10 +11,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù È¯°æ¼³Á¤
- * @¼ÒºĞ·ù µµ¸ŞÀÎ ÇÊÅÍ
- * @½Ã³ª¸®¿À¸í µµ¸ŞÀÎ ÇÊÅÍ µî·Ï
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ í™˜ê²½ì„¤ì •
+ * @ì†Œë¶„ë¥˜ ë„ë©”ì¸ í•„í„°
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ë„ë©”ì¸ í•„í„° ë“±ë¡
  */
 public class E_RegisterDomain extends Scenario {
 	WebElement engine = null;
@@ -34,7 +34,7 @@ public class E_RegisterDomain extends Scenario {
 	}
 	
 	private int getEngineInfo() {
-		engine = FEB("id", "engTypeSelect", "¿£Áø¼±ÅÃ µå·Ó¹Ú½º");
+		engine = FEB("id", "engTypeSelect", "ì—”ì§„ì„ íƒ ë“œë¡­ë°•ìŠ¤");
 		List<WebElement> options = engine.findElements(By.tagName("option"));
 		engineSelect = new Select(engine);
 		return options.size();
@@ -42,24 +42,24 @@ public class E_RegisterDomain extends Scenario {
 	
 	private void selectEngine(int index) {
 		engineSelect.selectByIndex(index);
-		FEB("xpath", "//*[@id=\"SearchEngForm\"]/div/div/div/span[2]/button", "°Ë»ö ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"SearchEngForm\"]/div/div/div/span[2]/button", "ê²€ìƒ‰ ë²„íŠ¼").click();
 		
 		// 2018-05-17 09:48:14
 		
-		FEB("xpath", "//*[@id=\"timePicker\"]", "¿£Áø¸¶°¨ÀÏÀÚ ÀÔ·ÂÄ­").clear();
+		FEB("xpath", "//*[@id=\"timePicker\"]", "ì—”ì§„ë§ˆê°ì¼ì ì…ë ¥ì¹¸").clear();
 		CustomWait(1000);
-//		FEB("xpath", "//*[@id=\"limitTime\"]", "¿£Áø¸¶°¨ÀÏÀÚ ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("datepicker"));
+//		FEB("xpath", "//*[@id=\"limitTime\"]", "ì—”ì§„ë§ˆê°ì¼ì ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("datepicker"));
 		CustomWait(20);
-		FEB("xpath", "//*[@id=\"timePicker\"]", "¿£Áø¸¶°¨ÀÏÀÚ ÀÔ·ÂÄ­").sendKeys("2019-02-14");
+		FEB("xpath", "//*[@id=\"timePicker\"]", "ì—”ì§„ë§ˆê°ì¼ì ì…ë ¥ì¹¸").sendKeys("2019-02-14");
 		CustomWait(20);
-		FEB("xpath", "//*[@id=\"timePicker\"]", "¿£Áø¸¶°¨ÀÏÀÚ ÀÔ·ÂÄ­").sendKeys(Keys.TAB);
+		FEB("xpath", "//*[@id=\"timePicker\"]", "ì—”ì§„ë§ˆê°ì¼ì ì…ë ¥ì¹¸").sendKeys(Keys.TAB);
 		CustomWait(20);
-		FEB("xpath", "//*[@id=\"timePicker\"]", "¿£Áø¸¶°¨ÀÏÀÚ ÀÔ·ÂÄ­").sendKeys("01:01:01");
+		FEB("xpath", "//*[@id=\"timePicker\"]", "ì—”ì§„ë§ˆê°ì¼ì ì…ë ¥ì¹¸").sendKeys("01:01:01");
 		CustomWait(20);
-		FEB("id", "domain", "µµ¸ŞÀÎ ÀÔ·ÂÄ­").clear();
-		FEB("id", "domain", "µµ¸ŞÀÎ ÀÔ·ÂÄ­").sendKeys(bs.getPropValue("domain.filter.address"));
+		FEB("id", "domain", "ë„ë©”ì¸ ì…ë ¥ì¹¸").clear();
+		FEB("id", "domain", "ë„ë©”ì¸ ì…ë ¥ì¹¸").sendKeys(bs.getPropValue("domain.filter.address"));
 		
-		FEB("xpath", "//*[@id=\"domainFltRegForm\"]/div[2]/div/button[2]", "µî·Ï ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"domainFltRegForm\"]/div[2]/div/button[2]", "ë“±ë¡ ë²„íŠ¼").click();
 		CustomWait(3);
 		cp.acceptAlert();
 	}

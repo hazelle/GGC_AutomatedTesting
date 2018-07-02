@@ -57,8 +57,8 @@ public class Window implements ActionListener {
 		
 		bigTabPane.add("Main", bigTabs.get(0));
 		bigTabPane.add("Admin", bigTabs.get(1));
-		bigTabPane.add("´ë·®", bigTabs.get(2));
-		bigTabPane.add("ÀÚµ¿", bigTabs.get(3));
+		bigTabPane.add("ëŒ€ëŸ‰", bigTabs.get(2));
+		bigTabPane.add("ìë™", bigTabs.get(3));
 		
 		mainframe.add(bigTabPane);
 	}
@@ -66,35 +66,35 @@ public class Window implements ActionListener {
 	private JPanel MainPanel() {
 		JPanel panel = new JPanel();
 		
-		//Ã¹¹øÂ°
+		//ì²«ë²ˆì§¸
 		JPanel panel1 = new JPanel();
-		JLabel secondsLabel = new JLabel("´ë±â ½Ã°£ : ");
+		JLabel secondsLabel = new JLabel("ëŒ€ê¸° ì‹œê°„ : ");
 		JComboBox<Integer> seconds = new JComboBox<Integer>();
 		for(int i=1; i<=10; i++) seconds.addItem(i);
 		seconds.setSelectedIndex(2);
-		JLabel unitLabel = new JLabel("ÃÊ");
+		JLabel unitLabel = new JLabel("ì´ˆ");
 		panel1.add(secondsLabel);
 		panel1.add(seconds);
 		panel1.add(unitLabel);
 		
-		//µÎ¹øÂ°
+		//ë‘ë²ˆì§¸
 		JPanel panel2 = new JPanel();
-		fileButton = new JButton("ÆÄÀÏ ¼±ÅÃ");
-		JLabel chromeLabel = new JLabel("ºê¶ó¿ìÀú driver ÆÄÀÏ : ");
+		fileButton = new JButton("íŒŒì¼ ì„ íƒ");
+		JLabel chromeLabel = new JLabel("ë¸Œë¼ìš°ì € driver íŒŒì¼ : ");
 		filechooser = new JFileChooser("/");
 		panel2.add(chromeLabel);
 		panel2.add(fileButton);
 		fileButton.addActionListener(this);
 		
-		//¼¼¹øÂ°
+		//ì„¸ë²ˆì§¸
 		JPanel panel3 = new JPanel();
-		JLabel urlLabel = new JLabel("TMS url ÁÖ¼Ò : ");
+		JLabel urlLabel = new JLabel("TMS url ì£¼ì†Œ : ");
 		JTextField urlTextfield = new JTextField(20);
 		urlTextfield.setSize(300, 50);
 		panel3.add(urlLabel);
 		panel3.add(urlTextfield);
 		
-		//³×¹øÂ°
+		//ë„¤ë²ˆì§¸
 		JPanel panel4 = new JPanel();
 		JLabel idLabel = new JLabel("ID : ");
 		JTextField idTextfield = new JTextField(10);
@@ -102,7 +102,7 @@ public class Window implements ActionListener {
 		panel4.add(idLabel);
 		panel4.add(idTextfield);
 		
-		//´Ù¼¸¹øÂ°
+		//ë‹¤ì„¯ë²ˆì§¸
 		JPanel panel5 = new JPanel();
 		JLabel pwLabel = new JLabel("PW : ");
 		JTextField pwTextfield = new JTextField(10);

@@ -11,9 +11,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù MySite
- * @ÁßºĞ·ù »çÀÌÆ® °ü¸®
- * @½Ã³ª¸®¿À¸í »çÀÌÆ® µî·Ï
+ * @ëŒ€ë¶„ë¥˜ MySite
+ * @ì¤‘ë¶„ë¥˜ ì‚¬ì´íŠ¸ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ì‚¬ì´íŠ¸ ë“±ë¡
  */
 public class E_RegisterSite extends Scenario {
 	private Map<String, Boolean> channel = ii.getChannel();
@@ -35,7 +35,7 @@ public class E_RegisterSite extends Scenario {
 	
 	private void click() {
 		CustomWait(10);
-		FEB("xpath", "//*[@id=\"btnSave\"]", "ÀúÀå ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"btnSave\"]", "ì €ì¥ ë²„íŠ¼").click();
 		CustomWait(10);
 	}
 
@@ -46,18 +46,18 @@ public class E_RegisterSite extends Scenario {
 	}
 
 	private void image() {
-		FEB("xpath", "//*[@id=\"siteImageFile\"]", "ÀÌ¹ÌÁö Upload ¹öÆ°").sendKeys(pr.getPropValue("site.image.path"));
+		FEB("xpath", "//*[@id=\"siteImageFile\"]", "ì´ë¯¸ì§€ Upload ë²„íŠ¼").sendKeys(pr.getPropValue("site.image.path"));
 	}
 
 	private void name() {
 		sitename = pr.getPropValue("site.name")+"_"+currentTime();
 		pr.setPropValue("site.name", sitename);
-		FEB("xpath", "//*[@id=\"siteName\"]", "»çÀÌÆ®¸í ÀÔ·ÂÄ­").sendKeys(sitename);
+		FEB("xpath", "//*[@id=\"siteName\"]", "ì‚¬ì´íŠ¸ëª… ì…ë ¥ì¹¸").sendKeys(sitename);
 	}
 
 	private void channel() {
 		for (int i = 0; i < 4; i++) {
-			WebElement w = FEB("id", chns[i] + "Flag", chns[i] + " Ã¼Å©¹Ú½º");
+			WebElement w = FEB("id", chns[i] + "Flag", chns[i] + " ì²´í¬ë°•ìŠ¤");
 			if (channel.get(chns[i])) {
 				if (!w.isSelected()) {	w.click();	}
 			} else {
@@ -73,7 +73,7 @@ public class E_RegisterSite extends Scenario {
 	
 	private boolean check() {
 		try{
-			FEB("xpath", "//*[@id=\"container\"]/div/h3", "Ã¤³Îº° ¹ß¼Û°èÁ¤ µî·Ï");
+			FEB("xpath", "//*[@id=\"container\"]/div/h3", "ì±„ë„ë³„ ë°œì†¡ê³„ì • ë“±ë¡");
 			return true;
 		} catch(WebDriverException e) {
 			return false;

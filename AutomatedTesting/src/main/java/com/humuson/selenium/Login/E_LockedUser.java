@@ -4,9 +4,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * ´ëºĞ·ù : ·Î±×ÀÎ
- * ÁßºĞ·ù : ·Î±×ÀÎ
- * ½Ã³ª¸®¿À ¸í : Àá±İÃ³¸®µÈ °èÁ¤ÀÏ °æ¿ì
+ * ëŒ€ë¶„ë¥˜ : ë¡œê·¸ì¸
+ * ì¤‘ë¶„ë¥˜ : ë¡œê·¸ì¸
+ * ì‹œë‚˜ë¦¬ì˜¤ ëª… : ì ê¸ˆì²˜ë¦¬ëœ ê³„ì •ì¼ ê²½ìš°
  * */
 public class E_LockedUser extends Scenario {
 	public E_LockedUser(int type, String[] category, String title) {

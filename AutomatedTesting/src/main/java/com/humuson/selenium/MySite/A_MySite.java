@@ -6,7 +6,7 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù MySite
+ * @ëŒ€ë¶„ë¥˜ MySite
  * */
 public class A_MySite extends Scenario {
 	public A_MySite(int type, String[] category, String title) {
@@ -17,8 +17,8 @@ public class A_MySite extends Scenario {
 	}
 	
 	protected void makeScenario() {
-		addChildScenario(new B_SiteMngmt(B, category, "»çÀÌÆ® °ü¸®"));
-		addChildScenario(new B_ChannelMngmt(B, category, "Ã¤³Î °ü¸®"));
+		addChildScenario(new B_SiteMngmt(B, category, "ì‚¬ì´íŠ¸ ê´€ë¦¬"));
+		addChildScenario(new B_ChannelMngmt(B, category, "ì±„ë„ ê´€ë¦¬"));
 	}
 	
 	protected void DO() {

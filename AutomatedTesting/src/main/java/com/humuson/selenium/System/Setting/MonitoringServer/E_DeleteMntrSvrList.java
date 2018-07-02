@@ -10,10 +10,10 @@ import com.humuson.support.Scenario;
 /**
  * ADMIN
  * 
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù È¯°æ¼³Á¤
- * @¼ÒºĞ·ù ¸ğ´ÏÅÍ¸µ ¼­¹ö
- * @½Ã³ª¸®¿À¸í ¸ğ´ÏÅÍ¸µ ¼­¹ö ¸®½ºÆ® »èÁ¦
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ í™˜ê²½ì„¤ì •
+ * @ì†Œë¶„ë¥˜ ëª¨ë‹ˆí„°ë§ ì„œë²„
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ëª¨ë‹ˆí„°ë§ ì„œë²„ ë¦¬ìŠ¤íŠ¸ ì‚­ì œ
  */
 public class E_DeleteMntrSvrList extends Scenario {
 	private int cnt = 0;
@@ -32,12 +32,12 @@ public class E_DeleteMntrSvrList extends Scenario {
 	}
 
 	private void click() {
-		List<WebElement> servers = FEB("xpath", "//*[@id=\"ListDiv\"]/div/div/table/tbody", "¼­¹ö ¸®½ºÆ®").findElements(By.tagName("tr"));
+		List<WebElement> servers = FEB("xpath", "//*[@id=\"ListDiv\"]/div/div/table/tbody", "ì„œë²„ ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("tr"));
 		cnt = servers.size();
 		for (int i = 1; i < servers.size() - 8; i++) {
 			if (i % 2 == 1
 					&& driver.findElement(By.xpath("//*[@id=\"ListDiv\"]/div/div/table/tbody/tr[" + i + "]/td[2]/a"))
-							.getText().trim().equals("»èÁ¦¿ë")) {
+							.getText().trim().equals("ì‚­ì œìš©")) {
 				driver.findElement(By.xpath("//*[@id=\"ListDiv\"]/div/div/table/tbody/tr[" + i + "]/td[4]/a[2]")).click();
 			}
 		}
@@ -45,8 +45,8 @@ public class E_DeleteMntrSvrList extends Scenario {
 	}
 	
 	private boolean check() {
-		List<WebElement> servers = FEB("xpath", "//*[@id=\"ListDiv\"]/div/div/table/tbody", "¼­¹ö ¸®½ºÆ®").findElements(By.tagName("tr"));
-		FAIL("¸ğ´ÏÅÍ¸µ ¼­¹ö »èÁ¦");
+		List<WebElement> servers = FEB("xpath", "//*[@id=\"ListDiv\"]/div/div/table/tbody", "ì„œë²„ ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("tr"));
+		FAIL("ëª¨ë‹ˆí„°ë§ ì„œë²„ ì‚­ì œ");
 		return cnt>servers.size();
 	}
 

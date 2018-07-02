@@ -12,9 +12,9 @@ import com.humuson.support.Scenario;
 /**
  * ADMIN
  * 
- * @´ëºĞ·ù MySite
- * @ÁßºĞ·ù Ã¤³Î °ü¸®
- * @½Ã³ª¸®¿À¸í Kakao °èÁ¤µî·Ï
+ * @ëŒ€ë¶„ë¥˜ MySite
+ * @ì¤‘ë¶„ë¥˜ ì±„ë„ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… Kakao ê³„ì •ë“±ë¡
  */
 public class E_PushAccount extends Scenario {
 	public E_PushAccount(int type, String[] category, String title) {
@@ -35,188 +35,188 @@ public class E_PushAccount extends Scenario {
 	}
 
 	private void click() {
-		FEB("id", "regPush", "Push °èÁ¤µî·Ï ÅÇ").click();
+		FEB("id", "regPush", "Push ê³„ì •ë“±ë¡ íƒ­").click();
 	}
 
 	private void register() {
-		FEB("id", "appGrpRegist", "APP µî·Ï ¹öÆ°").click();
+		FEB("id", "appGrpRegist", "APP ë“±ë¡ ë²„íŠ¼").click();
 
 		if (!Pattern.compile("/site/account/push/appRegist").matcher(driver.getCurrentUrl()).find()) {
-			FAIL("APP µî·Ï ÆäÀÌÁö ÁøÀÔ");
+			FAIL("APP ë“±ë¡ í˜ì´ì§€ ì§„ì…");
 			return;
 		}
 
-		FEB("xpath", "//*[@id=\"appImageFile\"]", "ÀÌ¹ÌÁö Upload ¹öÆ°").sendKeys(pr.getPropValue("site.app.image"));
+		FEB("xpath", "//*[@id=\"appImageFile\"]", "ì´ë¯¸ì§€ Upload ë²„íŠ¼").sendKeys(pr.getPropValue("site.app.image"));
 
-		FEB("id", "appGrpName", "App ÀÌ¸§ ÀÔ·ÂÄ­").clear();
-		FEB("id", "appGrpName", "App ÀÌ¸§ ÀÔ·ÂÄ­").sendKeys(pr.getPropValue("site.app.name"));
+		FEB("id", "appGrpName", "App ì´ë¦„ ì…ë ¥ì¹¸").clear();
+		FEB("id", "appGrpName", "App ì´ë¦„ ì…ë ¥ì¹¸").sendKeys(pr.getPropValue("site.app.name"));
 
-		menuCheck("//*[@id=\"platform_A_ICON\"]", "//*[@id=\"platform_A_ICON\"]", "Android ½½¶óÀÌµå ¸Ş´º");
-		menuCheck("//*[@id=\"platform_I_ICON\"]", "//*[@id=\"platform_I_ICON\"]", "iOS ½½¶óÀÌµå ¸Ş´º");
+		menuCheck("//*[@id=\"platform_A_ICON\"]", "//*[@id=\"platform_A_ICON\"]", "Android ìŠ¬ë¼ì´ë“œ ë©”ë‰´");
+		menuCheck("//*[@id=\"platform_I_ICON\"]", "//*[@id=\"platform_I_ICON\"]", "iOS ìŠ¬ë¼ì´ë“œ ë©”ë‰´");
 
 		if (Boolean.valueOf(pr.getPropValue("site.app.android")))
 			android();
 		if (Boolean.valueOf(pr.getPropValue("site.app.ios")))
 			ios();
 
-		Select start = new Select(FEB("xpath", "//*[@id=\"autoBlockStart\"]", "¹ß¼Û Â÷´Ü ½Ã°£ Ã¹¹øÂ° dropbox"));
+		Select start = new Select(FEB("xpath", "//*[@id=\"autoBlockStart\"]", "ë°œì†¡ ì°¨ë‹¨ ì‹œê°„ ì²«ë²ˆì§¸ dropbox"));
 		start.selectByValue(pr.getPropValue("site.app.block.start").length() == 1
 				? "0" + pr.getPropValue("site.app.block.start") : pr.getPropValue("site.app.block.start"));
-		Select end = new Select(FEB("xpath", "//*[@id=\"autoBlockEnd\"]", "¹ß¼Û Â÷´Ü ½Ã°£ µÎ¹øÂ° dropbox"));
+		Select end = new Select(FEB("xpath", "//*[@id=\"autoBlockEnd\"]", "ë°œì†¡ ì°¨ë‹¨ ì‹œê°„ ë‘ë²ˆì§¸ dropbox"));
 		end.selectByValue(pr.getPropValue("site.app.block.end").length() == 1
 				? "0" + pr.getPropValue("site.app.block.end") : pr.getPropValue("site.app.block.end"));
 
-		FEB("xpath", "//*[@id=\"btnSave\"]", "¿Ï·á ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"btnSave\"]", "ì™„ë£Œ ë²„íŠ¼").click();
 
 		if (!check_register()) {
-			FAIL("App µî·Ï");
+			FAIL("App ë“±ë¡");
 		} else {
-			OK("App µî·Ï");
-			saveScreenShot(category, "App µî·Ï", ".jpg");
+			OK("App ë“±ë¡");
+			saveScreenShot(category, "App ë“±ë¡", ".jpg");
 		}
 	}
 
 	private void modify() {
-		FEB("id", "appGrpRegist", "APP µî·Ï ¹öÆ°").click();
+		FEB("id", "appGrpRegist", "APP ë“±ë¡ ë²„íŠ¼").click();
 		if (!Pattern.compile("/site/account/push/appRegist").matcher(driver.getCurrentUrl()).find()) {
-			FAIL("APP µî·Ï ÆäÀÌÁö ÁøÀÔ");
+			FAIL("APP ë“±ë¡ í˜ì´ì§€ ì§„ì…");
 			return;
 		}
-		FEB("xpath", "//*[@id=\"appImageFile\"]", "ÀÌ¹ÌÁö Upload ¹öÆ°").sendKeys(pr.getPropValue("site.app.image"));
-		FEB("id", "appGrpName", "App ÀÌ¸§ ÀÔ·ÂÄ­").clear();
-		FEB("id", "appGrpName", "App ÀÌ¸§ ÀÔ·ÂÄ­").sendKeys("¼öÁ¤¿ë");
-		menuCheck("//*[@id=\"platform_A_ICON\"]", "//*[@id=\"platform_A_ICON\"]", "Android ½½¶óÀÌµå ¸Ş´º");
-		menuCheck("//*[@id=\"platform_I_ICON\"]", "//*[@id=\"platform_I_ICON\"]", "iOS ½½¶óÀÌµå ¸Ş´º");
-		if (!FEB("xpath", "//*[@id=\"platform_A_ICON\"]", "Android ½½¶óÀÌµå ¸Ş´º").getAttribute("flag").equals("open")) {
-			FEB("xpath", "//*[@id=\"platform_A_ICON\"]", "Android ½½¶óÀÌµå ¸Ş´º ¿­±â").click();
+		FEB("xpath", "//*[@id=\"appImageFile\"]", "ì´ë¯¸ì§€ Upload ë²„íŠ¼").sendKeys(pr.getPropValue("site.app.image"));
+		FEB("id", "appGrpName", "App ì´ë¦„ ì…ë ¥ì¹¸").clear();
+		FEB("id", "appGrpName", "App ì´ë¦„ ì…ë ¥ì¹¸").sendKeys("ìˆ˜ì •ìš©");
+		menuCheck("//*[@id=\"platform_A_ICON\"]", "//*[@id=\"platform_A_ICON\"]", "Android ìŠ¬ë¼ì´ë“œ ë©”ë‰´");
+		menuCheck("//*[@id=\"platform_I_ICON\"]", "//*[@id=\"platform_I_ICON\"]", "iOS ìŠ¬ë¼ì´ë“œ ë©”ë‰´");
+		if (!FEB("xpath", "//*[@id=\"platform_A_ICON\"]", "Android ìŠ¬ë¼ì´ë“œ ë©”ë‰´").getAttribute("flag").equals("open")) {
+			FEB("xpath", "//*[@id=\"platform_A_ICON\"]", "Android ìŠ¬ë¼ì´ë“œ ë©”ë‰´ ì—´ê¸°").click();
 		}
 		for (int i = 1; i <= 3; i++) {
-			FEB("xpath", "//*[@id=\"apiKey" + i + "\"]", "API Key" + i + " ÀÔ·ÂÄ­").clear();
-			FEB("xpath", "//*[@id=\"apiKey" + i + "\"]", "API Key" + i + " ÀÔ·ÂÄ­").sendKeys("123456");
+			FEB("xpath", "//*[@id=\"apiKey" + i + "\"]", "API Key" + i + " ì…ë ¥ì¹¸").clear();
+			FEB("xpath", "//*[@id=\"apiKey" + i + "\"]", "API Key" + i + " ì…ë ¥ì¹¸").sendKeys("123456");
 		}
-		FEB("xpath", "//*[@id=\"gcmNum\"]", "GCM ÇÁ·ÎÁ§Æ® ³Ñ¹ö").clear();
-		FEB("xpath", "//*[@id=\"gcmNum\"]", "GCM ÇÁ·ÎÁ§Æ® ³Ñ¹ö").sendKeys("12");
-		Select dropbox_private = new Select(FEB("xpath", "//*[@id=\"privateYN\"]", "Private »ç¿ë¿©ºÎ dropbox"));
+		FEB("xpath", "//*[@id=\"gcmNum\"]", "GCM í”„ë¡œì íŠ¸ ë„˜ë²„").clear();
+		FEB("xpath", "//*[@id=\"gcmNum\"]", "GCM í”„ë¡œì íŠ¸ ë„˜ë²„").sendKeys("12");
+		Select dropbox_private = new Select(FEB("xpath", "//*[@id=\"privateYN\"]", "Private ì‚¬ìš©ì—¬ë¶€ dropbox"));
 		dropbox_private.selectByValue("N");
 		dropbox_private.selectByValue("Y");
-		if (FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private ÇÁ·ÎÅäÄİ ¼±ÅÃ div").getAttribute("display") == null
-				|| FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private ÇÁ·ÎÅäÄİ ¼±ÅÃ div").getAttribute("display")
+		if (FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private í”„ë¡œí† ì½œ ì„ íƒ div").getAttribute("display") == null
+				|| FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private í”„ë¡œí† ì½œ ì„ íƒ div").getAttribute("display")
 						.equals("block")) {
 			Select dropbox_private_protocol = new Select(
-					FEB("xpath", "//*[@id=\"privateProtocol\"]", "Private ÇÁ·ÎÅäÄİ dropbox"));
+					FEB("xpath", "//*[@id=\"privateProtocol\"]", "Private í”„ë¡œí† ì½œ dropbox"));
 			dropbox_private_protocol
 					.selectByValue(pr.getPropValue("site.app.private.protocol").equals("TCP") ? "T" : "S");
-		} else if (FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private ÇÁ·ÎÅäÄİ ¼±ÅÃ div").getAttribute("display")
+		} else if (FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private í”„ë¡œí† ì½œ ì„ íƒ div").getAttribute("display")
 				.equals("none"))
-			FAIL("Private ÇÁ·ÎÅäÄİ ¼±ÅÃ div È­¸éÃâ·Â");
-		Select start = new Select(FEB("xpath", "//*[@id=\"autoBlockStart\"]", "¹ß¼Û Â÷´Ü ½Ã°£ Ã¹¹øÂ° dropbox"));
+			FAIL("Private í”„ë¡œí† ì½œ ì„ íƒ div í™”ë©´ì¶œë ¥");
+		Select start = new Select(FEB("xpath", "//*[@id=\"autoBlockStart\"]", "ë°œì†¡ ì°¨ë‹¨ ì‹œê°„ ì²«ë²ˆì§¸ dropbox"));
 		start.selectByValue(pr.getPropValue("site.app.block.start").length() == 1
 				? "0" + pr.getPropValue("site.app.block.start") : pr.getPropValue("site.app.block.start"));
-		Select end = new Select(FEB("xpath", "//*[@id=\"autoBlockEnd\"]", "¹ß¼Û Â÷´Ü ½Ã°£ µÎ¹øÂ° dropbox"));
+		Select end = new Select(FEB("xpath", "//*[@id=\"autoBlockEnd\"]", "ë°œì†¡ ì°¨ë‹¨ ì‹œê°„ ë‘ë²ˆì§¸ dropbox"));
 		end.selectByValue(pr.getPropValue("site.app.block.end").length() == 1
 				? "0" + pr.getPropValue("site.app.block.end") : pr.getPropValue("site.app.block.end"));
-		FEB("xpath", "//*[@id=\"btnSave\"]", "¿Ï·á ¹öÆ°").click();
-		List<WebElement> forms = FEB("xpath", "//*[@id=\"resultBody\"]", "App ¸®½ºÆ®").findElements(By.tagName("form"));
-		WebElement w = FEB("xpath", "//*[@id=\"resultBody\"]", "App ¸®½ºÆ®");
+		FEB("xpath", "//*[@id=\"btnSave\"]", "ì™„ë£Œ ë²„íŠ¼").click();
+		List<WebElement> forms = FEB("xpath", "//*[@id=\"resultBody\"]", "App ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("form"));
+		WebElement w = FEB("xpath", "//*[@id=\"resultBody\"]", "App ë¦¬ìŠ¤íŠ¸");
 		int check = 0;
 		for (int i = 1; i <= forms.size(); i++) {
 			CustomWait(2);
 			if (w.findElement(By.xpath("//form["+i+"]/div[2]/table/tbody/tr/td[2]/table/tbody/tr[1]/td[1]")).getText()
-					.equals("¼öÁ¤¿ë")) {
+					.equals("ìˆ˜ì •ìš©")) {
 				w.findElement(By.xpath("//form["+i+"]/div[2]/table/tbody/tr/td[2]/button")).click();
 				check += 1;
 				break;
 			}
 		}
 		if (check == 0)
-			FAIL("¼öÁ¤ÇÒ ¾Û ¼±ÅÃ");
+			FAIL("ìˆ˜ì •í•  ì•± ì„ íƒ");
 
-		// ¼öÁ¤ ½ÃÀÛ
-		FEB("id", "appGrpName", "App ÀÌ¸§ ÀÔ·ÂÄ­").clear();
-		FEB("id", "appGrpName", "App ÀÌ¸§ ÀÔ·ÂÄ­").sendKeys("»èÁ¦¿ë");
+		// ìˆ˜ì • ì‹œì‘
+		FEB("id", "appGrpName", "App ì´ë¦„ ì…ë ¥ì¹¸").clear();
+		FEB("id", "appGrpName", "App ì´ë¦„ ì…ë ¥ì¹¸").sendKeys("ì‚­ì œìš©");
 
-		FEB("xpath", "//*[@id=\"btnUpdate\"]", "¼öÁ¤ ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"btnUpdate\"]", "ìˆ˜ì • ë²„íŠ¼").click();
 
 		if (!check_modify())
-			FAIL("App ¼öÁ¤");
+			FAIL("App ìˆ˜ì •");
 		else
-			OK("App ¼öÁ¤");
+			OK("App ìˆ˜ì •");
 	}
 
 	private void delete() {
 		CustomWait(30);
-		List<WebElement> forms = FEB("xpath", "//*[@id=\"resultBody\"]", "App ¸®½ºÆ®").findElements(By.className("form_main"));
+		List<WebElement> forms = FEB("xpath", "//*[@id=\"resultBody\"]", "App ë¦¬ìŠ¤íŠ¸").findElements(By.className("form_main"));
 		int cnt = forms.size();
-		WebElement w = FEB("xpath", "//*[@id=\"resultBody\"]", "App ¸®½ºÆ®");
+		WebElement w = FEB("xpath", "//*[@id=\"resultBody\"]", "App ë¦¬ìŠ¤íŠ¸");
 		
 		for (int i = 1; i <= cnt; i++) {
-			if (w.findElement(By.xpath("//form["+i+"]/div[2]/table/tbody/tr/td[2]/table/tbody/tr[1]/td[1]")).getText().equals("»èÁ¦¿ë")) {
+			if (w.findElement(By.xpath("//form["+i+"]/div[2]/table/tbody/tr/td[2]/table/tbody/tr[1]/td[1]")).getText().equals("ì‚­ì œìš©")) {
 				w.findElement(By.xpath("//form["+i+"]/div[1]")).findElement(By.name("account_box_check")).click();
 			}
 		}
 		List<WebElement> buttons = driver.findElements(By.xpath("//*[@id=\"appGrpRegist\"]"));
 		for (int j = 0; j < buttons.size(); j++) {
-			if (buttons.get(j).getText().equals("APP »èÁ¦")) {
+			if (buttons.get(j).getText().equals("APP ì‚­ì œ")) {
 				buttons.get(j).click();
 				cp.acceptAlert();
 				cp.acceptAlert();
 			}
 		}
 		forms.clear();
-		forms = FEB("xpath", "//*[@id=\"resultBody\"]", "App ¸®½ºÆ®").findElements(By.tagName("form"));
+		forms = FEB("xpath", "//*[@id=\"resultBody\"]", "App ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("form"));
 		if (cnt == forms.size()) {
-			FAIL("App »èÁ¦");
+			FAIL("App ì‚­ì œ");
 		} else {
-			OK("App »èÁ¦");
+			OK("App ì‚­ì œ");
 		}
 	}
 
 	private void android() {
-		if (!FEB("xpath", "//*[@id=\"platform_A_ICON\"]", "Android ½½¶óÀÌµå ¸Ş´º").getAttribute("flag").equals("open")) {
-			FEB("xpath", "//*[@id=\"platform_A_ICON\"]", "Android ½½¶óÀÌµå ¸Ş´º ¿­±â").click();
+		if (!FEB("xpath", "//*[@id=\"platform_A_ICON\"]", "Android ìŠ¬ë¼ì´ë“œ ë©”ë‰´").getAttribute("flag").equals("open")) {
+			FEB("xpath", "//*[@id=\"platform_A_ICON\"]", "Android ìŠ¬ë¼ì´ë“œ ë©”ë‰´ ì—´ê¸°").click();
 		}
 
 		for (int i = 1; i <= 3; i++) {
-			FEB("xpath", "//*[@id=\"apiKey" + i + "\"]", "API Key" + i + " ÀÔ·ÂÄ­").clear();
-			FEB("xpath", "//*[@id=\"apiKey" + i + "\"]", "API Key" + i + " ÀÔ·ÂÄ­")
+			FEB("xpath", "//*[@id=\"apiKey" + i + "\"]", "API Key" + i + " ì…ë ¥ì¹¸").clear();
+			FEB("xpath", "//*[@id=\"apiKey" + i + "\"]", "API Key" + i + " ì…ë ¥ì¹¸")
 					.sendKeys(pr.getPropValue("site.app.apikey" + i));
 		}
-		FEB("xpath", "//*[@id=\"gcmNum\"]", "GCM ÇÁ·ÎÁ§Æ® ³Ñ¹ö").clear();
-		FEB("xpath", "//*[@id=\"gcmNum\"]", "GCM ÇÁ·ÎÁ§Æ® ³Ñ¹ö").sendKeys(pr.getPropValue("site.app.gcmnum"));
+		FEB("xpath", "//*[@id=\"gcmNum\"]", "GCM í”„ë¡œì íŠ¸ ë„˜ë²„").clear();
+		FEB("xpath", "//*[@id=\"gcmNum\"]", "GCM í”„ë¡œì íŠ¸ ë„˜ë²„").sendKeys(pr.getPropValue("site.app.gcmnum"));
 
-		Select dropbox_private = new Select(FEB("xpath", "//*[@id=\"privateYN\"]", "Private »ç¿ë¿©ºÎ dropbox"));
+		Select dropbox_private = new Select(FEB("xpath", "//*[@id=\"privateYN\"]", "Private ì‚¬ìš©ì—¬ë¶€ dropbox"));
 		dropbox_private.selectByValue("N");
 
 		if (pr.getPropValue("site.app.private.use").equals("true")) {
 			dropbox_private.selectByValue("Y");
-			if (FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private ÇÁ·ÎÅäÄİ ¼±ÅÃ div").getAttribute("display") == null
-					|| FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private ÇÁ·ÎÅäÄİ ¼±ÅÃ div").getAttribute("display")
+			if (FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private í”„ë¡œí† ì½œ ì„ íƒ div").getAttribute("display") == null
+					|| FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private í”„ë¡œí† ì½œ ì„ íƒ div").getAttribute("display")
 							.equals("block")) {
 				Select dropbox_private_protocol = new Select(
-						FEB("xpath", "//*[@id=\"privateProtocol\"]", "Private ÇÁ·ÎÅäÄİ dropbox"));
+						FEB("xpath", "//*[@id=\"privateProtocol\"]", "Private í”„ë¡œí† ì½œ dropbox"));
 				dropbox_private_protocol
 						.selectByValue(pr.getPropValue("site.app.private.protocol").equals("TCP") ? "T" : "S");
-			} else if (FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private ÇÁ·ÎÅäÄİ ¼±ÅÃ div").getAttribute("display")
+			} else if (FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private í”„ë¡œí† ì½œ ì„ íƒ div").getAttribute("display")
 					.equals("none"))
-				FAIL("Private ÇÁ·ÎÅäÄİ ¼±ÅÃ div È­¸éÃâ·Â");
+				FAIL("Private í”„ë¡œí† ì½œ ì„ íƒ div í™”ë©´ì¶œë ¥");
 
 		} else {
 			dropbox_private.selectByValue("N");
-			if (!FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private ÇÁ·ÎÅäÄİ ¼±ÅÃ div").getAttribute("style")
+			if (!FEB("xpath", "//*[@id=\"selectProtocol\"]", "Private í”„ë¡œí† ì½œ ì„ íƒ div").getAttribute("style")
 					.equals("display: none;"))
-				FAIL("Private ÇÁ·ÎÅäÄİ ¼±ÅÃ div È­¸é¼û±è");
+				FAIL("Private í”„ë¡œí† ì½œ ì„ íƒ div í™”ë©´ìˆ¨ê¹€");
 		}
 	}
 
 	private void ios() {
-		if (!FEB("xpath", "//*[@id=\"platform_I_ICON\"]", "iOS ½½¶óÀÌµå ¸Ş´º").getAttribute("flag").equals("open")) {
-			FEB("xpath", "//*[@id=\"platform_I_ICON\"]", "iOS ½½¶óÀÌµå ¸Ş´º ¿­±â").click();
+		if (!FEB("xpath", "//*[@id=\"platform_I_ICON\"]", "iOS ìŠ¬ë¼ì´ë“œ ë©”ë‰´").getAttribute("flag").equals("open")) {
+			FEB("xpath", "//*[@id=\"platform_I_ICON\"]", "iOS ìŠ¬ë¼ì´ë“œ ë©”ë‰´ ì—´ê¸°").click();
 		}
 
-		FEB("xpath", "//*[@id=\"upfile\"]", "P12 file ¾÷·Îµå").sendKeys(pr.getPropValue("site.app.p12file"));
-		FEB("xpath", "//*[@id=\"apnsPW\"]", "APNS PW ÀÔ·ÂÄ­").sendKeys(pr.getPropValue("site.app.apnspw"));
-		FEB("xpath", "//*[@id=\"pushSound\"]", "Push Sound ÀÔ·ÂÄ­").clear();
-		FEB("xpath", "//*[@id=\"pushSound\"]", "Push Sound ÀÔ·ÂÄ­").sendKeys(
+		FEB("xpath", "//*[@id=\"upfile\"]", "P12 file ì—…ë¡œë“œ").sendKeys(pr.getPropValue("site.app.p12file"));
+		FEB("xpath", "//*[@id=\"apnsPW\"]", "APNS PW ì…ë ¥ì¹¸").sendKeys(pr.getPropValue("site.app.apnspw"));
+		FEB("xpath", "//*[@id=\"pushSound\"]", "Push Sound ì…ë ¥ì¹¸").clear();
+		FEB("xpath", "//*[@id=\"pushSound\"]", "Push Sound ì…ë ¥ì¹¸").sendKeys(
 				pr.getPropValue("site.app.pushsound").equals("") ? "default" : pr.getPropValue("site.app.pushsound"));
 		Select dropbox_badge_count = new Select(FEB("xpath", "//*[@id=\"badgeFlag\"]", "Badge Count dropbox"));
 		dropbox_badge_count.selectByValue(pr.getPropValue("site.app.badgecount").equals("true") ? "Y" : "N");
@@ -227,20 +227,20 @@ public class E_PushAccount extends Scenario {
 		boolean result = true;
 		if (FEB("xpath", menu, name).getAttribute("flag") == "close") {
 			CustomWait(5);
-			FEB("xpath", click, name + " ¿­±â").click();
+			FEB("xpath", click, name + " ì—´ê¸°").click();
 			CustomWait(5);
 			if (FEB("xpath", menu, name).getAttribute("flag").equals("close")) {
-				FAIL(name + " ¿­±â");
+				FAIL(name + " ì—´ê¸°");
 				result &= false;
 			}
 		}
 
 		if (FEB("xpath", menu, name).getAttribute("flag").equals("open")) {
 			CustomWait(5);
-			FEB("xpath", click, name + " ´İ±â").click();
+			FEB("xpath", click, name + " ë‹«ê¸°").click();
 			CustomWait(5);
 			if (FEB("xpath", menu, name).getAttribute("flag").equals("open")) {
-				FAIL(name + " ´İ±â");
+				FAIL(name + " ë‹«ê¸°");
 				result &= false;
 			}
 		}
@@ -248,8 +248,8 @@ public class E_PushAccount extends Scenario {
 	}
 
 	private boolean check_register() {
-		List<WebElement> forms = FEB("xpath", "//*[@id=\"resultBody\"]", "App ¸®½ºÆ®").findElements(By.tagName("form"));
-		WebElement w = FEB("xpath", "//*[@id=\"resultBody\"]", "App ¸®½ºÆ®");
+		List<WebElement> forms = FEB("xpath", "//*[@id=\"resultBody\"]", "App ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("form"));
+		WebElement w = FEB("xpath", "//*[@id=\"resultBody\"]", "App ë¦¬ìŠ¤íŠ¸");
 		
 		for (int i = 1; i <= forms.size(); i++) {
 			CustomWait(2);
@@ -262,13 +262,13 @@ public class E_PushAccount extends Scenario {
 	}
 
 	private boolean check_modify() {
-		List<WebElement> forms = FEB("xpath", "//*[@id=\"resultBody\"]", "App ¸®½ºÆ®").findElements(By.tagName("form"));
-		WebElement w = FEB("xpath", "//*[@id=\"resultBody\"]", "App ¸®½ºÆ®");
+		List<WebElement> forms = FEB("xpath", "//*[@id=\"resultBody\"]", "App ë¦¬ìŠ¤íŠ¸").findElements(By.tagName("form"));
+		WebElement w = FEB("xpath", "//*[@id=\"resultBody\"]", "App ë¦¬ìŠ¤íŠ¸");
 		
 		for (int i = 1; i <= forms.size(); i++) {
 			CustomWait(2);
 			if (w.findElement(By.xpath("//form["+i+"]/div[2]/table/tbody/tr/td[2]/table/tbody/tr[1]/td[1]")).getText()
-					.equals("»èÁ¦¿ë")) {
+					.equals("ì‚­ì œìš©")) {
 				return true;
 			}
 		}

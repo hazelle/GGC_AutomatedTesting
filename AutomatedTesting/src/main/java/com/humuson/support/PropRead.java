@@ -38,7 +38,7 @@ public class PropRead extends CustomLogging {
 		try {
 			PropRead.props.store(new FileOutputStream(proppath), "");
 		} catch (IOException e) {
-			simpleLog("properties ÆÄÀÏ ¼öÁ¤ ½ÇÆĞ");
+			simpleLog("properties íŒŒì¼ ìˆ˜ì • ì‹¤íŒ¨");
 		}
 	}
 

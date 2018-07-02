@@ -6,10 +6,10 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù ÄÚµå °ü¸®
- * @¼ÒºĞ·ù ¸ÅÇÎ °ü¸®
- * @½Ã³ª¸®¿À¸í ½Å±Ô ¹öÆ° Å¬¸¯
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ ì½”ë“œ ê´€ë¦¬
+ * @ì†Œë¶„ë¥˜ ë§¤í•‘ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ì‹ ê·œ ë²„íŠ¼ í´ë¦­
  * */
 public class E_ResetForm extends Scenario {
 	public E_ResetForm(int type, String[] category, String title) {
@@ -27,25 +27,25 @@ public class E_ResetForm extends Scenario {
 	
 	private boolean check() {
 		boolean result = true;
-		result &= FEB("xpath", "//*[@id=\"show_seq\"]", "¸ÅÇÎÄÚµå ÀÔ·ÂÄ­").getAttribute("value").equals("");
-		result &= FEB("xpath", "//*[@id=\"img_file_name\"]", "ÀÌ¹ÌÁö ÆÄÀÏ¸í ÀÔ·ÂÄ­").getAttribute("value").equals("");
-		result &= FEB("xpath", "//*[@id=\"mapping_name\"]", "¸ÅÇÎ¸íÄª ÀÔ·ÂÄ­").getAttribute("value").equals("");
-		result &= FEB("xpath", "//*[@id=\"member_column_name\"]", "ÄÃ·³¸í ÀÔ·ÂÄ­").getAttribute("value").equals("");
-		result &= FEB("xpath", "//*[@id=\"title_mapping\"]", "Å¸ÀÌÆ² ¸ÅÇÎ¿©ºÎ radio").getAttribute("value").equals("");
-		result &= FEB("xpath", "//*[@id=\"d_use_yn\"]", "SMSµ¿º¸ »ç¿ëÀ¯¹« radio").getAttribute("value").equals("N");
+		result &= FEB("xpath", "//*[@id=\"show_seq\"]", "ë§¤í•‘ì½”ë“œ ì…ë ¥ì¹¸").getAttribute("value").equals("");
+		result &= FEB("xpath", "//*[@id=\"img_file_name\"]", "ì´ë¯¸ì§€ íŒŒì¼ëª… ì…ë ¥ì¹¸").getAttribute("value").equals("");
+		result &= FEB("xpath", "//*[@id=\"mapping_name\"]", "ë§¤í•‘ëª…ì¹­ ì…ë ¥ì¹¸").getAttribute("value").equals("");
+		result &= FEB("xpath", "//*[@id=\"member_column_name\"]", "ì»¬ëŸ¼ëª… ì…ë ¥ì¹¸").getAttribute("value").equals("");
+		result &= FEB("xpath", "//*[@id=\"title_mapping\"]", "íƒ€ì´í‹€ ë§¤í•‘ì—¬ë¶€ radio").getAttribute("value").equals("");
+		result &= FEB("xpath", "//*[@id=\"d_use_yn\"]", "SMSë™ë³´ ì‚¬ìš©ìœ ë¬´ radio").getAttribute("value").equals("N");
 		
 		return result;
 	}
 	
 	private void click() {
-		FEB("xpath", "//*[@id=\"saveForm\"]/div[4]/div/a[1]", "½Å±Ô ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"saveForm\"]/div[4]/div/a[1]", "ì‹ ê·œ ë²„íŠ¼").click();
 	}
 	
 	private void fillOut() {
-		FEB("xpath", "//*[@id=\"show_seq\"]", "¸ÅÇÎÄÚµå ÀÔ·ÂÄ­").sendKeys(pr.getPropValue("mapping.show_seq"));
-		FEB("xpath", "//*[@id=\"img_file_name\"]", "ÀÌ¹ÌÁö ÆÄÀÏ¸í ÀÔ·ÂÄ­").sendKeys(pr.getPropValue("mapping.img_file_name"));
-		FEB("xpath", "//*[@id=\"mapping_name\"]", "¸ÅÇÎ¸íÄª ÀÔ·ÂÄ­").sendKeys(pr.getPropValue("mapping.mapping_name"));
-		FEB("xpath", "//*[@id=\"member_column_name\"]", "ÄÃ·³¸í ÀÔ·ÂÄ­").sendKeys(pr.getPropValue("mapping.member_column_name"));
+		FEB("xpath", "//*[@id=\"show_seq\"]", "ë§¤í•‘ì½”ë“œ ì…ë ¥ì¹¸").sendKeys(pr.getPropValue("mapping.show_seq"));
+		FEB("xpath", "//*[@id=\"img_file_name\"]", "ì´ë¯¸ì§€ íŒŒì¼ëª… ì…ë ¥ì¹¸").sendKeys(pr.getPropValue("mapping.img_file_name"));
+		FEB("xpath", "//*[@id=\"mapping_name\"]", "ë§¤í•‘ëª…ì¹­ ì…ë ¥ì¹¸").sendKeys(pr.getPropValue("mapping.mapping_name"));
+		FEB("xpath", "//*[@id=\"member_column_name\"]", "ì»¬ëŸ¼ëª… ì…ë ¥ì¹¸").sendKeys(pr.getPropValue("mapping.member_column_name"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.getElementById('title_mapping').setAttribute('value', 'N')");
 		js.executeScript("document.getElementById('d_use_yn').setAttribute('value', 'N')");

@@ -4,9 +4,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù MySite
- * @ÁßºĞ·ù »çÀÌÆ® °ü¸®
- * @½Ã³ª¸®¿À¸í ½Å±Ô »çÀÌÆ® µî·Ï ¹öÆ° Å¬¸¯
+ * @ëŒ€ë¶„ë¥˜ MySite
+ * @ì¤‘ë¶„ë¥˜ ì‚¬ì´íŠ¸ ê´€ë¦¬
+ * @ì‹œë‚˜ë¦¬ì˜¤ëª… ì‹ ê·œ ì‚¬ì´íŠ¸ ë“±ë¡ ë²„íŠ¼ í´ë¦­
  * */
 public class E_ClickNewSite extends Scenario {
 	public E_ClickNewSite(int type, String[] category, String title) {
@@ -22,6 +22,6 @@ public class E_ClickNewSite extends Scenario {
 	}
 	
 	private void click() {
-		FEB("xpath", "//*[@id=\"registSite\"]/div", "½Å±Ô »çÀÌÆ® µî·Ï ¹öÆ°").click();
+		FEB("xpath", "//*[@id=\"registSite\"]/div", "ì‹ ê·œ ì‚¬ì´íŠ¸ ë“±ë¡ ë²„íŠ¼").click();
 	}
 }

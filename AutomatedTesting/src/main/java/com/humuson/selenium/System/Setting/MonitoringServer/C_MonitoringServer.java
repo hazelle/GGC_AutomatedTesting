@@ -4,9 +4,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù È¯°æ¼³Á¤
- * @¼ÒºĞ·ù ¸ğ´ÏÅÍ¸µ ¼­¹ö
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ í™˜ê²½ì„¤ì •
+ * @ì†Œë¶„ë¥˜ ëª¨ë‹ˆí„°ë§ ì„œë²„
  */
 public class C_MonitoringServer extends Scenario {
 	public C_MonitoringServer(int type, String[] category, String title) {
@@ -17,11 +17,11 @@ public class C_MonitoringServer extends Scenario {
 	}
 	
 	protected void makeScenario() {
-		addChildScenario(new E_ClickMntrSvr(E, category, "¸ğ´ÏÅÍ¸µ ¼­¹ö ¸Ş´º Å¬¸¯"));
-		addChildScenario(new E_RegistrMntrSvrList(E, category, "¸ğ´ÏÅÍ¸µ ¼­¹ö ¸®½ºÆ® µî·Ï"));
-		addChildScenario(new E_ModifyMntrSvrList(E, category, "¸ğ´ÏÅÍ¸µ ¼­¹ö ¸®½ºÆ® ¼öÁ¤"));
-		addChildScenario(new E_DeleteMntrSvrList(E, category, "¸ğ´ÏÅÍ¸µ ¼­¹ö ¸®½ºÆ® »èÁ¦"));
-		addChildScenario(new E_AddMntrSvr(E, category, "¸ğ´ÏÅÍ¸µ ¼­¹ö Ãß°¡"));
+		addChildScenario(new E_ClickMntrSvr(E, category, "ëª¨ë‹ˆí„°ë§ ì„œë²„ ë©”ë‰´ í´ë¦­"));
+		addChildScenario(new E_RegistrMntrSvrList(E, category, "ëª¨ë‹ˆí„°ë§ ì„œë²„ ë¦¬ìŠ¤íŠ¸ ë“±ë¡"));
+		addChildScenario(new E_ModifyMntrSvrList(E, category, "ëª¨ë‹ˆí„°ë§ ì„œë²„ ë¦¬ìŠ¤íŠ¸ ìˆ˜ì •"));
+		addChildScenario(new E_DeleteMntrSvrList(E, category, "ëª¨ë‹ˆí„°ë§ ì„œë²„ ë¦¬ìŠ¤íŠ¸ ì‚­ì œ"));
+		addChildScenario(new E_AddMntrSvr(E, category, "ëª¨ë‹ˆí„°ë§ ì„œë²„ ì¶”ê°€"));
 		
 	}
 	

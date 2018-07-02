@@ -4,8 +4,8 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù MySite
- * @ÁßºĞ·ù Ã¤³Î °ü¸®
+ * @ëŒ€ë¶„ë¥˜ MySite
+ * @ì¤‘ë¶„ë¥˜ ì±„ë„ ê´€ë¦¬
  * */
 public class B_ChannelMngmt extends Scenario {
 	public B_ChannelMngmt(int type, String[] category, String title) {
@@ -16,12 +16,12 @@ public class B_ChannelMngmt extends Scenario {
 	}
 	
 	protected void makeScenario() {
-		addChildScenario(new E_ClickChnMngmt(E, category, "Ã¤³Î °ü¸® ¹öÆ° Å¬¸¯"));
-		if(ii.getChannel().get("email"))	addChildScenario(new E_EmailAccount(E, category, "E-mail °èÁ¤µî·Ï"));
-		if(ii.getChannel().get("sms"))		addChildScenario(new E_SMSAccount(E, category, "SMS °èÁ¤µî·Ï"));
-		if(ii.getChannel().get("push"))		addChildScenario(new E_PushAccount(E, category, "Push °èÁ¤µî·Ï"));
-		if(ii.getChannel().get("kakao"))	addChildScenario(new E_KakaoAccount(E, category, "Kakao °èÁ¤µî·Ï"));
-		addChildScenario(new E_FatigueSetting(E, category, "ÇÇ·Îµµ ¼³Á¤"));
+		addChildScenario(new E_ClickChnMngmt(E, category, "ì±„ë„ ê´€ë¦¬ ë²„íŠ¼ í´ë¦­"));
+		if(ii.getChannel().get("email"))	addChildScenario(new E_EmailAccount(E, category, "E-mail ê³„ì •ë“±ë¡"));
+		if(ii.getChannel().get("sms"))		addChildScenario(new E_SMSAccount(E, category, "SMS ê³„ì •ë“±ë¡"));
+		if(ii.getChannel().get("push"))		addChildScenario(new E_PushAccount(E, category, "Push ê³„ì •ë“±ë¡"));
+		if(ii.getChannel().get("kakao"))	addChildScenario(new E_KakaoAccount(E, category, "Kakao ê³„ì •ë“±ë¡"));
+		addChildScenario(new E_FatigueSetting(E, category, "í”¼ë¡œë„ ì„¤ì •"));
 	}
 	
 	protected void DO() {

@@ -4,9 +4,9 @@ import com.humuson.support.Scenario;
 
 /**
  * ADMIN
- * @´ëºĞ·ù System
- * @ÁßºĞ·ù È¯°æ¼³Á¤
- * @¼ÒºĞ·ù µµ¸ŞÀÎ ÇÊÅÍ
+ * @ëŒ€ë¶„ë¥˜ System
+ * @ì¤‘ë¶„ë¥˜ í™˜ê²½ì„¤ì •
+ * @ì†Œë¶„ë¥˜ ë„ë©”ì¸ í•„í„°
  */
 public class C_DomainFilter extends Scenario {
 	public C_DomainFilter(int type, String[] category, String title) {
@@ -17,11 +17,11 @@ public class C_DomainFilter extends Scenario {
 	}
 	
 	protected void makeScenario() {
-		addChildScenario(new E_ClickDomainFilter(E, category, "µµ¸ŞÀÎ ÇÊÅÍ ¸Ş´º Å¬¸¯"));
-		addChildScenario(new E_RegisterDomain(E, category, "µµ¸ŞÀÎ ÇÊÅÍ µî·Ï"));
-		addChildScenario(new E_SearchDomain(E, category, "µµ¸ŞÀÎ ÇÊÅÍ °Ë»ö"));
-		addChildScenario(new E_ModifyDomain(E, category, "µµ¸ŞÀÎ ÇÊÅÍ ¼öÁ¤"));
-		addChildScenario(new E_DeleteDomain(E, category, "µµ¸ŞÀÎ ÇÊÅÍ »èÁ¦"));
+		addChildScenario(new E_ClickDomainFilter(E, category, "ë„ë©”ì¸ í•„í„° ë©”ë‰´ í´ë¦­"));
+		addChildScenario(new E_RegisterDomain(E, category, "ë„ë©”ì¸ í•„í„° ë“±ë¡"));
+		addChildScenario(new E_SearchDomain(E, category, "ë„ë©”ì¸ í•„í„° ê²€ìƒ‰"));
+		addChildScenario(new E_ModifyDomain(E, category, "ë„ë©”ì¸ í•„í„° ìˆ˜ì •"));
+		addChildScenario(new E_DeleteDomain(E, category, "ë„ë©”ì¸ í•„í„° ì‚­ì œ"));
 	}
 
 	protected void DO() {

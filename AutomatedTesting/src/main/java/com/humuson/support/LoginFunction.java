@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import com.humuson.selenium.StartTesting;
 
 /**
- * ·Î±×ÀÎ
+ * ë¡œê·¸ì¸
  */
 public class LoginFunction extends Scenario {
 	protected static WebDriver driver = StartTesting.driver;
@@ -18,40 +18,40 @@ public class LoginFunction extends Scenario {
 	private String PW = ii.getStrArray().get(0)[3];
 
 	public LoginFunction() {
-		this.title = "*·Î±×ÀÎ*";		
+		this.title = "*ë¡œê·¸ì¸*";		
 		login();
 	}
 
 	public LoginFunction(String ID, String PW) {
-		this.title = "*·Î±×ÀÎ*";
+		this.title = "*ë¡œê·¸ì¸*";
 		this.ID = ID;
 		this.PW = PW;
 	}
 
 	private void login() {
 		if (cp.movePage("/login")) {
-			FEB("xpath", "//*[@id=\"j_username\"]", "ID ÀÔ·ÂÄ­").sendKeys(ID);
-			FEB("id", "j_password", "PW ÀÔ·ÂÄ­").sendKeys(PW);
-			FEB("id", "j_password", "·Î±×ÀÎ ¹öÆ°").submit();
+			FEB("xpath", "//*[@id=\"j_username\"]", "ID ì…ë ¥ì¹¸").sendKeys(ID);
+			FEB("id", "j_password", "PW ì…ë ¥ì¹¸").sendKeys(PW);
+			FEB("id", "j_password", "ë¡œê·¸ì¸ ë²„íŠ¼").submit();
 			cp.dismissAlert();
 			if(cp.checkPage("/dashboard/index")) {
 				OK();
 			} else {
-				FAIL("·Î±×ÀÎ", driver.getCurrentUrl());
+				FAIL("ë¡œê·¸ì¸", driver.getCurrentUrl());
 			}
 		} else {
-			ETC("O", "ÀÌ¹Ì ·Î±×ÀÎÇÑ »óÅÂ");
+			ETC("O", "ì´ë¯¸ ë¡œê·¸ì¸í•œ ìƒíƒœ");
 		}
 	}
 	
 	public String login2() {
 		if (cp.checkPage("/login")) {
-			FEB("xpath", "//*[@id=\"j_username\"]", "ID ÀÔ·ÂÄ­").sendKeys(ID);
-			FEB("id", "j_password", "PW ÀÔ·ÂÄ­").sendKeys(PW);
-			FEB("id", "j_password", "·Î±×ÀÎ ¹öÆ°").submit();
+			FEB("xpath", "//*[@id=\"j_username\"]", "ID ì…ë ¥ì¹¸").sendKeys(ID);
+			FEB("id", "j_password", "PW ì…ë ¥ì¹¸").sendKeys(PW);
+			FEB("id", "j_password", "ë¡œê·¸ì¸ ë²„íŠ¼").submit();
 			return cp.getAlertText();
 		} else {
-			FAIL("·Î±×ÀÎ ÆäÀÌÁö·Î ÀÌµ¿", driver.getCurrentUrl());
+			FAIL("ë¡œê·¸ì¸ í˜ì´ì§€ë¡œ ì´ë™", driver.getCurrentUrl());
 			return null;
 		}
 	}
