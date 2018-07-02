@@ -29,3 +29,4 @@ pom.xml
 *.xlsx
 *.MF
 >>>>>>> 34dabe15d27b433cc20e9a3d5dd56e4358c9c912
+AutomatedTesting/target/
