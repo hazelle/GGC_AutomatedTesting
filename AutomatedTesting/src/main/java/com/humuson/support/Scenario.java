@@ -45,7 +45,7 @@ public class Scenario extends CustomLogging{
 	protected int period = 5;
 	protected int flag=0;
 
-	/** action()¸¸ ½ÇÇà½ÃÅ°¸é ½Ã³ª¸®¿ÀÀÇ ¸ðµç ³»¿ë ÁøÇà °¡´ÉÇÏµµ·Ï ¼³°èµÇ¾îÀÖÀ½ */
+	/** action()ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ */
 	public void action() {
 		CustomWait(3);
 		GO();
@@ -54,12 +54,12 @@ public class Scenario extends CustomLogging{
 		END();
 	}
 
-	/** ½Ã³ª¸®¿ÀÀÇ main ºÎºÐÀ» ½ÇÇàÇÔ */
+	/** ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ main ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 	protected void DO() {	}
 
 	protected void execute() {
 		for (int i = 0; i < getChildScenario().size(); i++) {
-			System.out.println("# ½Ã³ª¸®¿À ¸í : " + getChildScenario().get(i).getTitle());
+			System.out.println("# ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ : " + getChildScenario().get(i).getTitle());
 			getChildScenario().get(i).action();
 		}
 	}
@@ -71,69 +71,69 @@ public class Scenario extends CustomLogging{
 			RESULT += 1;
 	}
 
-	/** @return ÇØ´ç ½Ã³ª¸®¿ÀÀÇ ÇÏÀ§ ½Ã³ª¸®¿À¸¦ ArrayList·Î ¸®ÅÏÇÔ */
+	/** @return ï¿½Ø´ï¿½ ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ArrayListï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 	public ArrayList<Scenario> getChildScenario() {
 		return childScenario;
 	}
 
-	/** ÇÏÀ§ ½Ã³ª¸®¿À¸¦ »ý¼ºÇÏ´Â ¸Þ¼Òµå */
+	/** ï¿½ï¿½ï¿½ï¿½ ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼Òµï¿½ */
 	protected void makeScenario() {	}
 
 	/**
-	 * ÇÏÀ§ ½Ã³ª¸®¿À¸¦ childScenario¿¡ Ãß°¡
+	 * ï¿½ï¿½ï¿½ï¿½ ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ childScenarioï¿½ï¿½ ï¿½ß°ï¿½
 	 * 
 	 * @param sc
-	 *            ÇÏÀ§ ½Ã³ª¸®¿À
+	 *            ï¿½ï¿½ï¿½ï¿½ ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void addChildScenario(Scenario sc) {
 		childScenario.add(sc);
 	}
 
-	/** ·Î±× »ó¿¡ ½Ã³ª¸®¿ÀÀÇ ½ÃÀÛÀ» ¾Ë¸² */
+	/** ï¿½Î±ï¿½ ï¿½ï¿½ ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½ */
 	public void GO() {
 		simpleLog("");
-		simpleLog(">>> " + getTitle() + " [½ÃÀÛ]");
+		simpleLog(">>> " + getTitle() + " [ï¿½ï¿½ï¿½ï¿½]");
 	}
 
-	/** ·Î±× »ó¿¡ ½Ã³ª¸®¿ÀÀÇ ³¡À» ¾Ë¸² */
+	/** ï¿½Î±ï¿½ ï¿½ï¿½ ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½ */
 	public void END() {
 		if(RESULT==0) {
-			simpleLog("<<< " + getTitle() + " [³¡] ... O");
+			simpleLog("<<< " + getTitle() + " [ï¿½ï¿½] ... O");
 			if(TYPE==E)	logExcel(category[0], category[1], category[2], title, "O", failDetail);
 		} else {
-			simpleLog("<<< " + getTitle() + " [³¡] ... X");
+			simpleLog("<<< " + getTitle() + " [ï¿½ï¿½] ... X");
 			if(TYPE==E)	logExcel(category[0], category[1], category[2], title, "X", failDetail);
 		}
 	}
 
-	/** ÇöÀç Å¸ÀÌÆ²ÀÇ ¼º°øÀ» ·Î±×¿¡ OÇ¥½Ã¿Í ÇÔ²² ³²±è */
+	/** ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½Æ²ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¿ï¿½ OÇ¥ï¿½Ã¿ï¿½ ï¿½Ô²ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 	public void OK() {
 		simpleLog("O  " + getTitle());
 	}
 
-	/** ÇöÀç Å¸ÀÌÆ²ÀÇ ½ÇÆÐ¸¦ ·Î±×¿¡ XÇ¥½Ã¿Í ÇÔ²² ³²±è */
+	/** ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½Æ²ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¸ï¿½ ï¿½Î±×¿ï¿½ XÇ¥ï¿½Ã¿ï¿½ ï¿½Ô²ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 	public void FAIL() {
 		RESULT += 1;
 		simpleLog("X  " + getTitle());
 	}
 
 	/**
-	 * ¼º°øµµ ½ÇÆÐµµ ¾Æ´Ñ ±âÅ¸ ³»¿ëÀÇ ·Î±×¸¦ ³²±è/ 'type msg' <-ÇüÅÂ·Î ·Î±×¿¡ ±â·ÏµÊ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ðµï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¸ï¿½ ï¿½ï¿½ï¿½ï¿½/ 'type msg' <-ï¿½ï¿½ï¿½Â·ï¿½ ï¿½Î±×¿ï¿½ ï¿½ï¿½Ïµï¿½
 	 * 
 	 * @param type
-	 *            ·Î±×ÀÇ Å¸ÀÔÀ» Á÷Á¢ ÀÔ·Â. O³ª X, ´Ù¸¥ °Íµµ °¡´É
+	 *            ï¿½Î±ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½. Oï¿½ï¿½ X, ï¿½Ù¸ï¿½ ï¿½Íµï¿½ ï¿½ï¿½ï¿½ï¿½
 	 * @param msg
-	 *            ·Î±×ÀÇ ³»¿ë
+	 *            ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void ETC(String type, String msg) {
 		simpleLog(type + "  " + msg);
 	}
 
 	/**
-	 * DetaildLog°¡ trueÀÏ ¶§¸¸ ½ÇÇàµÊ. OÇ¥½Ã¿Í ÇÔ²² ·Î±×¿¡ ÂïÈû
+	 * DetaildLogï¿½ï¿½ trueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½. OÇ¥ï¿½Ã¿ï¿½ ï¿½Ô²ï¿½ ï¿½Î±×¿ï¿½ ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param detail
-	 *            ¼¼ºÎ ³»¿ë (ÇöÀç ClassÀÇ title µÚ¿¡ ÂïÈú ³»¿ë)
+	 *            ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ Classï¿½ï¿½ title ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 	 */
 	public void OK(String detail) {
 		if (StartTesting.DetailedLog)
@@ -141,15 +141,15 @@ public class Scenario extends CustomLogging{
 	}
 
 	/**
-	 * XÇ¥½Ã¿Í ÇÔ²² ·Î±×¿¡ ÂïÈû
+	 * XÇ¥ï¿½Ã¿ï¿½ ï¿½Ô²ï¿½ ï¿½Î±×¿ï¿½ ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param detail
-	 *            ·Î±×¿¡ Á÷Á¢ÀûÀ¸·Î ÂïÈ÷´Â ³»¿ë
+	 *            ï¿½Î±×¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void FAIL(String detail) {
 		// if(StartTesting.DetailedLog)
 		RESULT += 1;
-		simpleLog("X  " + getTitle() + " | " + detail + " ½ÇÆÐ");
+		simpleLog("X  " + getTitle() + " | " + detail + " ï¿½ï¿½ï¿½ï¿½");
 		if(failDetail.length()>0) {
 			failDetail += "\n"+detail;
 		} else {
@@ -158,35 +158,35 @@ public class Scenario extends CustomLogging{
 	}
 
 	/**
-	 * ÇöÀç UrlÀ» ·Î±×¿¡ Ãâ·Â. XÇ¥½Ã¿Í ÇÔ²² ·Î±×¿¡ ÂïÈû
+	 * ï¿½ï¿½ï¿½ï¿½ Urlï¿½ï¿½ ï¿½Î±×¿ï¿½ ï¿½ï¿½ï¿½. XÇ¥ï¿½Ã¿ï¿½ ï¿½Ô²ï¿½ ï¿½Î±×¿ï¿½ ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param detail
-	 *            ¼¼ºÎ ³»¿ë (ÇöÀç ClassÀÇ title µÚ¿¡ ÂïÈú ³»¿ë)
+	 *            ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ Classï¿½ï¿½ title ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 	 * @param currentUrl
-	 *            ÇöÀç ÆäÀÌÁöÀÇ Url. driver.getCurrentUrl()·Î ¾²¸é µÊ
+	 *            ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Url. driver.getCurrentUrl()ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	 */
 	public void FAIL(String detail, String currentUrl) {
 		// if(StartTesting.DetailedLog)
 		RESULT += 1;
-		simpleLog("X  " + getTitle() + " | " + detail + " ½ÇÆÐ. ÇöÀç ÆäÀÌÁö " + currentUrl);
+		simpleLog("X  " + getTitle() + " | " + detail + " ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + currentUrl);
 	}
 
 	/**
-	 * ÇöÀç ¹ß»ýÇÑ ExceptionÀÇ ³»¿ëÀ» ·Î±×¿¡ Ãâ·Â. XÇ¥½Ã¿Í ÇÔ²² ·Î±×¿¡ ÂïÈû
+	 * ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ Exceptionï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¿ï¿½ ï¿½ï¿½ï¿½. XÇ¥ï¿½Ã¿ï¿½ ï¿½Ô²ï¿½ ï¿½Î±×¿ï¿½ ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param detail
-	 *            ¼¼ºÎ ³»¿ë (ÇöÀç ClassÀÇ title µÚ¿¡ ÂïÈú ³»¿ë)
+	 *            ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ Classï¿½ï¿½ title ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 	 * @param e
-	 *            ÇöÀç ¹ß»ýÇÑ Exception
+	 *            ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ Exception
 	 */
 	public void FAIL(String detail, Exception e) {
 		RESULT += 1;
-		simpleLog("X  " + getTitle() + " | " + detail + " ½ÇÆÐ");
+		simpleLog("X  " + getTitle() + " | " + detail + " ï¿½ï¿½ï¿½ï¿½");
 		simpleLog(e.getMessage());
 	}
 
 	/**
-	 * DetaildLog°¡ trueÀÏ ¶§¸¸ ½ÇÇàµÊ.
+	 * DetaildLogï¿½ï¿½ trueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
 	 * 
 	 * @param type
 	 * @param msg
@@ -198,15 +198,15 @@ public class Scenario extends CustomLogging{
 	}
 
 	/**
-	 * driver.findElement(by)¿Í try/catch¹®À» ÇÑ ¸Þ¼Òµå¿¡ ÀÛ¼ºÇÔ
+	 * driver.findElement(by)ï¿½ï¿½ try/catchï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Þ¼Òµå¿¡ ï¿½Û¼ï¿½ï¿½ï¿½
 	 * 
 	 * @param type
-	 *            WebElement °Ë»ö¿¡ ¾µ °ªÀÇ Á¾·ù. id, xpath, css, nameÀÌ ÀÖÀ½. default : id
+	 *            WebElement ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. id, xpath, css, nameï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. default : id
 	 * @param value
-	 *            WebElement °Ë»ö¿¡ ¾µ °ª
+	 *            WebElement ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
 	 * @param detail
-	 *            °Ë»öÇÑ WebElement¸¦ ºÎ¸¦ ¸íÄª. Exception¹ß»ý ½Ã ·Î±×¿¡ ÂïÈû
-	 * @return °Ë»öµÈ WebElement. °Ë»ö¿¡ ½ÇÆÐ ½Ã null°ª ¸®ÅÏ
+	 *            ï¿½Ë»ï¿½ï¿½ï¿½ WebElementï¿½ï¿½ ï¿½Î¸ï¿½ ï¿½ï¿½Äª. Exceptionï¿½ß»ï¿½ ï¿½ï¿½ ï¿½Î±×¿ï¿½ ï¿½ï¿½ï¿½ï¿½
+	 * @return ï¿½Ë»ï¿½ï¿½ï¿½ WebElement. ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ nullï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	 */
 	public WebElement FEB(String type, String value, String detail) {
 		CustomWait(4);
@@ -233,24 +233,28 @@ public class Scenario extends CustomLogging{
 				wait.until(ExpectedConditions.presenceOfElementLocated(By.name(value)));
 				w = driver.findElement(By.name(value));
 				break;
+			case "linkText":
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText(value)));
+				w = driver.findElement(By.linkText(value));
+				break;
 			default:
 				wait.until(ExpectedConditions.presenceOfElementLocated(By.id(value)));
 				w = driver.findElement(By.id(value));
 			}
-			OK(detail +" Å½»ö");
+			OK(detail +" Å½ï¿½ï¿½");
 			return w;
 		} catch (StaleElementReferenceException e) {
-			System.out.println("Stale ³µÀ½!!!!");
+			System.out.println("Stale ï¿½ï¿½ï¿½ï¿½!!!!");
 			return FEB(type, value, detail);
 		} catch (WebDriverException e) {
-			System.out.println("±×³É WebDriverException ³µÀ½!!!!");
-			FAIL(detail + " WebElement Ã£±â ½ÇÆÐ", e);
+			System.out.println("ï¿½×³ï¿½ WebDriverException ï¿½ï¿½ï¿½ï¿½!!!!");
+			FAIL(detail + " WebElement Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½", e);
 			return null;
 		}
 	}
 
 	/**
-	 * ÇöÀç À¥ÆäÀÌÁö ÀüÃ¼¸¦ Ä¸ÃÄÇØ jpgÆÄÀÏ·Î ÀúÀå
+	 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ Ä¸ï¿½ï¿½ï¿½ï¿½ jpgï¿½ï¿½ï¿½Ï·ï¿½ ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void saveScreenShot(String[] category, String detail, String extension) {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
@@ -263,7 +267,7 @@ public class Scenario extends CustomLogging{
 			filename += " "+detail;
 			FileUtils.copyFile(scrFile, new File(filename + extension));
 		} catch (IOException e) {
-			FAIL(detail + " ½ºÅ©¸°¼¦", e);
+			FAIL(detail + " ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½", e);
 		}
 	}
 	
@@ -287,7 +291,7 @@ public class Scenario extends CustomLogging{
 //		js.executeScript("document.getElementById('//id of element').setAttribute('attr', '10')");
 	}
 
-	/** @return ÇöÀç ClassÀÇ title */
+	/** @return ï¿½ï¿½ï¿½ï¿½ Classï¿½ï¿½ title */
 	public String getTitle() {
 		return title;
 	}
@@ -313,7 +317,7 @@ public class Scenario extends CustomLogging{
 		String[] val = {cate0, cate1, cate2, scenarioname, result, failDetail};
 		xlsxContent.add(val);
 		if(xlsxContent.size()>=period) {
-//		if(title.equals("·Î±×ÀÎ")) {
+//		if(title.equals("ï¿½Î±ï¿½ï¿½ï¿½")) {
 			StartTesting.x.modify(xlsxContent);
 			xlsxContent.clear();
 		} else {	}
