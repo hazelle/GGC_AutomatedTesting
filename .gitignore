@@ -3,6 +3,7 @@
 
 # Log file
 *.log
+<<<<<<< HEAD
 
 *.properties
 
@@ -23,3 +24,8 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+=======
+pom.xml
+*.xlsx
+*.MF
+>>>>>>> 34dabe15d27b433cc20e9a3d5dd56e4358c9c912
